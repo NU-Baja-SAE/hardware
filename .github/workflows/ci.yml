@@ -11,32 +11,32 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Placeholder
-        run: echo "TODO: kicad-cli sch erc / kicad-cli pcb drc per board"
+        run: 'echo "TODO: kicad-cli sch erc / kicad-cli pcb drc per board"'
 
   render-artifacts:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Placeholder
-        run: echo "TODO: render schematic PDFs and PCB renders"
+        run: 'echo "TODO: render schematic PDFs and PCB renders"'
 
   bom-diff:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Placeholder
-        run: echo "TODO: generate BOM and diff against previous version"
+        run: 'echo "TODO: generate BOM and diff against previous version"'
 
   interactive-html-bom:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Placeholder
-        run: echo "TODO: generate InteractiveHtmlBom output"
+        run: 'echo "TODO: generate InteractiveHtmlBom output"'
 
   harness-render:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Placeholder
-        run: echo "TODO: render harness YAML to SVG"
+        run: 'echo "TODO: render harness YAML to SVG"'
