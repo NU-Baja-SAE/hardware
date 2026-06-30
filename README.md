@@ -13,8 +13,7 @@ hardware/
 ├── boards/
 │   ├── ecvt-controller/   (.kicad_pro/.kicad_sch/.kicad_pcb + fab-outputs/ + README.md)
 │   ├── daq-node/
-│   ├── hud-node/
-│   └── telemetry-node/
+│   └── hud-node/
 ├── harness/                # WireViz or WireLab YAML source + output/ (generated SVGs)
 ├── bom/
 │   ├── consolidated-bom.csv
