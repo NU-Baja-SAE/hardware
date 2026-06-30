@@ -1,0 +1,21 @@
+# Fab outputs — regenerate via CI, don't commit binary fab outputs by hand
+*.zip
+fab-outputs/
+**/fab-outputs/*.gbr
+**/fab-outputs/*.drl
+**/fab-outputs/*.step
+**/fab-outputs/*.stp
+
+# KiCad backups/locks
+*.bak
+*-bak
+*.kicad_pcb-bak
+*.kicad_sch-bak
+fp-info-cache
+*.lck
+_autosave-*
+*~
+
+# OS junk
+.DS_Store
+Thumbs.db

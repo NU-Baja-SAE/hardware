@@ -1,0 +1,47 @@
+name: Hardware CI
+
+on:
+  pull_request:
+    paths:
+      - "boards/**"
+
+jobs:
+  erc-drc:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # TODO: run headless ERC/DRC via kicad-cli (KiCad 8+) for each changed board
+      - name: Placeholder
+        run: echo "TODO: kicad-cli sch erc / kicad-cli pcb drc per board"
+
+  render-artifacts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # TODO: generate schematic PDFs + PCB renders, upload as PR artifacts
+      - name: Placeholder
+        run: echo "TODO: render schematic PDFs and PCB renders"
+
+  bom-diff:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # TODO: regenerate BOM via bom/scripts/generate_bom.py, diff against previous version
+      - name: Placeholder
+        run: echo "TODO: generate BOM and diff against previous version"
+
+  interactive-html-bom:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # TODO: generate InteractiveHtmlBom output for assembly/debug reference
+      - name: Placeholder
+        run: echo "TODO: generate InteractiveHtmlBom output"
+
+  harness-render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # TODO: render harness/ WireViz or WireLab YAML to SVG, post as PR artifact
+      - name: Placeholder
+        run: echo "TODO: render harness YAML to SVG"
