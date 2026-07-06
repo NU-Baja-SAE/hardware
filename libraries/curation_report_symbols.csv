@@ -1,0 +1,22 @@
+symbol,source_lib_ids,used_on_boards,content_variants,canonical_from,merged_aliases
+15311026,baja_symbol_library:15311026,DAQ_PCB; ecvt_main_board_v2; ecvt_main_board_v3; straingauge_accelerometer; turnsignals,1,ecvt_main_board_v3 (2026-02-27),False
+15311046,baja_symbol_library:15311046,ecvt_main_board_v2; ecvt_main_board_v3,1,ecvt_main_board_v3 (2026-02-27),False
+240128,baja_symbol_library:240128,Dashboard,1,Dashboard (2026-04-16),False
+2411099,baja_symbol_library:2411099,safety,1,safety (2026-02-05),False
+2411450,baja_symbol_library:2411450,safety,1,safety (2025-11-20),False
+917780-1,baja_symbol_library:917780-1,DAQ_PCB; Dashboard; ecvt_main_board_v1; ecvt_main_board_v2; ecvt_main_board_v3; safety; straingauge_accelerometer,1,Dashboard (2026-04-16),False
+917781-1,baja_symbol_library:917781-1,DAQ_PCB; Dashboard; ecvt_main_board_v1; ecvt_main_board_v2; ecvt_main_board_v3; turnsignals; wheel_hall_pcb,1,Dashboard (2026-04-16),False
+917782-1,Connector_1x4:917782-1; baja:917782-1; baja_symbol_library:917782-1,Temp_pcb; ecvt_main_board_v1; ecvt_main_board_v2; ecvt_main_board_v3; straingauge_accelerometer,3,ecvt_main_board_v3 (2026-02-27),True
+917783-1,Connector_1x5 v2:917783-1,DAQ_PCB,1,DAQ_PCB (2026-01-22),False
+917784-1,Connector_1x6:917784-1; baja_symbol_library:917784-1,DAQ_PCB; ecvt_main_board_v3,2,ecvt_main_board_v3 (2026-02-27),True
+917786-1,baja_symbol_library:917786-1,ecvt_main_board_v3,1,ecvt_main_board_v3 (2026-02-27),False
+917791-1,baja_symbol_library:917791-1,ecvt_main_board_v2,1,ecvt_main_board_v2 (2026-01-25),False
+ACT45B-101-2P-TL003,baja_symbol_library:ACT45B-101-2P-TL003,DAQ_PCB; Dashboard; ecvt_main_board_v1; ecvt_main_board_v2; ecvt_main_board_v3; straingauge_accelerometer,1,ecvt_main_board_v3 (2026-02-27),False
+BL99232CH,baja_symbol_library:‎BL99232CH,safety,1,safety (2026-02-05),False
+DRV8452DDWR,baja_symbol_library:DRV8452DDWR,tssop-44-dip-48_adapters,1,tssop-44-dip-48_adapters (2026-01-09),False
+DRV8462DDVR,baja_symbol_library:DRV8462DDVR,ecvt_main_board_v1; ecvt_main_board_v2; ecvt_main_board_v3,3,ecvt_main_board_v3 (2026-02-27),False
+ESD3V3AP-TP,baja_symbol_library:ESD3V3AP-TP,ecvt_main_board_v3,1,ecvt_main_board_v3 (2026-02-27),False
+MLX90316,baja_symbol_library:MLX90316,hall_PWM_out; hall_PWM_out_v2; hall_SPI_out_v2; hall_SPI_out_v3; hall_analog_out,1,hall_PWM_out_v2 (2026-01-11),False
+NAU7802SGI,nau7802:NAU7802SGI,straingauge_accelerometer,1,straingauge_accelerometer (2026-02-22),False
+TEA_1-0505,baja_symbol_library:TEA_1-0505,turnsignals,1,turnsignals (2026-02-05),False
+TSR_1-24120,baja_symbol_library:TSR_1-24120,turnsignals,1,turnsignals (2026-02-05),False

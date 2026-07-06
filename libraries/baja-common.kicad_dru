@@ -1,0 +1,184 @@
+(version 1)
+# Shared custom Design Rules (DRC) template for Baja boards.
+#
+# Copy this file into a board's project folder as `<project>.kicad_dru`
+# (KiCad only looks for a .kicad_dru file matching the project name, it
+# won't read one from elsewhere) and open the project in KiCad so DRC
+# picks it up. See "Trace width / netclass convention" in
+# libraries/README.md for the reasoning behind these numbers.
+#
+# Manufacturer floor matched to JLCPCB's capabilities page
+# (https://jlcpcb.com/capabilities/pcb-capabilities): trace width 0.1mm,
+# clearance 0.09mm. These are the absolute minimums regardless of netclass
+# -- fab can't reliably etch anything thinner/tighter than this.
+#
+# Netclass floors on top of that: "Default" (general signal wiring)
+# >= 0.3mm, "Power" >= 0.6mm, matching the netclass track_width defaults
+# in each board's .kicad_pro. Unlike a netclass's track_width (which is
+# only the *default* width KiCad proposes when you draw a new trace, not
+# an enforced minimum), these rules make DRC actually flag anything routed
+# thinner.
+#
+# NOTE: this only covers the two rule kinds a text-based CI lint can't
+# reliably substitute for (trace width IS checked by
+# libraries/tools/check_trace_widths.py from the .kicad_pcb directly;
+# clearance depends on real board geometry and can only be checked by
+# KiCad's own DRC engine -- run it locally, or via `kicad-cli pcb drc`
+# once that's wired into CI). Everything else here (hole sizes, annular
+# rings, silkscreen, board edge) is carried over from the JLCPCB-derived
+# rules already in use on daq_board.kicad_dru, so every board stays
+# consistent rather than each one hand-copying/tweaking its own.
+
+# --- Minimum Trace Width and Spacing (fab floor) ---
+
+(rule "Baja: Trace Width (Fab Floor)"
+	(condition "A.Type == 'Track'")
+	(constraint track_width (min 0.1mm))
+)
+(rule "Baja: Trace Spacing (Fab Floor)"
+	(condition "A.Type == 'Track' && B.Type == 'Track'")
+	(constraint clearance (min 0.09mm))
+)
+
+# --- Minimum Trace Width by Netclass (on top of the fab floor above) ---
+
+(rule "Baja: Min Trace Width - Default/Signal Netclass"
+	(condition "A.NetClass == 'Default'")
+	(constraint track_width (min 0.3mm))
+)
+(rule "Baja: Min Trace Width - Power Netclass"
+	(condition "A.NetClass == 'Power'")
+	(constraint track_width (min 0.6mm))
+)
+
+# --- Drill/Hole Size (JLCPCB, 4-6 layers preferred) ---
+
+(rule "JLCPCB: Drill Hole Size"
+	(constraint hole_size (min 0.2mm) (max 6.3mm))
+)
+
+(rule "JLCPCB: Via Hole Size"
+	(condition "A.Type == 'Via'")
+	(constraint hole_size (min 0.2mm))
+)
+
+(rule "JLCPCB: Via Annular Ring"
+	(condition "A.Type == 'Via'")
+	(constraint annular_width (min 0.075mm))
+)
+
+(rule "JLCPCB: PTH Hole Size"
+	(condition "A.Type == 'Pad' && A.Pad_Type == 'Through-hole' && A.isPlated()")
+	(constraint hole_size (min 0.2mm) (max 6.3mm))
+)
+
+(rule "JLCPCB: NPTH Hole Size"
+	(condition "A.Type == 'Pad' && A.Pad_Type == 'NPTH, mechanical' && !A.isPlated()")
+	(constraint hole_size (min 0.5mm))
+)
+
+(rule "JLCPCB: Castellated Hole Size"
+	(layer outer)
+	(condition "A.Type == 'Pad' && A.Fabrication_Property == 'Castellated pad'")
+	(constraint hole_size (min 0.6mm))
+)
+
+(rule "JLCPCB: PTH Annular Ring"
+	(condition "A.Type == 'Pad' && A.Pad_Type == 'Through-hole' && A.isPlated()")
+	(constraint annular_width (min 0.075mm))
+)
+
+(rule "JLCPCB: NPTH Annular Ring"
+	(condition "A.Type == 'Pad' && A.Pad_Type == 'NPTH, mechanical' && !A.isPlated()")
+	(constraint annular_width (min 0.25mm))
+)
+
+(rule "JLCPCB: Avoid 4-Wire Kelvin Test"
+	(condition "(A.Type == 'Via' && A.Hole < 0.3mm && A.Diameter <= 0.4mm) || (A.Type == 'Pad' && ((A.Hole_Size_X < 0.3mm && A.Size_X <= 0.4mm) || (A.Hole_Size_Y < 0.3mm && A.Size_Y <= 0.4mm)))")
+	(constraint annular_width (min 0.125mm))
+)
+
+# --- VIA Support Rules ---
+
+(rule "JLCPCB: Only Throughhole VIAs are supported"
+	(condition "A.Type == 'Via'")
+	(constraint assertion "!(A.isBlindBuriedVia() || A.isMicroVia())")
+)
+
+# --- Minimum Clearance (hole-to-hole / pad-to-trace, JLCPCB) ---
+
+(rule "JLCPCB: Hole to Hole Clearance (Different Nets)"
+	(condition "A.Net != B.Net")
+	(constraint hole_to_hole (min 0.5mm))
+)
+
+(rule "JLCPCB: Via Hole to Via Hole Clearance (Same Net)"
+	(condition "A.Type == 'Via' && B.Type == 'Via' && A.Net == B.Net")
+	(constraint hole_to_hole (min 0.254mm))
+)
+
+(rule "JLCPCB: Pad to Pad Clearance (Pad without Hole, Different Nets)"
+	(condition "A.Type == 'Pad' && (A.Pad_Type != 'Through-hole' && A.Pad_Type != 'NPTH, mechanical') && B.Type == 'Pad' && (B.Pad_Type != 'Through-hole' && B.Pad_Type != 'NPTH, mechanical') && A.Net != B.Net")
+	(constraint clearance (min 0.127mm))
+)
+
+(rule "JLCPCB: Pad Hole to Pad Hole Clearance (Pad with Hole, Different Nets)"
+	(condition "A.Type == 'Pad' && (A.Pad_Type == 'Through-hole' || A.Pad_Type == 'NPTH, mechanical') && B.Type == 'Pad' && (B.Pad_Type == 'Through-hole' || B.Pad_Type == 'NPTH, mechanical') && A.Net != B.Net")
+	(constraint hole_to_hole (min 0.5mm))
+)
+
+(rule "JLCPCB: Via/Pad to Via/Pad Clearance (Different Nets)"
+	(condition "(A.Type == 'Pad' || A.Type == 'Via') && (B.Type == 'Pad' || B.Type == 'Via') && A.Net != B.Net")
+	(constraint clearance (min 0.127mm))
+)
+
+(rule "JLCPCB: Via/Pad Hole to Via/Pad Hole Clearance (Same Net)"
+	(condition "(A.Type == 'Pad' || A.Type == 'Via') && (B.Type == 'Pad' || B.Type == 'Via') && A.Net == B.Net")
+	(constraint hole_to_hole (min 0.254mm))
+)
+
+(rule "JLCPCB: Via to Trace"
+	(condition "A.Type == 'Via' && B.Type == 'Track'")
+	(constraint hole_clearance (min 0.254mm))
+)
+
+(rule "JLCPCB: PTH to Trace"
+	(condition "A.Type == 'Pad' && A.Pad_Type == 'Through-hole' && A.isPlated() && B.Type == 'Track'")
+	(constraint hole_clearance (min 0.33mm))
+)
+
+(rule "JLCPCB: NPTH to Trace"
+	(condition "A.Type == 'Pad' && A.Pad_Type == 'NPTH, mechanical' && !A.isPlated() && B.Type == 'Track'")
+	(constraint hole_clearance (min 0.254mm))
+)
+
+(rule "JLCPCB: Pad to Trace"
+	(condition "A.Type == 'Pad' && (A.Pad_Type == 'Through-hole' || A.Pad_Type == 'NPTH, mechanical') && B.Type == 'Track' &&  A.Net != B.Net")
+	(constraint clearance (min 0.2mm))
+)
+
+# --- Legend ---
+
+(rule "JLCPCB: Minimum Line Width"
+	(layer "?.Silkscreen")
+	(condition "A.Type == 'Text' || A.Type == 'Text Box'")
+	(constraint text_thickness (min 0.15mm))
+)
+
+(rule "JLCPCB: Minimum Text Height"
+	(layer "?.Silkscreen")
+	(condition "A.Type == 'Text' || A.Type == 'Text Box'")
+	(constraint text_height (min 1mm))
+)
+
+(rule "JLCPCB: Pad to Silkscreen"
+	(condition "A.Type == 'Pad' && ((A.existsOnLayer('F.Mask') && B.Layer == 'F.Silkscreen') || (A.existsOnLayer('B.Mask') && B.Layer == 'B.Silkscreen')) ")
+	(constraint silk_clearance (min 0.15mm))
+)
+
+# --- Board Outlines ---
+
+(rule "JLCPCB: Trace to Board Edge"
+	(condition "A.Type == 'Track'")
+	(constraint edge_clearance (min 0.3mm))
+)

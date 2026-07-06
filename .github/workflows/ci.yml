@@ -13,6 +13,20 @@ jobs:
       - name: Placeholder
         run: 'echo "TODO: kicad-cli sch erc / kicad-cli pcb drc per board"'
 
+  passive-footprint-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check resistor/capacitor footprint sizes
+        run: python3 libraries/tools/check_passive_footprints.py boards
+
+  trace-width-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check netclass minimum trace widths
+        run: python3 libraries/tools/check_trace_widths.py boards
+
   render-artifacts:
     runs-on: ubuntu-latest
     steps:

@@ -1,0 +1,21 @@
+footprint,source_lib_ids,used_on_boards,content_variants,canonical_from,merged_aliases,ad_hoc_generic
+917783-1,baja_footprint_library:Connector_1x5,DAQ_PCB,1,DAQ_PCB (2026-01-25),False,False
+ACT45B-101-2P-TL003,baja:ACT45B-101-2P-TL003; baja_footprint_library:ACT45B-101-2P-TL003,DAQ_PCB; Dashboard; ecvt_main_board_v1; ecvt_main_board_v2; ecvt_main_board_v3; straingauge_accelerometer,6,ecvt_main_board_v3 (2026-04-19),True,False
+CON2_1X2_P100,Connector_1x2:CON2_1X2_P100,DAQ_PCB,1,DAQ_PCB (2026-01-25),False,True
+CON3_1X3_P100,Connector_1x3:CON3_1X3_P100; KiCADv6:CON3_1X3_P100,DAQ_PCB; wheel_hall_pcb,2,DAQ_PCB (2026-01-25),True,True
+CON4_1X4_P100,Connector_1x4:CON4_1X4_P100,Temp_pcb,1,Temp_pcb (2026-01-25),False,True
+CONV_TEA_1-0505,baja_footprint_library:CONV_TEA_1-0505,turnsignals,1,turnsignals (2026-02-15),False,False
+MOLEX_15311026,baja:MOLEX_15311026; baja_footprint_library:MOLEX_15311026,DAQ_PCB; ecvt_main_board_v2; ecvt_main_board_v3; straingauge_accelerometer; turnsignals,5,ecvt_main_board_v3 (2026-04-19),True,False
+MOLEX_15311046,baja_footprint_library:MOLEX_15311046,ecvt_main_board_v2; ecvt_main_board_v3,2,ecvt_main_board_v3 (2026-04-19),False,False
+Potentiometer_Bourns_3296W_PDB181P_Vertical,baja_footprint_library:Potentiometer_Bourns_3296W_PDB181P_Vertical,Manual_Mode,1,Manual_Mode (2025-12-11),False,False
+SD_Card,baja_footprint_library:SD_Card,DAQ_PCB,1,DAQ_PCB (2026-01-25),False,False
+SOI16_NAU7802SGI_NUV,nau7802:SOI16_NAU7802SGI_NUV,straingauge_accelerometer,1,straingauge_accelerometer (2026-02-22),False,False
+TE-Connectivity_1x6,baja_footprint_library:TE-Connectivity_1x6,DAQ_PCB; ecvt_main_board_v3,2,ecvt_main_board_v3 (2026-04-19),False,False
+TE-Connectivity_917780,baja:TE-Connectivity_ 917780; baja_footprint_library:TE-Connectivity_ 917780,Dashboard; ecvt_main_board_v1; ecvt_main_board_v2; ecvt_main_board_v3; straingauge_accelerometer,7,ecvt_main_board_v3 (2026-04-19),True,False
+TE-Connectivity_917781,baja_footprint_library:TE-Connectivity_917781,Dashboard; ecvt_main_board_v1; ecvt_main_board_v2; ecvt_main_board_v3; turnsignals,9,ecvt_main_board_v3 (2026-04-19),False,False
+TE-Connectivity_917782,baja:TE-Connectivity_917782; baja_footprint_library:TE-Connectivity_917782,Dashboard; ecvt_main_board_v1; ecvt_main_board_v2; ecvt_main_board_v3; straingauge_accelerometer,7,ecvt_main_board_v3 (2026-04-19),True,False
+TE-Connectivity_917786,baja_footprint_library:TE-Connectivity_917786,ecvt_main_board_v3,1,ecvt_main_board_v3 (2026-04-19),False,False
+TE-Connectivity_917791,baja_footprint_library:TE-Connectivity_917791,ecvt_main_board_v2,1,ecvt_main_board_v2 (2026-02-17),False,False
+TSR1-SINGLE_TRP,baja_footprint_library:TSR1-SINGLE_TRP,turnsignals,1,turnsignals (2026-02-15),False,False
+baja_logo_footprint,baja:baja_logo_footprint; baja_footprint_library:baja_logo_footprint,DAQ_PCB; Dashboard; ecvt_main_board_v1; ecvt_main_board_v2; ecvt_main_board_v3; straingauge_accelerometer,5,ecvt_main_board_v3 (2026-04-19),True,False
+thermistor_pad,baja_footprint_library:thermistor_pad,Temp_pcb,1,Temp_pcb (2026-01-25),False,False

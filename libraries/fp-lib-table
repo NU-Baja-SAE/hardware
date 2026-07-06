@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "baja-common-parts")(type "KiCad")(uri "${BAJA_LIB}/baja-common-parts.pretty")(options "")(descr "NU Baja SAE shared footprints matching baja-common-parts.kicad_sym"))
+)

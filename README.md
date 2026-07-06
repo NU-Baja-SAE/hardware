@@ -42,6 +42,7 @@ You only need to do this once per computer.
    - Mac: open Terminal and run `git --version` — macOS will offer to install it for you if it is missing.
 3. Install GitHub Desktop (recommended if you are new to Git) from [desktop.github.com](https://desktop.github.com). It gives you a visual interface for the commit/push/pull steps below instead of typing commands. Everything in this guide can be done either with GitHub Desktop's buttons or with the `git` command line — both are described below.
 4. Install KiCad — see [KiCad version](#kicad-version) below for which version to install. Download from [kicad.org/download](https://www.kicad.org/download/).
+5. After cloning the repo (next section), add the shared parts library so connectors/ICs used across boards show up in KiCad — see [`libraries/README.md`](libraries/README.md).
 
 ## Getting the files onto your computer
 
