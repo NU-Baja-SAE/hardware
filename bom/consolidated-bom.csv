@@ -1,1 +1,4 @@
 part_number,description,manufacturer,quantity,board,notes
+100n 0603,Unpolarized capacitor,,1,hud-node,C1
+10u 0805,Unpolarized capacitor,,1,hud-node,C2
+1k 0603,Resistor,,1,hud-node,R1

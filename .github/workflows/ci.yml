@@ -4,20 +4,85 @@ on:
   push:
     paths:
       - "boards/**"
+      - "libraries/**"
+      - "bom/**"
+      - "harness/**"
+      - ".github/workflows/ci.yml"
   pull_request:
     paths:
       - "boards/**"
+      - "libraries/**"
+      - "bom/**"
+      - "harness/**"
+      - ".github/workflows/ci.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+# The kicad/kicad:9.0 container image used below should match the team
+# standard KiCad version in the top-level README ("KiCad version" section).
+# Bump every job's image and the README together.
 
 jobs:
   erc-drc:
+    name: ERC / DRC
     runs-on: ubuntu-latest
+    timeout-minutes: 15
+    container:
+      image: kicad/kicad:9.0
+      options: --user root
     steps:
       - uses: actions/checkout@v4
-      - name: Placeholder
-        run: 'echo "TODO: kicad-cli sch erc / kicad-cli pcb drc per board"'
+
+      - name: ERC on every board schematic
+        run: |
+          shopt -s nullglob globstar
+          mkdir -p reports
+          status=0
+          for pro in boards/**/*.kicad_pro; do
+            case "$pro" in *backup*|*-bak*|*_autosave-*) continue ;; esac
+            sch="${pro%.kicad_pro}.kicad_sch"
+            [ -f "$sch" ] || continue
+            board="$(basename "$(dirname "$pro")")"
+            echo "::group::ERC: $sch"
+            kicad-cli sch erc --severity-error --exit-code-violations \
+              -o "reports/${board}-erc.rpt" "$sch" || status=1
+            cat "reports/${board}-erc.rpt"
+            echo "::endgroup::"
+          done
+          exit "$status"
+
+      - name: DRC on every board layout
+        if: ${{ !cancelled() }}
+        run: |
+          shopt -s nullglob globstar
+          mkdir -p reports
+          status=0
+          for pro in boards/**/*.kicad_pro; do
+            case "$pro" in *backup*|*-bak*|*_autosave-*) continue ;; esac
+            pcb="${pro%.kicad_pro}.kicad_pcb"
+            [ -f "$pcb" ] || continue
+            board="$(basename "$(dirname "$pro")")"
+            echo "::group::DRC: $pcb"
+            kicad-cli pcb drc --severity-error --exit-code-violations \
+              -o "reports/${board}-drc.rpt" "$pcb" || status=1
+            cat "reports/${board}-drc.rpt"
+            echo "::endgroup::"
+          done
+          exit "$status"
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: erc-drc-reports
+          path: reports/
+          if-no-files-found: ignore
 
   passive-footprint-lint:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
       - name: Check resistor/capacitor footprint sizes
@@ -25,35 +90,184 @@ jobs:
 
   trace-width-lint:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
       - name: Check netclass minimum trace widths
         run: python3 libraries/tools/check_trace_widths.py boards
 
   render-artifacts:
+    name: Schematic / PCB renders
     runs-on: ubuntu-latest
+    timeout-minutes: 15
+    container:
+      image: kicad/kicad:9.0
+      options: --user root
     steps:
       - uses: actions/checkout@v4
-      - name: Placeholder
-        run: 'echo "TODO: render schematic PDFs and PCB renders"'
 
-  bom-diff:
+      - name: Render schematic PDFs and PCB layer SVGs
+        run: |
+          shopt -s nullglob globstar
+          mkdir -p render
+          status=0
+          for pro in boards/**/*.kicad_pro; do
+            case "$pro" in *backup*|*-bak*|*_autosave-*) continue ;; esac
+            board="$(basename "$(dirname "$pro")")"
+            sch="${pro%.kicad_pro}.kicad_sch"
+            pcb="${pro%.kicad_pro}.kicad_pcb"
+            if [ -f "$sch" ]; then
+              echo "::group::Schematic PDF: $sch"
+              kicad-cli sch export pdf -o "render/${board}-schematic.pdf" "$sch" || status=1
+              echo "::endgroup::"
+            fi
+            if [ -f "$pcb" ]; then
+              echo "::group::PCB SVGs: $pcb"
+              kicad-cli pcb export svg --mode-single -o "render/${board}-front.svg" \
+                --layers "F.Cu,F.SilkS,F.Mask,Edge.Cuts" \
+                --page-size-mode 2 --exclude-drawing-sheet "$pcb" || status=1
+              kicad-cli pcb export svg --mode-single -o "render/${board}-back.svg" \
+                --layers "B.Cu,B.SilkS,B.Mask,Edge.Cuts" \
+                --page-size-mode 2 --exclude-drawing-sheet --mirror "$pcb" || status=1
+              echo "::endgroup::"
+            fi
+          done
+          exit "$status"
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: board-renders
+          path: render/
+          if-no-files-found: warn
+
+  bom:
+    name: Consolidated BOM
     runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
-      - name: Placeholder
-        run: 'echo "TODO: generate BOM and diff against previous version"'
+
+      # On PRs the committed CSV must already match what the schematics
+      # produce, so the file history stays truthful and reviewable.
+      - name: Check committed BOM is up to date (PRs)
+        if: github.event_name == 'pull_request'
+        run: python3 bom/scripts/generate_bom.py --check
+
+      - name: Regenerate consolidated BOM
+        run: python3 bom/scripts/generate_bom.py
+
+      - name: Post BOM diff vs. base branch to the job summary (PRs)
+        if: github.event_name == 'pull_request'
+        run: |
+          git fetch --depth=1 origin "${{ github.base_ref }}"
+          {
+            echo "### Consolidated BOM changes vs. \`${{ github.base_ref }}\`"
+            if git diff --quiet "origin/${{ github.base_ref }}" -- bom/consolidated-bom.csv; then
+              echo "_No BOM changes._"
+            else
+              echo '```diff'
+              git diff "origin/${{ github.base_ref }}" -- bom/consolidated-bom.csv
+              echo '```'
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      # Safety net for direct pushes to main (e.g. schematic edits committed
+      # without regenerating): keep the committed CSV in sync automatically.
+      # "[skip ci]" stops the bot commit from retriggering this workflow.
+      - name: Auto-commit regenerated BOM (pushes to main)
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          if git diff --quiet -- bom/consolidated-bom.csv; then
+            echo "Committed BOM already up to date."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add bom/consolidated-bom.csv
+          git commit -m "Auto-regenerate consolidated BOM [skip ci]"
+          git pull --rebase origin main
+          git push origin HEAD:main
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: consolidated-bom
+          path: bom/consolidated-bom.csv
 
   interactive-html-bom:
+    name: Interactive HTML BOM
     runs-on: ubuntu-latest
+    timeout-minutes: 15
+    container:
+      image: kicad/kicad:9.0
+      options: --user root
     steps:
       - uses: actions/checkout@v4
-      - name: Placeholder
-        run: 'echo "TODO: generate InteractiveHtmlBom output"'
+
+      - uses: actions/checkout@v4
+        with:
+          repository: openscopeproject/InteractiveHtmlBom
+          ref: v2.11.2
+          path: .ibom
+
+      - name: Generate interactive HTML BOM per board
+        env:
+          INTERACTIVE_HTML_BOM_NO_DISPLAY: "1"
+        run: |
+          shopt -s nullglob globstar
+          mkdir -p ibom-output
+          status=0
+          for pcb in boards/**/*.kicad_pcb; do
+            case "$pcb" in *backup*|*-bak*|*_autosave-*) continue ;; esac
+            board="$(basename "$(dirname "$pcb")")"
+            echo "::group::Interactive BOM: $pcb"
+            python3 .ibom/InteractiveHtmlBom/generate_interactive_bom.py \
+              --no-browser \
+              --dest-dir "$GITHUB_WORKSPACE/ibom-output" \
+              --name-format "${board}-ibom" \
+              "$pcb" || status=1
+            echo "::endgroup::"
+          done
+          exit "$status"
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: interactive-html-bom
+          path: ibom-output/
+          if-no-files-found: warn
 
   harness-render:
+    name: Harness diagrams
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
-      - name: Placeholder
-        run: 'echo "TODO: render harness YAML to SVG"'
+
+      - name: Render WireViz harness diagrams
+        run: |
+          shopt -s nullglob
+          files=(harness/*.yml harness/*.yaml)
+          if [ ${#files[@]} -eq 0 ]; then
+            echo "No harness YAML sources yet - nothing to render."
+            exit 0
+          fi
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq graphviz
+          python3 -m pip install --quiet "wireviz==0.4.1"
+          mkdir -p harness/output
+          for f in "${files[@]}"; do
+            echo "Rendering $f"
+            wireviz "$f" --output-dir harness/output
+          done
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: harness-diagrams
+          path: |
+            harness/output/
+            !harness/output/.gitkeep
+          if-no-files-found: ignore

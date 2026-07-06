@@ -149,7 +149,7 @@ hardware/
 
 - `boards/<name>/` — one folder per physical board. Each contains its own KiCad project (`.kicad_pro`), schematic (`.kicad_sch`), PCB layout (`.kicad_pcb`), a `fab-outputs/` folder for generated gerbers/drill files/STEP models (not committed by hand — see below), and a short `README.md` describing the board.
 - `harness/` — wiring harness definitions (WireViz/WireLab YAML), with rendered diagrams in `harness/output/`.
-- `bom/` — the consolidated bill of materials across all boards (`consolidated-bom.csv`) and the script that generates it from each board's KiCad BOM export.
+- `bom/` — the consolidated bill of materials across all boards (`consolidated-bom.csv`), generated automatically from the schematics by `bom/scripts/generate_bom.py`. Never edit the CSV by hand. If you change a schematic, run `python3 bom/scripts/generate_bom.py` and commit the updated CSV alongside your change — CI fails the PR if the committed CSV is out of date (and auto-regenerates it on direct pushes to `main` as a safety net).
 - `libraries/` — shared KiCad symbol and footprint libraries used by more than one board, so parts stay consistent across designs.
 - `.github/workflows/` — CI configuration; this is what automatically checks your PRs (see step 6 above).
 
@@ -161,4 +161,4 @@ Board releases are tagged at the point gerbers are sent to fab, e.g. `ecvt-contr
 
 ## KiCad version
 
-All board files must be authored/saved in the same KiCad version to avoid spurious diffs from format upgrades. Current standard version: TBD (update this line once the team confirms).
+All board files must be authored/saved in the same KiCad version to avoid spurious diffs from format upgrades. Current standard version: **KiCad 9.0** — this is also the version CI runs (the `kicad/kicad:9.0` image in `.github/workflows/ci.yml`), so files saved in a newer major version will fail CI until both are bumped together.

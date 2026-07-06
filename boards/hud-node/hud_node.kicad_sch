@@ -133,6 +133,32 @@
 				)
 			)
 		)
+		(symbol "power:PWR_FLAG"
+			(power)
+			(pin_numbers hide)
+			(pin_names (offset 0) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#FLG" (at 0 1.905 0) (effects (font (size 1.27 1.27)) (hide yes)))
+			(property "Value" "PWR_FLAG" (at 0 3.81 0) (effects (font (size 1.27 1.27))))
+			(property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+			(property "Datasheet" "~" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+			(property "Description" "Special symbol for telling ERC where power comes from" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+			(symbol "PWR_FLAG_0_0"
+				(pin power_out line (at 0 0 90) (length 0)
+					(name "pwr" (effects (font (size 1.27 1.27))))
+					(number "1" (effects (font (size 1.27 1.27))))
+				)
+			)
+			(symbol "PWR_FLAG_0_1"
+				(polyline
+					(pts (xy 0 0) (xy 0 1.27) (xy -1.016 1.905) (xy 0 2.54) (xy 1.016 1.905) (xy 0 1.27))
+					(stroke (width 0) (type default))
+					(fill (type none))
+				)
+			)
+		)
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -248,6 +274,52 @@
 			(project "hud_node"
 				(path "/0f1e2d3c-4b5a-6978-8899-aabbccddeeff"
 					(reference "#PWR02") (unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 111.76 72.39 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "66666666-6666-6666-6666-666666666606")
+		(property "Reference" "#FLG01" (at 111.76 70.485 0) (effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Value" "PWR_FLAG" (at 106.68 71.12 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 111.76 72.39 0) (effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~" (at 111.76 72.39 0) (effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Description" "Special symbol for telling ERC where power comes from" (at 111.76 72.39 0) (effects (font (size 1.27 1.27)) (hide yes)))
+		(pin "1" (uuid "ffff0001-0000-0000-0000-000000000001"))
+		(instances
+			(project "hud_node"
+				(path "/0f1e2d3c-4b5a-6978-8899-aabbccddeeff"
+					(reference "#FLG01") (unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 130.81 98.42 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "77777777-7777-7777-7777-777777777707")
+		(property "Reference" "#FLG02" (at 130.81 96.515 0) (effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Value" "PWR_FLAG" (at 135.89 96.52 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 130.81 98.42 0) (effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~" (at 130.81 98.42 0) (effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Description" "Special symbol for telling ERC where power comes from" (at 130.81 98.42 0) (effects (font (size 1.27 1.27)) (hide yes)))
+		(pin "1" (uuid "ffff0002-0000-0000-0000-000000000001"))
+		(instances
+			(project "hud_node"
+				(path "/0f1e2d3c-4b5a-6978-8899-aabbccddeeff"
+					(reference "#FLG02") (unit 1)
 				)
 			)
 		)
