@@ -1,6 +1,9 @@
 name: Hardware CI
 
 on:
+  push:
+    paths:
+      - "boards/**"
   pull_request:
     paths:
       - "boards/**"
