@@ -36,12 +36,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # The kicad container image has no bash, so these steps run under plain
+      # sh: no globstar/arrays -- use find, and keep everything POSIX.
       - name: ERC on every board schematic
         run: |
-          shopt -s nullglob globstar
           mkdir -p reports
           status=0
-          for pro in boards/**/*.kicad_pro; do
+          for pro in $(find boards -type f -name '*.kicad_pro' | sort); do
             case "$pro" in *backup*|*-bak*|*_autosave-*) continue ;; esac
             sch="${pro%.kicad_pro}.kicad_sch"
             [ -f "$sch" ] || continue
@@ -49,7 +50,7 @@ jobs:
             echo "::group::ERC: $sch"
             kicad-cli sch erc --severity-error --exit-code-violations \
               -o "reports/${board}-erc.rpt" "$sch" || status=1
-            cat "reports/${board}-erc.rpt"
+            cat "reports/${board}-erc.rpt" || true
             echo "::endgroup::"
           done
           exit "$status"
@@ -57,10 +58,9 @@ jobs:
       - name: DRC on every board layout
         if: ${{ !cancelled() }}
         run: |
-          shopt -s nullglob globstar
           mkdir -p reports
           status=0
-          for pro in boards/**/*.kicad_pro; do
+          for pro in $(find boards -type f -name '*.kicad_pro' | sort); do
             case "$pro" in *backup*|*-bak*|*_autosave-*) continue ;; esac
             pcb="${pro%.kicad_pro}.kicad_pcb"
             [ -f "$pcb" ] || continue
@@ -68,7 +68,7 @@ jobs:
             echo "::group::DRC: $pcb"
             kicad-cli pcb drc --severity-error --exit-code-violations \
               -o "reports/${board}-drc.rpt" "$pcb" || status=1
-            cat "reports/${board}-drc.rpt"
+            cat "reports/${board}-drc.rpt" || true
             echo "::endgroup::"
           done
           exit "$status"
@@ -106,12 +106,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # No bash in the kicad image -- POSIX sh only (see erc-drc job).
       - name: Render schematic PDFs and PCB layer SVGs
         run: |
-          shopt -s nullglob globstar
           mkdir -p render
           status=0
-          for pro in boards/**/*.kicad_pro; do
+          for pro in $(find boards -type f -name '*.kicad_pro' | sort); do
             case "$pro" in *backup*|*-bak*|*_autosave-*) continue ;; esac
             board="$(basename "$(dirname "$pro")")"
             sch="${pro%.kicad_pro}.kicad_sch"
@@ -212,14 +212,14 @@ jobs:
           ref: v2.11.2
           path: .ibom
 
+      # No bash in the kicad image -- POSIX sh only (see erc-drc job).
       - name: Generate interactive HTML BOM per board
         env:
           INTERACTIVE_HTML_BOM_NO_DISPLAY: "1"
         run: |
-          shopt -s nullglob globstar
           mkdir -p ibom-output
           status=0
-          for pcb in boards/**/*.kicad_pcb; do
+          for pcb in $(find boards -type f -name '*.kicad_pcb' | sort); do
             case "$pcb" in *backup*|*-bak*|*_autosave-*) continue ;; esac
             board="$(basename "$(dirname "$pcb")")"
             echo "::group::Interactive BOM: $pcb"
