@@ -1,0 +1,18 @@
+Reference,Qty,Value,DNP,Exclude from BOM,Exclude from Board,Footprint,Datasheet
+"C1,C3",2,4.7µF,,,,Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder,~
+"C2,C4,C6",3,0.1 µF,,,,Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder,~
+"C5,C18",2,0.1 µF,,,,Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder,~
+"C19,C20",2,220 pF,,,,Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder,~
+D1,1,SMAJ26A,,,,Diode_SMD:D_SMA,https://www.littelfuse.com/media?resourcetype=datasheets&itemid=75e32973-b177-4ee3-a0ff-cedaf1abdb93&filename=smaj-datasheet
+D2,1,5V,,,,Diode_SMD:D_SMA,~
+"J1,J2,J3,J4,J5,J6,J7",7,917781-1,,,,Connector_1x3:CON3_1X3_P100,https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=82181_SOFTSHELL_HIGH_DENSITY&DocType=Catalog+Section&DocLang=English&PartCntxt=794217-3&DocFormat=pdf
+"J8,J9",2,917780-1,,,,Connector_1x2:CON2_1X2_P100,https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=82181_SOFTSHELL_HIGH_DENSITY&DocType=Catalog+Section&DocLang=English&PartCntxt=794217-3&DocFormat=pdf
+J10,1,Conn_01x09_Socket,,,,Connector_PinHeader_2.54mm:PinHeader_1x09_P2.54mm_Vertical,~
+"J11,J12",2,Conn_01x19_Socket,,,,Connector_PinHeader_2.54mm:PinHeader_1x19_P2.54mm_Vertical,~
+Q1,1,Q_PMOS_DGS,,,,Package_TO_SOT_SMD:SOT-23-3,~
+"R1,R2",2,60,,,,Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder,~
+R3,1,1k,,,,Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder,~
+U2,1,TJA1051T-3,,,,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,http://www.nxp.com/docs/en/data-sheet/TJA1051.pdf
+U3,1,TSR_1-2450,,,,Converter_DCDC:Converter_DCDC_TRACO_TSR-1_THT,http://www.tracopower.com/products/tsr1.pdf
+U4,1,TPD2EUSB30,,,,Package_TO_SOT_SMD:Texas_DRT-3,http://www.ti.com/lit/ds/symlink/tpd2eusb30a.pdf
+U5,1,ACT45B-101-2P-TL003,,,,baja_footprint_library:ACT45B-101-2P-TL003,

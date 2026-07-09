@@ -1,0 +1,31 @@
+Reference,Qty,Value,DNP,Exclude from BOM,Exclude from Board,Footprint,Datasheet
+"C1,C3,C5",3,0.01µF,,,,Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder,~
+C2,1,100µF,,,,Capacitor_SMD:CP_Elec_10x10.5,~
+"C4,C7",2,1µF,,,,Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder,~
+"C6,C8,C9",3,0.1 µF,,,,Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder,~
+"C10,C11,C13,C15,C17,C18",6,0.1 µF,,,,Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder,~
+"C12,C14,C16",3,4.7µF,,,,Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder,~
+"C19,C20",2,220 pF,,,,Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder,~
+"D1,D3",2,DF2S5M4CTL3FCT-ND,,,,Diode_SMD:D_SOD-882,~
+"D2,D6",2,LED,,,,LED_SMD:LED_Luminus_MP-3030-1100_3.0x3.0mm,~
+D4,1,5V,,,,Diode_SMD:D_SMA,~
+D5,1,SMAJ26A,,,,Diode_SMD:D_SMA,https://www.littelfuse.com/media?resourcetype=datasheets&itemid=75e32973-b177-4ee3-a0ff-cedaf1abdb93&filename=smaj-datasheet
+F1,1,Fuse,,,,Fuse:Fuse_0603_1608Metric_Pad1.05x0.95mm_HandSolder,~
+"H1,H2,H3,H4",4,MountingHole,,Excluded from BOM,,MountingHole:MountingHole_3.2mm_M3,~
+J1,1,917782-1,,,,baja_footprint_library:TE-Connectivity_917782,https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=82181_SOFTSHELL_HIGH_DENSITY&DocType=Catalog+Section&DocLang=English&PartCntxt=794217-3&DocFormat=pdf
+J2,1,15311046,,,,baja_footprint_library:MOLEX_15311046,https://www.molex.com/en-us/products/part-detail-pdf/15311046?display=pdf
+J3,1,917791-1,,,,baja_footprint_library:TE-Connectivity_917791,
+J4,1,15311026,,,,baja_footprint_library:MOLEX_15311026,https://www.molex.com/en-us/products/part-detail-pdf/15311026?display=pdf
+J6,1,917780-1,,,,baja_footprint_library:TE-Connectivity_ 917780,https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=82181_SOFTSHELL_HIGH_DENSITY&DocType=Catalog+Section&DocLang=English&PartCntxt=794217-3&DocFormat=pdf
+"J8,J9",2,Conn_01x19_Socket,,,,Connector_PinSocket_2.54mm:PinSocket_1x19_P2.54mm_Vertical,~
+J10,1,917781-1,,,,baja_footprint_library:TE-Connectivity_917781,https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=82181_SOFTSHELL_HIGH_DENSITY&DocType=Catalog+Section&DocLang=English&PartCntxt=794217-3&DocFormat=pdf
+Q1,1,Q_PMOS_DGS,,,,Package_TO_SOT_SMD:SOT-23-3,~
+"R1,R2",2,10kΩ,,,,Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder,~
+R3,1,1k,,,,Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder,~
+"R4,R5",2,60,,,,Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder,~
+"R6,R7",2,100k,,,,Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder,~
+U1,1,TI DRV8462DDVR,,,,Package_SO:HTSSOP-44_6.1x14mm_P0.635mm_TopEP4.14x7.01mm,kicad-embed://Motor Driver 10A (drv8462).pdf
+"U2,U6",2,TPD2EUSB30,,,,Package_TO_SOT_SMD:Texas_DRT-3,http://www.ti.com/lit/ds/symlink/tpd2eusb30a.pdf
+U3,1,TSR_1-2450,,,,Converter_DCDC:Converter_DCDC_TRACO_TSR-1_THT,http://www.tracopower.com/products/tsr1.pdf
+U4,1,TJA1051T-3,,,,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,http://www.nxp.com/docs/en/data-sheet/TJA1051.pdf
+U5,1,ACT45B-101-2P-TL003,,,,baja_footprint_library:ACT45B-101-2P-TL003,
