@@ -1,0 +1,5 @@
+# Dependencies for the BUILD path only (extract + build the diagram in CI).
+# The interactive `serve` editor additionally needs ruamel.yaml (see
+# requirements.txt), but CI never runs the editor.
+pydantic>=2
+PyYAML>=6

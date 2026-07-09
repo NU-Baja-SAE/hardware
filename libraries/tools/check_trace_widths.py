@@ -88,10 +88,19 @@ def load_netclasses(pro_path: Path):
         print(f"  ! could not parse {pro_path} as JSON ({e}); skipping netclass resolution", file=sys.stderr)
         return {}, {}, []
 
-    net_settings = data.get("net_settings", {})
-    class_min_width = {c["name"]: c.get("track_width", ABS_MIN_WIDTH_MM) for c in net_settings.get("classes", [])}
-    net_to_class = {name: classes[0] for name, classes in net_settings.get("netclass_assignments", {}).items() if classes}
-    patterns = [(p["pattern"], p["netclass"]) for p in net_settings.get("netclass_patterns", [])]
+    # A .kicad_pro may carry any of these keys as an explicit JSON null (not
+    # just absent) -- KiCad writes "netclass_assignments": null on boards with
+    # no per-net overrides. dict.get(key, default) returns the default only
+    # when the key is missing, so a present-but-null value slips through as
+    # None. Coerce each to its empty form before iterating.
+    net_settings = data.get("net_settings") or {}
+    classes = net_settings.get("classes") or []
+    assignments = net_settings.get("netclass_assignments") or {}
+    netclass_patterns = net_settings.get("netclass_patterns") or []
+
+    class_min_width = {c["name"]: c.get("track_width", ABS_MIN_WIDTH_MM) for c in classes}
+    net_to_class = {name: cls[0] for name, cls in assignments.items() if cls}
+    patterns = [(p["pattern"], p["netclass"]) for p in netclass_patterns]
     return class_min_width, net_to_class, patterns
 
 

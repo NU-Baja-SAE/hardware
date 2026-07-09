@@ -265,9 +265,10 @@ jobs:
             echo "skip=0" >> "$GITHUB_OUTPUT"
           fi
 
-      # The KiCad image is Debian-based and ships python3/pip/git, but fail
-      # loudly with an actionable message if any are missing rather than
-      # letting a later step die cryptically.
+      # The KiCad image ships kicad-cli/python3/git but NOT pip. pip is part
+      # of CPython, so bootstrap it with ensurepip rather than requiring it.
+      # Fail loudly with an actionable message if a genuinely-unbootstrappable
+      # tool is missing rather than letting a later step die cryptically.
       - name: Pre-flight - required tools present
         if: steps.guard.outputs.skip == '0'
         run: |
@@ -275,16 +276,21 @@ jobs:
           for t in kicad-cli python3 git; do
             command -v "$t" >/dev/null 2>&1 || missing="$missing $t"
           done
-          python3 -m pip --version >/dev/null 2>&1 || missing="$missing pip"
           if [ -n "$missing" ]; then
             echo "harness-render: missing required tool(s):$missing" >&2
             echo "The kicad/kicad:9.0 image is expected to provide these." >&2
             exit 1
           fi
 
-      - name: Install harness tool dependencies
+      # ensurepip ships with CPython; the image has no standalone pip. Only the
+      # build path runs in CI, so install just its two deps (pydantic, PyYAML)
+      # -- not ruamel.yaml, which only the interactive editor needs.
+      - name: Install harness build dependencies
         if: steps.guard.outputs.skip == '0'
-        run: python3 -m pip install --quiet --break-system-packages -r harness/wirelab/requirements.txt
+        run: |
+          python3 -m ensurepip --upgrade || true
+          python3 -m pip install --quiet --break-system-packages \
+            -r harness/wirelab/requirements-build.txt
 
       # 1. Regenerate each board's off-board connectors from its KiCad
       #    schematic. 2. Build the whole-car diagram from the hand-maintained
