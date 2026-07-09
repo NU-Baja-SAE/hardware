@@ -1,4 +1,75 @@
 part_number,description,manufacturer,quantity,board,notes
-100n 0603,Unpolarized capacitor,,1,hud-node,C1
-10u 0805,Unpolarized capacitor,,1,hud-node,C2
-1k 0603,Resistor,,1,hud-node,R1
+0.1 µF 0603,Unpolarized capacitor,,1,daq-node,C11
+0.1 µF 0603,"Unpolarized capacitor, small symbol",,1,daq-node,C5
+0.1 µF 0805,Unpolarized capacitor,,3,daq-node,C2 C4 C6
+15311026,,,1,daq-node,J5
+1k 0603,Resistor,,1,daq-node,R3
+220 pF 0603,Unpolarized capacitor,,2,daq-node,C19 C20
+4.7µF 0603,Unpolarized capacitor,,3,daq-node,C1 C3 C12
+5V,Zener diode,,1,daq-node,D2
+917780-1,,,1,daq-node,J8
+917781-1,,,1,daq-node,J4
+917783-1,,TE,1,daq-node,J7
+917784-1,,,1,daq-node,J1
+ACT45B-101-2P-TL003,,,1,daq-node,U5
+Conn_01x19_Socket,"Generic connector, single row, 01x19, script generated",,2,daq-node,J11 J12
+DF2S5M4CTL3FCT-ND,Zener diode,,4,daq-node,D3 D4 D5 D6
+DM3CS-SF,,Hirose,1,daq-node,J6
+Fuse 0603,Fuse,,1,daq-node,F1
+Q_PMOS_DGS,"P-MOSFET transistor, drain/gate/source",,1,daq-node,Q1
+SMAJ26A,"400W unidirectional Transient Voltage Suppressor, 26.0Vr, SMA(DO-214AC)",,1,daq-node,D1
+TJA1051T-3,"High-Speed CAN Transceiver, separate VIO, silent mode, SOIC-8",,1,daq-node,U2
+TPD2EUSB30,"2-Channel ESD Protection for Super-Speed USB 3.0 Interface, DRT-3",,1,daq-node,U4
+TSR_1-2450,"1A step-down regulator module, fixed 5V output voltage, 5-36V input voltage, -40°C to +85°C temperature range, TO-220 compatible LM78xx replacement",,1,daq-node,U3
+0.01µF 0603,"Unpolarized capacitor, small symbol",,3,ecvt-controller,C1 C3 C5
+0.1 µF 0603,Unpolarized capacitor,,6,ecvt-controller,C10 C11 C13 C15 C17 C18
+0.1 µF 0603,"Unpolarized capacitor, small symbol",,3,ecvt-controller,C6 C8 C9
+100µF,"Polarized capacitor, small symbol",,1,ecvt-controller,C2
+10k 0603,Resistor,,2,ecvt-controller,R6 R7
+10kΩ 0603,"Resistor, small US symbol",,2,ecvt-controller,R1 R2
+15311026,,,1,ecvt-controller,J4
+15311046,,,1,ecvt-controller,J2
+1k 0603,Resistor,,1,ecvt-controller,R3
+1µF 0603,"Unpolarized capacitor, small symbol",,2,ecvt-controller,C4 C7
+220 pF 0603,Unpolarized capacitor,,2,ecvt-controller,C19 C20
+4.7µF 0603,Unpolarized capacitor,,3,ecvt-controller,C12 C14 C16
+5V,Zener diode,,1,ecvt-controller,D4
+60 1206,Resistor,,2,ecvt-controller,R4 R5
+917780-1,,,1,ecvt-controller,J6
+917781-1,,,1,ecvt-controller,J10
+917782-1,,,1,ecvt-controller,J1
+917784-1,,,1,ecvt-controller,J3
+917786-1,,,1,ecvt-controller,J5
+ACT45B-101-2P-TL003,,,1,ecvt-controller,U5
+Conn_01x19_Socket,"Generic connector, single row, 01x19, script generated",,2,ecvt-controller,J8 J9
+ESD3V3AP-TP,,,3,ecvt-controller,U2 U6 U7
+Fuse 0603,Fuse,,1,ecvt-controller,F1
+LED,Light emitting diode,,2,ecvt-controller,D2 D6
+Q_PMOS_DGS,"P-MOSFET transistor, drain/gate/source",,1,ecvt-controller,Q1
+S23LC03,,,1,ecvt-controller,U8
+SMAJ26A,"400W unidirectional Transient Voltage Suppressor, 26.0Vr, SMA(DO-214AC)",,1,ecvt-controller,D5
+TI DRV8462DDVR,"65 V, 5-10 A Stepper Motor Driver for High Efficiency and Noiseless  Operation",,1,ecvt-controller,U1
+TJA1051T-3,"High-Speed CAN Transceiver, separate VIO, silent mode, SOIC-8",,1,ecvt-controller,U4
+TSR_1-2450,"1A step-down regulator module, fixed 5V output voltage, 5-36V input voltage, -40°C to +85°C temperature range, TO-220 compatible LM78xx replacement",,1,ecvt-controller,U3
+.01u 0805,Unpolarized capacitor,,2,hud-node,C1 C2
+.1uF 0603,Unpolarized capacitor,,1,hud-node,C6
+.1uf 0805,Unpolarized capacitor,,1,hud-node,C7
+0603 Fuse 0603,Fuse,,1,hud-node,F1
+100 0603,Resistor,,1,hud-node,R4
+1k 0603,Resistor,,1,hud-node,R3
+220p 0603,Unpolarized capacitor,,2,hud-node,C4 C5
+4.7u 0603,Polarized capacitor,,1,hud-node,C3
+5V,Zener diode,,1,hud-node,D1
+60 1206,Resistor,,2,hud-node,R1 R2
+917780-1,,,2,hud-node,J3 J4
+917781-1,,,1,hud-node,J6
+ACT45B-101-2P-TL003,,,1,hud-node,U3
+Conn_01x04,"Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)",,1,hud-node,J5
+Conn_01x19_Socket,"Generic connector, single row, 01x19, script generated",,2,hud-node,J1 J2
+Q_PMOS_DGS,"P-MOSFET transistor, drain/gate/source",,1,hud-node,Q1
+R_Potentiometer,Potentiometer,,1,hud-node,RV1
+SMAJ26A,"400W unidirectional Transient Voltage Suppressor, 26.0Vr, SMA(DO-214AC)",,1,hud-node,D2
+TJA1051T-3,"High-Speed CAN Transceiver, separate VIO, silent mode, SOIC-8",,1,hud-node,U2
+TPD2EUSB30,"2-Channel ESD Protection for Super-Speed USB 3.0 Interface, DRT-3",,1,hud-node,U5
+TSR_1-2450,"1A step-down regulator module, fixed 5V output voltage, 5-36V input voltage, -40°C to +85°C temperature range, TO-220 compatible LM78xx replacement",,1,hud-node,U1
+~,4.7 inch 240x128 Dots Graphic LCD Module,,1,hud-node,U4
