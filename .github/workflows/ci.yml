@@ -265,10 +265,10 @@ jobs:
             echo "skip=0" >> "$GITHUB_OUTPUT"
           fi
 
-      # The KiCad image ships kicad-cli/python3/git but NOT pip. pip is part
-      # of CPython, so bootstrap it with ensurepip rather than requiring it.
-      # Fail loudly with an actionable message if a genuinely-unbootstrappable
-      # tool is missing rather than letting a later step die cryptically.
+      # The KiCad image ships kicad-cli/python3/git but NOT pip (and strips
+      # ensurepip too -- it's a Debian image where pip comes from apt). Fail
+      # loudly with an actionable message if a genuinely-required tool is
+      # missing rather than letting a later step die cryptically.
       - name: Pre-flight - required tools present
         if: steps.guard.outputs.skip == '0'
         run: |
@@ -282,15 +282,27 @@ jobs:
             exit 1
           fi
 
-      # ensurepip ships with CPython; the image has no standalone pip. Only the
-      # build path runs in CI, so install just its two deps (pydantic, PyYAML)
-      # -- not ruamel.yaml, which only the interactive editor needs.
+      # The harness build needs pydantic + PyYAML. The KiCad image has no pip
+      # (and no ensurepip -- pip comes from apt on this Debian image). Install
+      # only what's actually missing: if the bundled Python already has both,
+      # skip pip entirely; otherwise apt-install pip and pull them. ruamel.yaml
+      # isn't needed -- only the interactive editor uses it.
       - name: Install harness build dependencies
         if: steps.guard.outputs.skip == '0'
         run: |
-          python3 -m ensurepip --upgrade || true
-          python3 -m pip install --quiet --break-system-packages \
-            -r harness/wirelab/requirements-build.txt
+          if python3 -c "import pydantic, yaml" 2>/dev/null; then
+            echo "pydantic + PyYAML already available; skipping pip."
+          else
+            apt-get update -qq
+            apt-get install -y -qq python3-pip
+            # --break-system-packages is needed on PEP-668 (externally-managed)
+            # pythons but rejected by older pip; try with, fall back to without.
+            python3 -m pip install --quiet --break-system-packages \
+              -r harness/wirelab/requirements-build.txt \
+              || python3 -m pip install --quiet \
+                 -r harness/wirelab/requirements-build.txt
+          fi
+          python3 -c "import pydantic, yaml; print('deps OK:', pydantic.VERSION)"
 
       # 1. Regenerate each board's off-board connectors from its KiCad
       #    schematic. 2. Build the whole-car diagram from the hand-maintained
