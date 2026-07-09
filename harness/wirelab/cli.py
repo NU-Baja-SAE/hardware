@@ -7,7 +7,10 @@ from parser import load, validate_no_double_connections
 from layout import layout
 from render import render
 from bom import wire_cuts, bill_of_materials, to_csv
-from serve import serve as serve_preview
+# NOTE: `serve` (the interactive editor) is imported lazily inside cmd_serve,
+# not here. It depends on ruamel.yaml, which the build/bom/check paths don't
+# need -- importing it at module load would force that dependency on every
+# subcommand (and breaks CI, which only installs the build deps).
 
 
 def cmd_build(args):
@@ -37,6 +40,7 @@ def cmd_bom(args):
 
 
 def cmd_serve(args):
+    from serve import serve as serve_preview  # lazy: needs ruamel.yaml
     serve_preview(args.input, port=args.port, host=args.host)
 
 
