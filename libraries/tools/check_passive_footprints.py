@@ -5,10 +5,15 @@ check_passive_footprints.py
 Lint check: flags SMD resistor/capacitor footprints that don't match the
 team's standard sizes (see "Passive footprint sizes" in libraries/README.md).
 
-Standard: 0603 by default, 0805 where a part needs more pad area (higher
-power/voltage, or easier hand-rework); always the "HandSolder" pad variant,
-since boards are hand-soldered rather than reflowed. Chosen by scanning
-what's actually used on last year's boards, not arbitrarily.
+Standard chip sizes: 0603 by default, 0805 where a part needs more pad area
+(higher power/voltage, or easier hand-rework), and 1206 for the higher-power
+cases; always the "HandSolder" pad variant, since boards are hand-soldered
+rather than reflowed. Chosen by scanning what's actually used on the boards,
+not arbitrarily.
+
+Bulk/polarized capacitors (electrolytic, tantalum -- the `CP_*` families) are
+not chip-size parts and are exempt: you can't shrink a bulk energy-storage cap
+to an 0805, so the chip-size rule doesn't apply to them.
 
 Scans every .kicad_pcb (placed footprints -- what actually gets fabricated)
 and .kicad_sch (a symbol's default Footprint field -- catches problems
@@ -28,7 +33,13 @@ import re
 import sys
 from pathlib import Path
 
-ALLOWED = re.compile(r"^[RC]_(0603|0805)_\d+Metric_Pad[\d.]+x[\d.]+mm_HandSolder$")
+# Standard chip sizes, HandSolder pad variant.
+ALLOWED = re.compile(r"^[RC]_(0603|0805|1206)_\d+Metric_Pad[\d.]+x[\d.]+mm_HandSolder$")
+
+# Bulk/polarized caps (electrolytic `CP_Elec_*`, tantalum `CP_Tantalum_*`, and
+# the generic polarized `CP_*`) aren't chip-size passives -- they can't be
+# shrunk to a chip footprint, so they're exempt from the size rule entirely.
+BULK_CAP_EXEMPT = re.compile(r"^CP_")
 
 # Matches both the standalone PCB footprint reference, e.g.
 #   (footprint "Resistor_SMD:R_0603_..._HandSolder" ...
@@ -47,8 +58,9 @@ def check_file(path: Path):
     """Yields (footprint_name,) for every disallowed Resistor_SMD/Capacitor_SMD reference in path."""
     text = path.read_text(encoding="utf-8", errors="replace")
     for lib, name in REFERENCE.findall(text):
-        if not ALLOWED.match(name):
-            yield f"{lib}:{name}"
+        if ALLOWED.match(name) or BULK_CAP_EXEMPT.match(name):
+            continue
+        yield f"{lib}:{name}"
 
 
 def main():
@@ -71,7 +83,8 @@ def main():
         return
 
     print("Disallowed resistor/capacitor footprint(s) found "
-          "(standard: 0603 default / 0805 alternate, HandSolder pad variant):\n")
+          "(standard chip sizes: 0603/0805/1206, HandSolder pad variant; "
+          "bulk CP_* caps exempt):\n")
     for path, footprint in violations:
         print(f"  {path}: {footprint}")
     sys.exit(1)

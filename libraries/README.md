@@ -58,10 +58,14 @@ what's actually used on last year's boards (e.g. `boards/daq-node`'s
   `C_0603_1608Metric_..._HandSolder`).
 - **0805** where a part needs more pad area (higher power/voltage dissipation,
   or easier hand-rework of a part you expect to swap).
+- **1206** for the higher-power resistor/cap cases.
 - Always the **`HandSolder`** pad variant (larger pads/toe fillets than the
   reflow-only default) — boards are hand-soldered, not reflowed.
 - Nothing smaller than 0603 (e.g. 0402/0201) — too fiddly to hand-solder
   reliably.
+- **Bulk/polarized caps** (electrolytic / tantalum — the `CP_*` footprint
+  families) are exempt from the chip-size rule: a bulk energy-storage cap
+  can't be shrunk to a chip footprint, so its own package footprint is fine.
 
 When placing a resistor/capacitor in KiCad, pick the matching
 `Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder` /
