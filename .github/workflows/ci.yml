@@ -240,33 +240,101 @@ jobs:
           if-no-files-found: warn
 
   harness-render:
-    name: Harness diagrams
+    name: Harness diagram
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    permissions:
+      contents: write
+    # Needs kicad-cli (for extract_connectors.py) so it runs in the KiCad
+    # container like the other kicad jobs. No bash in this image -- POSIX sh
+    # only (see the erc-drc job).
+    container:
+      image: kicad/kicad:9.0
+      options: --user root
     steps:
       - uses: actions/checkout@v4
 
-      - name: Render WireViz harness diagrams
+      # Skip cleanly until there's a backbone to render.
+      - name: Bail out if no harness backbone yet
+        id: guard
         run: |
-          shopt -s nullglob
-          files=(harness/*.yml harness/*.yaml)
-          if [ ${#files[@]} -eq 0 ]; then
-            echo "No harness YAML sources yet - nothing to render."
+          if [ ! -f harness/car.yaml ]; then
+            echo "No harness/car.yaml yet - nothing to render."
+            echo "skip=1" >> "$GITHUB_OUTPUT"
+          else
+            echo "skip=0" >> "$GITHUB_OUTPUT"
+          fi
+
+      # The KiCad image is Debian-based and ships python3/pip/git, but fail
+      # loudly with an actionable message if any are missing rather than
+      # letting a later step die cryptically.
+      - name: Pre-flight - required tools present
+        if: steps.guard.outputs.skip == '0'
+        run: |
+          missing=""
+          for t in kicad-cli python3 git; do
+            command -v "$t" >/dev/null 2>&1 || missing="$missing $t"
+          done
+          python3 -m pip --version >/dev/null 2>&1 || missing="$missing pip"
+          if [ -n "$missing" ]; then
+            echo "harness-render: missing required tool(s):$missing" >&2
+            echo "The kicad/kicad:9.0 image is expected to provide these." >&2
+            exit 1
+          fi
+
+      - name: Install harness tool dependencies
+        if: steps.guard.outputs.skip == '0'
+        run: python3 -m pip install --quiet --break-system-packages -r harness/wirelab/requirements.txt
+
+      # 1. Regenerate each board's off-board connectors from its KiCad
+      #    schematic. 2. Build the whole-car diagram from the hand-maintained
+      #    backbone. Output SVG lands in harness/output/.
+      - name: Smoke-test the harness pipeline
+        if: steps.guard.outputs.skip == '0'
+        run: python3 harness/scripts/test_pipeline.py
+
+      - name: Extract connectors and build harness diagram
+        if: steps.guard.outputs.skip == '0'
+        run: |
+          python3 harness/scripts/extract_connectors.py
+          mkdir -p harness/output
+          python3 harness/wirelab/cli.py build harness/car.yaml -o harness/output/car.svg
+
+      # On PRs the committed generated YAML + SVG must already match what the
+      # schematics produce, so the diagram in the repo stays truthful.
+      - name: Check committed harness files are up to date (PRs)
+        if: steps.guard.outputs.skip == '0' && github.event_name == 'pull_request'
+        run: |
+          python3 harness/scripts/extract_connectors.py --check
+          if ! git diff --quiet -- harness/output/car.svg; then
+            echo "harness/output/car.svg is stale. Rebuild and commit:" >&2
+            echo "  python3 harness/scripts/extract_connectors.py" >&2
+            echo "  python3 harness/wirelab/cli.py build harness/car.yaml -o harness/output/car.svg" >&2
+            git diff --stat -- harness/output/car.svg >&2
+            exit 1
+          fi
+
+      # Safety net for direct pushes to main: keep the committed generated
+      # connector YAML + diagram in sync automatically. "[skip ci]" stops the
+      # bot commit from retriggering this workflow. Mirrors the BOM job.
+      - name: Auto-commit regenerated harness (pushes to main)
+        if: steps.guard.outputs.skip == '0' && github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          if git diff --quiet -- harness/generated harness/output/car.svg; then
+            echo "Committed harness already up to date."
             exit 0
           fi
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq graphviz
-          python3 -m pip install --quiet "wireviz==0.4.1"
-          mkdir -p harness/output
-          for f in "${files[@]}"; do
-            echo "Rendering $f"
-            wireviz "$f" --output-dir harness/output
-          done
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add harness/generated harness/output/car.svg
+          git commit -m "Auto-regenerate harness diagram [skip ci]"
+          git pull --rebase origin main
+          git push origin HEAD:main
 
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: harness-diagrams
+          name: harness-diagram
           path: |
             harness/output/
             !harness/output/.gitkeep

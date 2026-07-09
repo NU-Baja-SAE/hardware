@@ -1,0 +1,57 @@
+metadata:
+  name: "Baja SAE - whole car off-board harness"
+  revision: 1
+
+# Hand-maintained backbone for the car wiring harness.
+#
+# It pulls in each board's OFF-BOARD connectors (auto-generated from the KiCad
+# schematics by harness/scripts/extract_connectors.py -- never hand-edit the
+# generated/*.yaml files) and declares only the wiring BETWEEN boards: the CAN
+# bus and the power distribution. Anything internal to a board is not here and
+# not in the diagram, by design.
+#
+# When a board changes, CI regenerates its generated/*.yaml and rebuilds this
+# file into harness/output/car.svg. Edit THIS file by hand only to add/'change
+# inter-board wires, the battery/switch spine, or junction boxes.
+
+includes:
+  daq: generated/daq-node.yaml
+  ecvt: generated/ecvt-controller.yaml
+  hud: generated/hud-node.yaml
+
+components:
+  # Battery + master switch/fuse: the power spine. These are physical harness
+  # parts that live on no board, so they're declared here.
+  BATTERY:
+    type: device
+    label: "Battery (12V/24V)"
+    zone: power
+    pins:
+      - {n: 1, name: PWR}
+      - {n: 2, name: GND}
+
+  MASTER_SWITCH:
+    type: bulkhead
+    label: "Master switch + main fuse"
+    zone: power
+    positions: 1
+
+wires:
+  # ── Power: battery -> master switch/fuse -> each board's +24V connector ───
+  # Every board has a Molex 15311026 power-in connector:
+  #   ecvt J4, daq J5, hud J4  (each +24V / GND).
+  # +24V is distributed from the switched side; grounds return to the battery.
+  - {from: BATTERY.PWR, to: MASTER_SWITCH.A1, gauge: 12, color: RED, signal: "B+"}
+  - {from: MASTER_SWITCH.B1, to: ecvt.J4.+24V, gauge: 12, color: RED, signal: "+24V"}
+  - {from: MASTER_SWITCH.B1, to: daq.J5.+24V, gauge: 14, color: RED, signal: "+24V"}
+  - {from: MASTER_SWITCH.B1, to: hud.J4.+24V, gauge: 14, color: RED, signal: "+24V"}
+  - {from: BATTERY.GND, to: ecvt.J4.GND, gauge: 12, color: BLACK, signal: "GND"}
+  - {from: BATTERY.GND, to: daq.J5.GND, gauge: 14, color: BLACK, signal: "GND"}
+  - {from: BATTERY.GND, to: hud.J4.GND, gauge: 14, color: BLACK, signal: "GND"}
+
+  # ── CAN bus: daisy-chain the three boards' CAN connectors ────────────────
+  # ecvt J6, daq J8, hud J3 each expose CANH/CANL. Chain ecvt <-> daq <-> hud.
+  - {from: ecvt.J6.CANH, to: daq.J8.CANH, gauge: 22, color: YELLOW, signal: "CANH"}
+  - {from: ecvt.J6.CANL, to: daq.J8.CANL, gauge: 22, color: GREEN, signal: "CANL"}
+  - {from: daq.J8.CANH, to: hud.J3.CANH, gauge: 22, color: YELLOW, signal: "CANH"}
+  - {from: daq.J8.CANL, to: hud.J3.CANL, gauge: 22, color: GREEN, signal: "CANL"}

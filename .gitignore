@@ -16,6 +16,13 @@ fp-info-cache
 _autosave-*
 *~
 
+# Python bytecode (harness tooling)
+__pycache__/
+*.pyc
+
 # OS junk
 .DS_Store
 Thumbs.db
+
+# Local-only harness planning notes (not pushed)
+harness/TODO.md
