@@ -326,18 +326,24 @@ jobs:
           mkdir -p harness/output
           python3 harness/wirelab/cli.py build harness/car.yaml -o harness/output/car.svg
 
-      # On PRs the committed generated YAML + SVG must already match what the
-      # schematics produce, so the diagram in the repo stays truthful.
+      # On PRs the committed generated YAML must already match what the
+      # schematics produce -- that's the harness DATA, and stale data means a
+      # wrong diagram, so this is a hard failure.
+      #
+      # The rendered car.svg is NOT hard-checked: its exact bytes depend on the
+      # renderer/host (float rounding, element ordering) so a locally-built SVG
+      # differs from the container's even when the harness is identical. Failing
+      # on that just blocks merges for a cosmetic diff. We only WARN, and the
+      # push-to-main step below regenerates the canonical SVG anyway.
       - name: Check committed harness files are up to date (PRs)
         if: steps.guard.outputs.skip == '0' && github.event_name == 'pull_request'
         run: |
           python3 harness/scripts/extract_connectors.py --check
           if ! git diff --quiet -- harness/output/car.svg; then
-            echo "harness/output/car.svg is stale. Rebuild and commit:" >&2
-            echo "  python3 harness/scripts/extract_connectors.py" >&2
-            echo "  python3 harness/wirelab/cli.py build harness/car.yaml -o harness/output/car.svg" >&2
+            echo "::warning::harness/output/car.svg differs from a fresh build" \
+                 "(likely renderer/host byte differences). It will be" \
+                 "regenerated on merge to main; not failing the PR." >&2
             git diff --stat -- harness/output/car.svg >&2
-            exit 1
           fi
 
       # Safety net for direct pushes to main: keep the committed generated
