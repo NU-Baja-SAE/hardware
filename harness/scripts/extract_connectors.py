@@ -54,10 +54,38 @@ OFF_BOARD_FAMILIES = (
     re.compile(r"^15311026$|^15311046$"),  # Molex 15311026 / 15311046 (power)
 )
 
+# A connector's part number lives in its `value` / libsource `part`, but by
+# convention some are left as a generic symbol name (e.g. "Conn_01x04") while
+# only the FOOTPRINT identifies the real harness connector (e.g.
+# ".../TE-Connectivity_917782" or ".../MOLEX_15311026"). Match those too, so a
+# connector isn't silently dropped from the harness just because its Value
+# wasn't set to the P/N. Searched anywhere in the footprint id (which is
+# "lib:footprint"), not anchored, since the family token is embedded.
+OFF_BOARD_FOOTPRINTS = (
+    re.compile(r"917\d{3}"),          # TE Connectivity 917xxx footprints
+    re.compile(r"1531102[06]|1531104[06]"),  # Molex 15311026/46 footprints
+)
+
 
 def is_off_board_part(part: str) -> bool:
     part = (part or "").strip()
     return any(rx.match(part) for rx in OFF_BOARD_FAMILIES)
+
+
+def is_off_board_footprint(footprint: str) -> bool:
+    footprint = (footprint or "").strip()
+    return any(rx.search(footprint) for rx in OFF_BOARD_FOOTPRINTS)
+
+
+def part_from_footprint(footprint: str) -> str:
+    """Best-effort harness P/N from a footprint id, for connectors whose Value
+    is generic. "baja_footprint_library:TE-Connectivity_917782" -> "917782";
+    ".../MOLEX_15311026" -> "15311026". Returns "" if no family token found."""
+    for rx in OFF_BOARD_FOOTPRINTS:
+        m = rx.search(footprint or "")
+        if m:
+            return m.group(0)
+    return ""
 
 
 # --- Minimal KiCad S-expression parser (shared shape with bom scripts) ------
@@ -171,6 +199,13 @@ def extract_board(netlist_text: str):
             part = _val(libsource, "part") or part  # fall back to libsource
         if is_off_board_part(part):
             off_board[ref] = part
+            continue
+        # Value/libsource didn't identify a harness P/N; fall back to the
+        # footprint. Some connectors keep a generic Value ("Conn_01x04") and
+        # only the footprint (".../TE-Connectivity_917782") names the family.
+        footprint = _val(comp, "footprint")
+        if is_off_board_footprint(footprint):
+            off_board[ref] = part_from_footprint(footprint) or part
 
     # 2. Walk nets; record every node that lands on an off-board connector.
     connectors = {ref: {"part": part, "pins": {}}

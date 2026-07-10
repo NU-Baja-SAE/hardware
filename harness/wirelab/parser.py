@@ -188,6 +188,16 @@ def _resolve_includes(raw: dict, base_path: Path, chain: list[Path],
                     f"duplicate component id after include: {prefixed} "
                     f"(check that two includes don't share a nested alias)"
                 )
+            # Namespace the layout zone by the include alias so that the SAME
+            # generated file imported under several aliases (e.g. one wheel-hall
+            # board instanced as wheel_fl/fr/rl/rr) lands each instance in its
+            # own zone column instead of collapsing them into one. The zone
+            # baked into the generated file (the board-folder name) is only a
+            # sensible default for a singly-imported board; the alias is the
+            # instance identity, so it wins. Copy the dict so we don't mutate
+            # the shared spec when the same file is imported twice.
+            c = dict(c)
+            c["zone"] = sub_alias
             out_components[prefixed] = (c, resolved)
 
         for w in (sub_raw.get("wires") or []):
