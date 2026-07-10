@@ -55,6 +55,18 @@ The `harness-render` job (`.github/workflows/ci.yml`) runs in the
 auto-commits them (`[skip ci]`), the same safety-net pattern the consolidated
 BOM job uses. So: change a board → push → the diagram updates itself.
 
+Because CI rewrites `generated/*.yaml` and `output/car.svg` on every push to
+`main`, their committed bytes are a moving target and two branches will almost
+always differ there. To stop that from producing merge conflicts, those paths
+are marked `merge=ours` in `.gitattributes` (git keeps one side instead of
+conflicting; the next CI run regenerates the canonical copy). GitHub's merge
+button honors this server-side. If you **merge or rebase locally**, register
+the driver once so the attribute takes effect:
+
+```
+git config merge.ours.driver true
+```
+
 ## Adding an inter-board wire / junction box
 
 Edit `car.yaml`. Reference a board connector by its include alias and refdes,

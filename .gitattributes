@@ -1,0 +1,17 @@
+# Generated harness build artifacts. These are regenerated from the KiCad
+# schematics by CI (extract_connectors.py + wirelab build) on every push to
+# main, so their committed content is a moving target: two branches will
+# almost always have different bytes and would otherwise conflict on merge.
+#
+# Mark them with the built-in "ours" merge strategy so a merge/rebase never
+# produces conflict markers in them -- it just keeps one side. The next CI
+# run on main regenerates the canonical version regardless, so whichever side
+# git keeps is only transient. This keeps the diagram viewable in the repo
+# without letting it block merges.
+#
+# NOTE: the "ours" driver must also be registered in git config. This repo's
+# CI and a one-time local setup do that via:
+#     git config merge.ours.driver true
+# (contributors who merge locally should run that once; see harness/README.md)
+harness/output/car.svg          merge=ours
+harness/generated/*.yaml        merge=ours
