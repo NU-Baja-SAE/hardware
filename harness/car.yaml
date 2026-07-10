@@ -19,6 +19,24 @@ includes:
   ecvt: generated/ecvt-controller.yaml
   hud: generated/hud-node.yaml
 
+  # ── Auxiliary sensor boards ──────────────────────────────────────────────
+  # These are small single-connector boards. Each UNIQUE board design is ONE
+  # generated/*.yaml file; a board that appears more than once on the car is
+  # instanced by importing that one file under several aliases. The renderer
+  # namespaces each component's layout zone by its alias, so every instance
+  # below gets its own column in the diagram from the single shared file.
+  #
+  # Four identical wheel hall-speed sensors, one per corner:
+  wheel_fl: generated/wheel-hall.yaml
+  wheel_fr: generated/wheel-hall.yaml
+  wheel_rl: generated/wheel-hall.yaml
+  wheel_rr: generated/wheel-hall.yaml
+  # Fuel-level sensor board (x1):
+  fuel: generated/fuel-sensor.yaml
+  # eCVT sheave hall pickups (primary + secondary; drop one if only one board):
+  ecvt_hall_pri: generated/ecvt-hall.yaml
+  ecvt_hall_sec: generated/ecvt-hall.yaml
+
 components:
   # Battery + master switch/fuse: the power spine. These are physical harness
   # parts that live on no board, so they're declared here.
@@ -55,3 +73,38 @@ wires:
   - {from: ecvt.J6.CANL, to: daq.J8.CANL, gauge: 22, color: GREEN, signal: "CANL"}
   - {from: daq.J8.CANH, to: hud.J3.CANH, gauge: 22, color: YELLOW, signal: "CANH"}
   - {from: daq.J8.CANL, to: hud.J3.CANL, gauge: 22, color: GREEN, signal: "CANL"}
+
+  # ── Auxiliary sensor boards -> their host board ──────────────────────────
+  # Each aux board draws its supply/ground from the host connector it reports
+  # into and returns its one signal on the matching input pin.
+  #
+  # Fuel-level sensor -> daq J4 (Fuel_Sensor / +5V / GND):
+  - {from: daq.J4.+5V,         to: fuel.J1.+5V,       gauge: 22, color: RED,   signal: "+5V"}
+  - {from: daq.J4.GND,         to: fuel.J1.GND,       gauge: 22, color: BLACK, signal: "GND"}
+  - {from: daq.J4.Fuel_Sensor, to: fuel.J1.FUEL_LEVEL, gauge: 22, color: BLUE, signal: "FUEL"}
+  #
+  # Wheel hall-speed sensors, one per corner. Two host connectors split them:
+  #   - Front wheels (FL/FR) -> HUD J5 "Wheel power" (Wheel1/Wheel2, +3.3V/GND)
+  #   - Rear wheels  (RL/RR) -> daq J7 (LEFT_HALL/RIGHT_HALL, +3V3/GND)
+  # Front left / front right -> HUD J5:
+  - {from: hud.J5.+3V3,   to: wheel_fl.J1.+3V3,     gauge: 22, color: RED,   signal: "+3V3"}
+  - {from: hud.J5.GND,    to: wheel_fl.J1.GND,      gauge: 22, color: BLACK, signal: "GND"}
+  - {from: hud.J5.Wheel1, to: wheel_fl.J1.HALL_OUT, gauge: 22, color: WHITE, signal: "FL_HALL"}
+  - {from: hud.J5.+3V3,   to: wheel_fr.J1.+3V3,     gauge: 22, color: RED,   signal: "+3V3"}
+  - {from: hud.J5.GND,    to: wheel_fr.J1.GND,      gauge: 22, color: BLACK, signal: "GND"}
+  - {from: hud.J5.Wheel2, to: wheel_fr.J1.HALL_OUT, gauge: 22, color: WHITE, signal: "FR_HALL"}
+  # Rear left / rear right -> daq J7:
+  - {from: daq.J7.+3V3,       to: wheel_rl.J1.+3V3,     gauge: 22, color: RED,   signal: "+3V3"}
+  - {from: daq.J7.GND,        to: wheel_rl.J1.GND,      gauge: 22, color: BLACK, signal: "GND"}
+  - {from: daq.J7.LEFT_HALL,  to: wheel_rl.J1.HALL_OUT, gauge: 22, color: WHITE, signal: "RL_HALL"}
+  - {from: daq.J7.RIGHT_HALL, to: wheel_rr.J1.HALL_OUT, gauge: 22, color: WHITE, signal: "RR_HALL"}
+  - {from: daq.J7.+3V3,       to: wheel_rr.J1.+3V3,     gauge: 22, color: RED,   signal: "+3V3"}
+  - {from: daq.J7.GND,        to: wheel_rr.J1.GND,      gauge: 22, color: BLACK, signal: "GND"}
+  #
+  # eCVT sheave hall pickups -> ecvt J3 (PRIM_RPM / SEC_RPM):
+  - {from: ecvt.J3.+3V3,     to: ecvt_hall_pri.J1.+5V,      gauge: 22, color: RED,   signal: "+5V"}
+  - {from: ecvt.J3.GND,      to: ecvt_hall_pri.J1.GND,      gauge: 22, color: BLACK, signal: "GND"}
+  - {from: ecvt.J3.PRIM_RPM, to: ecvt_hall_pri.J1.HALL_OUT, gauge: 22, color: WHITE, signal: "PRIM_RPM"}
+  - {from: ecvt.J3.+3V3,     to: ecvt_hall_sec.J1.+5V,      gauge: 22, color: RED,   signal: "+5V"}
+  - {from: ecvt.J3.GND,      to: ecvt_hall_sec.J1.GND,      gauge: 22, color: BLACK, signal: "GND"}
+  - {from: ecvt.J3.SEC_RPM,  to: ecvt_hall_sec.J1.HALL_OUT, gauge: 22, color: WHITE, signal: "SEC_RPM"}

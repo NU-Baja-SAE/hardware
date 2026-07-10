@@ -4390,7 +4390,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+3.3V"
+		(property "Value" "+3V3"
 			(at 88.9 62.23 0)
 			(effects
 				(font

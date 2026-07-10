@@ -1,0 +1,19 @@
+# HAND-WRITTEN PLACEHOLDER -- not yet generated from a KiCad board.
+#
+# Off-board connector of the fuel-level sensor board. Instanced once in
+# car.yaml (alias: fuel). Replaced by extract_connectors.py output once a real
+# boards/fuel-sensor/ KiCad project exists.
+
+metadata:
+  name: fuel-sensor off-board connectors (placeholder)
+
+components:
+  # 3-pin harness connector: supply, ground, analog level output.
+  J1:
+    type: connector
+    label: "fuel-sensor J1 (917782-1)"
+    zone: fuel-sensor
+    pins:
+      - {n: 1, name: "+5V"}
+      - {n: 2, name: GND}
+      - {n: 3, name: FUEL_LEVEL}

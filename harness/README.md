@@ -55,9 +55,48 @@ The `harness-render` job (`.github/workflows/ci.yml`) runs in the
 auto-commits them (`[skip ci]`), the same safety-net pattern the consolidated
 BOM job uses. So: change a board → push → the diagram updates itself.
 
+Because CI rewrites `generated/*.yaml` and `output/car.svg` on every push to
+`main`, their committed bytes are a moving target and two branches will almost
+always differ there. To stop that from producing merge conflicts, those paths
+are marked `merge=ours` in `.gitattributes` (git keeps one side instead of
+conflicting; the next CI run regenerates the canonical copy). GitHub's merge
+button honors this server-side. If you **merge or rebase locally**, register
+the driver once so the attribute takes effect:
+
+```
+git config merge.ours.driver true
+```
+
 ## Adding an inter-board wire / junction box
 
 Edit `car.yaml`. Reference a board connector by its include alias and refdes,
 e.g. `ecvt.J6.CANH`. Cross-board wires and the battery/switch spine live only
 here; per-board connector pins come from `generated/` and update when the
 board changes.
+
+## Auxiliary boards & repeated (instanced) boards
+
+Small aux boards (wheel/eCVT hall sensors, fuel sensor) follow the same
+pattern as the big three: **one file per unique design**, instanced in
+`car.yaml`.
+
+- **A board that appears more than once on the car** (e.g. four identical
+  wheel hall sensors) is still just ONE `generated/*.yaml`. Import it under
+  several aliases in `car.yaml`'s `includes:` — `wheel_fl:`, `wheel_fr:`, … all
+  pointing at `generated/wheel-hall.yaml`. Each alias becomes a separate copy
+  of the connector in the diagram. The renderer namespaces each component's
+  layout **zone by its include alias**, so every instance gets its own column
+  (see `_resolve_includes` in `wirelab/parser.py`). Wire each instance
+  independently, e.g. `daq.J7.LEFT_HALL -> wheel_fl.J1.HALL_OUT`.
+
+- **A real KiCad board** goes in `boards/<name>/` and its `generated/<name>.yaml`
+  is produced by `extract_connectors.py` like any other board.
+
+- **A placeholder board** (design not drawn yet) can be a hand-written
+  `generated/<name>.yaml` with a `# HAND-WRITTEN PLACEHOLDER` header. Because
+  the extractor only writes/`--check`s files for folders that exist under
+  `boards/`, a placeholder with no matching board folder is left untouched by
+  CI. When you later add `boards/<name>/`, the extractor regenerates that file
+  and it becomes a normal build artifact — the hand file is transparently
+  replaced. (Keep the placeholder's connectors/pins matching the intended
+  design so the diagram stays truthful until the real board lands.)

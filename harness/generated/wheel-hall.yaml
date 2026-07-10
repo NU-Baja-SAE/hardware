@@ -1,0 +1,25 @@
+# HAND-WRITTEN PLACEHOLDER -- not yet generated from a KiCad board.
+#
+# This describes the off-board connector of the wheel hall-sensor board. There
+# is (deliberately) ONE file for this design even though the car carries four
+# identical wheel-speed sensors; car.yaml instances it four times by importing
+# this file under four aliases (wheel_fl / wheel_fr / wheel_rl / wheel_rr).
+#
+# When a real boards/wheel-hall/ KiCad project is added, extract_connectors.py
+# will regenerate this file from the schematic and it becomes a build artifact.
+# Until then, edit the connector/pins here by hand to match the intended design.
+
+metadata:
+  name: wheel-hall off-board connectors (placeholder)
+
+components:
+  # 3-pin harness connector: sensor supply (3.3V from host), ground,
+  # open-collector hall output.
+  J1:
+    type: connector
+    label: "wheel-hall J1 (917782-1)"
+    zone: wheel-hall
+    pins:
+      - {n: 1, name: "+3V3"}
+      - {n: 2, name: GND}
+      - {n: 3, name: HALL_OUT}

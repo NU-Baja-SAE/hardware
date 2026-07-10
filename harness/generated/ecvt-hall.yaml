@@ -1,0 +1,21 @@
+# HAND-WRITTEN PLACEHOLDER -- not yet generated from a KiCad board.
+#
+# Off-board connector of the eCVT hall-sensor board (primary / secondary
+# sheave position or RPM pickup). Instanced in car.yaml under aliases
+# ecvt_hall_pri and ecvt_hall_sec -- drop one of the two if only a single
+# board is used. Replaced by extract_connectors.py output once a real
+# boards/ecvt-hall/ KiCad project exists.
+
+metadata:
+  name: ecvt-hall off-board connectors (placeholder)
+
+components:
+  # 3-pin harness connector: supply, ground, hall output.
+  J1:
+    type: connector
+    label: "ecvt-hall J1 (917782-1)"
+    zone: ecvt-hall
+    pins:
+      - {n: 1, name: "+5V"}
+      - {n: 2, name: GND}
+      - {n: 3, name: HALL_OUT}

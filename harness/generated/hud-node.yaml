@@ -22,6 +22,16 @@ components:
       - {n: 1, name: +24V}
       - {n: 2, name: GND}
 
+  J5:
+    type: connector
+    label: hud-node J5 (917782)
+    zone: hud-node
+    pins:
+      - {n: 1, name: +3V3}
+      - {n: 2, name: Wheel1}
+      - {n: 3, name: Wheel2}
+      - {n: 4, name: GND}
+
   J6:
     type: connector
     label: hud-node J6 (917781-1)
