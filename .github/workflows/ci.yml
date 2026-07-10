@@ -254,6 +254,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # This job runs inside the kicad container as root, but the workspace is
+      # checked out owned by the runner user. Git then refuses every command
+      # here with "detected dubious ownership" / "fatal: not in a git
+      # directory" (see the git diff / config / push steps below). Mark the
+      # workspace safe so all later git commands work.
+      - name: Mark workspace as a safe git directory
+        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
       # Skip cleanly until there's a backbone to render.
       - name: Bail out if no harness backbone yet
         id: guard
