@@ -40,7 +40,9 @@ TE Connectivity board connectors (917780/781/782/783/784/786/791-1), Molex
 (DRV8452DDWR / DRV8462DDVR), the MLX90316 hall sensor, the NAU7802 load-cell
 ADC, TRACO TSR/TEA DC-DC modules, an ESD protection diode, brake-light ICs,
 the SD card socket, a thermistor pad, the ESP32-DevKitC-V4 module (the MCU
-board used on the daq/hud/eCVT nodes), and the Baja logo footprint.
+board used on the daq/hud/eCVT nodes — its footprint is two 1x19 2.54mm
+female pin sockets at 22.86mm/0.9" row spacing, matching how those boards
+socket the module), and the Baja logo footprint.
 
 A few footprints (`CON2_1X2_P100`, `CON3_1X3_P100`, `CON3_1X3_P100_KiCADv6`,
 `CON4_1X4_P100`) are hand-drawn generic pin-header footprints kept only for
