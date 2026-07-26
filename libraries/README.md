@@ -9,10 +9,24 @@ deduplicating them, and fixing the naming/data problems that had crept in
 over three years of copy-pasting between projects. See
 [CURATION_NOTES.md](CURATION_NOTES.md) for exactly what changed and why.
 
-Standard KiCad stock libraries (`Device`, `Connector`, `power`, `Capacitor_SMD`,
-resistors, mounting holes, etc.) are **not** included here — every KiCad
-install already has those built in. This library only carries parts that
-aren't in a stock KiCad install.
+This library carries two kinds of part:
+
+1. **Custom / vendor-specific parts** that aren't in a stock KiCad install
+   at all (the connectors, motor driver, hall sensor, DC-DC modules, ADC,
+   etc.).
+2. **"Pick-proof" versions of standard parts** — a small set of common
+   passives and signature ICs that *do* exist in stock KiCad, but which we
+   re-package here with the **team's correct footprint already filled in**,
+   so a newcomer can drop in the right part without having to know which of
+   KiCad's dozens of footprint variants to choose. See "Pick-proof passives"
+   and "Signature parts" below.
+
+We deliberately do **not** copy in trivial stock parts where there's no
+decision to encode (bare `power:*` rails, `Mechanical:MountingHole`, generic
+`Device:LED`/`Fuse`) — those are identical in every KiCad install and
+duplicating them only invites drift. The rule of thumb: a part earns a place
+here if it's custom, or if putting it here saves someone from making a wrong
+footprint/part choice.
 
 ## One-time setup (each member, once per computer)
 
@@ -34,15 +48,30 @@ aren't in a stock KiCad install.
 
 ## What's in it
 
-22 symbols / 21 footprints covering the parts reused across last year's boards:
+**Custom / vendor-specific parts:**
 TE Connectivity board connectors (917780/781/782/783/784/786/791-1), Molex
 15311026/15311046, the ACT45B CAN connector, the eCVT motor driver
 (DRV8452DDWR / DRV8462DDVR), the MLX90316 hall sensor, the NAU7802 load-cell
 ADC, TRACO TSR/TEA DC-DC modules, an ESD protection diode, brake-light ICs,
-the SD card socket, a thermistor pad, the ESP32-DevKitC-V4 module (the MCU
-board used on the daq/hud/eCVT nodes — its footprint is two 1x19 2.54mm
-female pin sockets at 22.86mm/0.9" row spacing, matching how those boards
-socket the module), and the Baja logo footprint.
+a thermistor pad, the ESP32-DevKitC-V4 module (the MCU board used on the
+daq/hud/eCVT nodes — its footprint is two 1x19 2.54mm female pin sockets at
+22.86mm/0.9" row spacing, matching how those boards socket the module), and
+the Baja logo footprint.
+
+**Pick-proof passives** (see "Passive footprint sizes" below) — stock
+`Device:R`/`Device:C` bodies with the team-standard HandSolder footprint
+pre-filled so you never leave the footprint field blank or pick a wrong size:
+`R_0603`, `R_0805`, `R_1206`, `C_0603`, `C_0805`. Just place one and type the
+value.
+
+**Signature parts** — parts that exist in stock KiCad but that the team uses
+on essentially every board, re-packaged here with the footprint we actually
+use so they're one-stop: `TJA1051T-3` (CAN transceiver, SOIC-8), `TSR_1-2450`
+(TRACO switching regulator, THT), `TPD2EUSB30` (USB/ESD protection),
+`SMAJ26A` (400 W TVS, D_SMA), `Q_PMOS_DGS` (P-channel MOSFET, SOT-23-3),
+`Conn_01x19_Socket` (the 1x19 female socket the ESP32 plugs into), and
+`DM3CS-SF` (microSD socket — its footprint was already here; now the symbol
+is too).
 
 A few footprints (`CON2_1X2_P100`, `CON3_1X3_P100`, `CON3_1X3_P100_KiCADv6`,
 `CON4_1X4_P100`) are hand-drawn generic pin-header footprints kept only for
@@ -70,11 +99,19 @@ what's actually used on last year's boards (e.g. `boards/daq-node`'s
   families) are exempt from the chip-size rule: a bulk energy-storage cap
   can't be shrunk to a chip footprint, so its own package footprint is fine.
 
-When placing a resistor/capacitor in KiCad, pick the matching
+**The easy way to get this right:** place one of the pick-proof passive
+symbols from this library — `R_0603` / `R_0805` / `R_1206` / `C_0603` /
+`C_0805` — instead of stock `Device:R` / `Device:C`. Each already has the
+correct `HandSolder` footprint filled in, so you just set the value and move
+on. (The `Value` defaults to the size name as a reminder — change it to the
+actual value, e.g. `10k`.) This is what a newcomer should reach for.
+
+If you do place a bare stock `Device:R`/`Device:C`, pick the matching
 `Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder` /
-`Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder` (or the 0805
-equivalent) footprint from KiCad's stock library — don't leave the
-footprint field blank or pick an arbitrary size.
+`Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder` (or the 0805/1206
+equivalent) footprint from KiCad's stock library — don't leave the footprint
+field blank or pick an arbitrary size. `tools/check_passive_footprints.py`
+(run in CI) will flag any that don't match the standard.
 
 `tools/check_passive_footprints.py` scans `boards/**/*.kicad_pcb` and
 `*.kicad_sch` for `Resistor_SMD`/`Capacitor_SMD` references that don't match
