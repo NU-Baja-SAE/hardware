@@ -2357,16 +2357,6 @@
 		)
 		(uuid "4227f5fc-6722-4da3-81c3-8fb6c83f991b")
 	)
-	(text "Motor\n"
-		(exclude_from_sim no)
-		(at 151.13 94.742 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "422abb78-8b93-4e5e-8670-8f2f3976ff0f")
-	)
 	(text "Battery"
 		(exclude_from_sim no)
 		(at 161.29 64.008 0)
@@ -2499,16 +2489,6 @@
 	)
 	(wire
 		(pts
-			(xy 139.7 102.87) (xy 142.24 102.87)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "445f3762-721f-4adc-a577-0cc5678dec37")
-	)
-	(wire
-		(pts
 			(xy 73.66 72.39) (xy 73.66 76.2)
 		)
 		(stroke
@@ -2516,16 +2496,6 @@
 			(type default)
 		)
 		(uuid "47ae7f8f-843c-4ae2-b5d6-c683fc58916d")
-	)
-	(wire
-		(pts
-			(xy 139.7 102.87) (xy 139.7 104.14)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "65e9fa0d-c1c1-4153-8b95-106f406ad7e3")
 	)
 	(wire
 		(pts
@@ -2546,16 +2516,6 @@
 			(type default)
 		)
 		(uuid "7ade272e-fedf-4495-aedb-2ead6818bdb9")
-	)
-	(wire
-		(pts
-			(xy 139.7 97.79) (xy 139.7 100.33)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "85973bfb-d9b1-4d20-8881-bccf4ffa2f6f")
 	)
 	(wire
 		(pts
@@ -2606,16 +2566,6 @@
 			(type default)
 		)
 		(uuid "ce3c9732-ab0d-412d-ab19-6f1d7c2da3e3")
-	)
-	(wire
-		(pts
-			(xy 139.7 100.33) (xy 142.24 100.33)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ce8f9d86-809f-4952-b7ea-583f168d1d24")
 	)
 	(wire
 		(pts
@@ -2690,17 +2640,6 @@
 			(justify right)
 		)
 		(uuid "a5eeb26f-fe43-4d72-ac09-4984fb5f11ce")
-	)
-	(hierarchical_label "12V_Motor_Driver"
-		(shape input)
-		(at 139.7 97.79 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "d69f35c2-7479-43cb-9e38-27502e0eeb9e")
 	)
 	(hierarchical_label "Limit"
 		(shape input)
@@ -3154,115 +3093,6 @@
 			(project "ecvt-controller"
 				(path "/6a3c849d-efdf-47ab-8467-b82fc2fbc70f/2eb35e44-f3d1-4b8a-b6ba-ac006b5b3fd5"
 					(reference "#PWR045")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "1720420206:1720420206")
-		(at 142.24 100.33 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "4acff2b5-60ed-4a1a-a036-8ac6214db876")
-		(property "Reference" "J4"
-			(at 156.21 100.3299 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1720420206"
-			(at 156.21 102.8699 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Molex_SuperSabre:CONN_SD-172042-001_02_BL_MOL"
-			(at 142.24 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "Datasheet" "https://www.molex.com/en-us/products/part-detail-pdf/1720420206?display=pdf"
-			(at 142.24 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "Description" "Super Sabre Vertical Header, 7.50mm Pitch, 2 Circuits, Glow-Wire Capable, 5.33mm Tail Length, with Board Lock, Complies with UL1977 Finger Proof Standards"
-			(at 142.24 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "MFR_NAME" "Molex"
-			(at 142.24 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "MANUFACTURER_PART_NUMBER" "1720420206"
-			(at 142.24 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(pin "1"
-			(uuid "78d51286-bf66-46b5-92f5-a0560286171c")
-		)
-		(pin "2"
-			(uuid "e00404da-a63d-41d0-ba66-c3b85236ce76")
-		)
-		(instances
-			(project "ecvt-controller"
-				(path "/6a3c849d-efdf-47ab-8467-b82fc2fbc70f/2eb35e44-f3d1-4b8a-b6ba-ac006b5b3fd5"
-					(reference "J4")
 					(unit 1)
 				)
 			)
@@ -4295,83 +4125,6 @@
 			(project "ecvt-controller"
 				(path "/6a3c849d-efdf-47ab-8467-b82fc2fbc70f/2eb35e44-f3d1-4b8a-b6ba-ac006b5b3fd5"
 					(reference "#PWR035")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 139.7 104.14 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "f72aecbe-9482-4cbf-a258-780b4cd0d9a4")
-		(property "Reference" "#PWR041"
-			(at 139.7 110.49 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 139.7 108.204 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 139.7 104.14 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 139.7 104.14 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 139.7 104.14 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "c977f646-a480-4057-bba7-84ecc8c31c6f")
-		)
-		(instances
-			(project "ecvt-controller"
-				(path "/6a3c849d-efdf-47ab-8467-b82fc2fbc70f/2eb35e44-f3d1-4b8a-b6ba-ac006b5b3fd5"
-					(reference "#PWR041")
 					(unit 1)
 				)
 			)

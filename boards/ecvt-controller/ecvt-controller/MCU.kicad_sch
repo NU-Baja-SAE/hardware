@@ -3779,25 +3779,36 @@
 	)
 	(hierarchical_label "LIMIT"
 		(shape input)
-		(at 196.85 106.68 0)
+		(at 121.92 99.06 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
+			(justify right)
 		)
-		(uuid "4f616ff0-b49f-4155-a994-34466e2c50cd")
+		(uuid "21f3a2dd-3ba0-4ea0-a648-d9e5824e8c86")
+	)
+	(hierarchical_label "PRIMARY_HALL"
+		(shape input)
+		(at 121.92 93.98 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "5b5b9d42-5c0c-49b7-8849-d1774d825f4f")
 	)
 	(hierarchical_label "SECONDARY_HALL"
 		(shape input)
-		(at 196.85 101.6 0)
+		(at 121.92 96.52 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
+			(justify right)
 		)
-		(uuid "7314a971-e282-4247-b226-ea4d6e2d7b56")
+		(uuid "65355670-7d52-4307-b852-2facd363c5cc")
 	)
 	(hierarchical_label "SCK"
 		(shape input)
@@ -3853,17 +3864,6 @@
 			(justify right)
 		)
 		(uuid "ebcd214c-b069-4159-9847-a42cb5cac290")
-	)
-	(hierarchical_label "PRIMARY_HALL"
-		(shape input)
-		(at 196.85 99.06 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "f024e553-e3e8-40ce-b549-0e724f6ceddb")
 	)
 	(symbol
 		(lib_id "power:+3.3V")
