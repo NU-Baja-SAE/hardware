@@ -289,16 +289,6 @@
 				(justify left top)
 			)
 		)
-		(pin "S" input
-			(at 139.7 92.71 90)
-			(uuid "f945d173-8813-4c79-b137-2b049885059f")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
 		(pin "CANH" input
 			(at 173.99 109.22 0)
 			(uuid "984191bb-aa8c-4a31-b602-f6640d2b2f52")
@@ -488,16 +478,6 @@
 		(pin "MISO" input
 			(at 161.29 72.39 270)
 			(uuid "7b94afe9-57ad-4134-8649-17e7060e6c70")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "S" input
-			(at 139.7 72.39 270)
-			(uuid "7b1f1cee-a223-4de4-8e87-6e9c020c0208")
 			(effects
 				(font
 					(size 1.27 1.27)

@@ -1,0 +1,558 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "6a3c849d-efdf-47ab-8467-b82fc2fbc70f")
+	(paper "A4")
+	(lib_symbols)
+	(wire
+		(pts
+			(xy 158.75 72.39) (xy 158.75 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0615badd-a21b-4202-9641-d835698193ef")
+	)
+	(wire
+		(pts
+			(xy 220.98 104.14) (xy 228.6 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0864464c-51b9-4a56-a1e8-3145955ac7e3")
+	)
+	(wire
+		(pts
+			(xy 172.72 60.96) (xy 193.04 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "15f10307-dce8-45db-963f-4f6d9b26a4e7")
+	)
+	(wire
+		(pts
+			(xy 172.72 57.15) (xy 196.85 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "27696183-c775-491d-a1dd-591ea0ff164f")
+	)
+	(wire
+		(pts
+			(xy 196.85 57.15) (xy 196.85 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2fa4dc5e-cb69-411a-80bb-081968be7740")
+	)
+	(wire
+		(pts
+			(xy 200.66 53.34) (xy 200.66 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3540e983-34a3-4601-9574-227f32d83142")
+	)
+	(wire
+		(pts
+			(xy 172.72 53.34) (xy 200.66 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "60172263-8ef5-49d7-8198-c30e41efbc7e")
+	)
+	(wire
+		(pts
+			(xy 147.32 72.39) (xy 147.32 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "957012d6-ab4d-488e-8b1c-85cd5f8597d3")
+	)
+	(wire
+		(pts
+			(xy 173.99 102.87) (xy 181.61 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "97ff5be3-2683-4871-932d-86703b0d01e3")
+	)
+	(wire
+		(pts
+			(xy 173.99 109.22) (xy 181.61 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9b994961-5ce5-4986-a549-f5b4864e3e68")
+	)
+	(wire
+		(pts
+			(xy 161.29 72.39) (xy 161.29 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ad6db51c-74e1-40d6-96e4-ce2a70ce7a48")
+	)
+	(wire
+		(pts
+			(xy 193.04 60.96) (xy 193.04 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cc2a8fca-bebc-4f81-b960-2cfcd86c5186")
+	)
+	(wire
+		(pts
+			(xy 166.37 72.39) (xy 166.37 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cc882188-dc0a-4871-b423-aa602dbaca94")
+	)
+	(wire
+		(pts
+			(xy 153.67 72.39) (xy 153.67 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d323e0d5-95a1-47ce-9505-f0a1ca22cb3b")
+	)
+	(sheet
+		(at 181.61 91.44)
+		(size 39.37 27.94)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "2eb35e44-f3d1-4b8a-b6ba-ac006b5b3fd5")
+		(property "Sheetname" "Connectors"
+			(at 181.61 90.7284 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Connectors.kicad_sch"
+			(at 181.61 119.9646 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "12V_Motor_Driver" input
+			(at 220.98 104.14 0)
+			(uuid "ff981a72-6486-418b-8726-a4ab6fc6d1b2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "CANL" input
+			(at 181.61 102.87 180)
+			(uuid "b3ec89bb-d254-4f2b-9efe-9f68dbcd188c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "CANH" input
+			(at 181.61 109.22 180)
+			(uuid "0b1bf4ea-2ee7-4d50-a4bb-a35f86c9ceca")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "Limit" input
+			(at 200.66 91.44 90)
+			(uuid "f8ffee7c-5400-415b-a1ef-ec7ca5947a85")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "Primary" input
+			(at 196.85 91.44 90)
+			(uuid "32682324-ca60-42b3-ae9b-0b135a6edd93")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "Secondary" input
+			(at 193.04 91.44 90)
+			(uuid "cbaf1e1a-eee4-4fa8-847b-ca9694edd80b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "ecvt-controller"
+				(path "/6a3c849d-efdf-47ab-8467-b82fc2fbc70f"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 128.27 92.71)
+		(size 45.72 26.67)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "577f7b7d-9ccb-4072-8b99-2d0e10acd900")
+		(property "Sheetname" "CAN"
+			(at 128.27 91.9984 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "CAN.kicad_sch"
+			(at 128.27 119.9646 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "CANH" input
+			(at 173.99 109.22 0)
+			(uuid "984191bb-aa8c-4a31-b602-f6640d2b2f52")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "CANL" input
+			(at 173.99 102.87 0)
+			(uuid "8e63e7e9-7c42-45e9-9ee8-b95f27eca98e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "INT" input
+			(at 147.32 92.71 90)
+			(uuid "1736bcde-7611-402d-9696-a5ecd72d44cf")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "CS" input
+			(at 153.67 92.71 90)
+			(uuid "2405095b-7095-4b97-b1a3-feda78ad15b6")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SI" input
+			(at 158.75 92.71 90)
+			(uuid "e04eb9cc-073e-48a5-94ae-bacc40b38b44")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SO" input
+			(at 161.29 92.71 90)
+			(uuid "5fe38066-d751-4971-a4cf-6423c4f8cc39")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SCK" input
+			(at 166.37 92.71 90)
+			(uuid "d3cc0fa7-5af6-4fe3-be42-aa848fa220f0")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "ecvt-controller"
+				(path "/6a3c849d-efdf-47ab-8467-b82fc2fbc70f"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 132.08 43.18)
+		(size 40.64 29.21)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "86d3e2f6-ea24-425a-b24f-155dc33c446a")
+		(property "Sheetname" "MCU"
+			(at 132.08 42.4684 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "MCU.kicad_sch"
+			(at 132.08 72.9746 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "PRIMARY_HALL" input
+			(at 172.72 57.15 0)
+			(uuid "1f512345-846f-4953-8409-03198912be89")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SECONDARY_HALL" input
+			(at 172.72 60.96 0)
+			(uuid "f60eab8b-211a-439a-9289-9fb51861a319")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "LIMIT" input
+			(at 172.72 53.34 0)
+			(uuid "860dda47-7fee-417f-932d-15b448f0c6d0")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "CS0" input
+			(at 153.67 72.39 270)
+			(uuid "412137e9-f2c8-4ba8-aab9-13be102f0a23")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "MOSI" input
+			(at 158.75 72.39 270)
+			(uuid "04606395-5989-4d8b-aa24-34c87e08e024")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "INT" input
+			(at 147.32 72.39 270)
+			(uuid "4c037312-a67c-4ee7-a4e8-7c7e30430231")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "SCK" input
+			(at 166.37 72.39 270)
+			(uuid "8c4a3c44-8714-47c5-8673-6b7c1e138e87")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "MISO" input
+			(at 161.29 72.39 270)
+			(uuid "7b94afe9-57ad-4134-8649-17e7060e6c70")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "ecvt-controller"
+				(path "/6a3c849d-efdf-47ab-8467-b82fc2fbc70f"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 228.6 95.25)
+		(size 45.72 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "9fb119a6-415a-46e4-9f18-11a73f9f5767")
+		(property "Sheetname" "Power"
+			(at 228.6 94.5384 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Power.kicad_sch"
+			(at 228.6 113.6146 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "12V_Motor_Driver" input
+			(at 228.6 104.14 180)
+			(uuid "c2802161-e145-4aa6-b0ed-baf83e6c374b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "ecvt-controller"
+				(path "/6a3c849d-efdf-47ab-8467-b82fc2fbc70f"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)

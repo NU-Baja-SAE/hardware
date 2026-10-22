@@ -1732,16 +1732,6 @@
 	)
 	(wire
 		(pts
-			(xy 67.31 74.93) (xy 67.31 76.2)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "41a04d20-80c9-4031-9926-f9c973660c52")
-	)
-	(wire
-		(pts
 			(xy 143.51 87.63) (xy 153.67 87.63)
 		)
 		(stroke
@@ -2477,6 +2467,85 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C")
+		(at 199.39 90.17 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "5afbf5dc-f633-4aa7-b745-c0c830be6dc4")
+		(property "Reference" "C18"
+			(at 196.85 86.36 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "0.1 µF"
+			(at 202.438 86.106 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+			(at 203.2 89.2048 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 199.39 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 199.39 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "5ebece96-8acb-4a07-955a-497822df2f08")
+		)
+		(pin "2"
+			(uuid "785aa38a-a80c-4511-9f3b-b52f216cb7d9")
+		)
+		(instances
+			(project "ecvt_main_board_v3"
+				(path "/2d2f20c1-7688-4916-93e2-449d7f94d4cf/358a33be-3f77-4ab9-af21-017748dbc6a0"
+					(reference "C18")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 210.82 78.74 0)
 		(unit 1)
@@ -2633,87 +2702,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:C")
-		(at 199.39 90.17 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "6c624527-ed91-4844-b10b-5509acba62b2")
-		(property "Reference" "C18"
-			(at 196.85 86.36 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "0.1 µF"
-			(at 202.438 86.106 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
-			(at 203.2 89.2048 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 199.39 90.17 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 199.39 90.17 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "fa9cb0ae-eaa6-4c37-9e53-7210a2f1408f")
-		)
-		(pin "2"
-			(uuid "97bc5c77-629a-4666-9fb4-6d4b44ee4c9f")
-		)
-		(instances
-			(project "ecvt_main_board_v3"
-				(path "/2d2f20c1-7688-4916-93e2-449d7f94d4cf/358a33be-3f77-4ab9-af21-017748dbc6a0"
-					(reference "C18")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
-		(at 67.31 76.2 0)
+		(at 67.31 74.93 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2723,7 +2713,7 @@
 		(dnp no)
 		(uuid "7f5ee71b-36eb-4747-9c6a-c6d35113811c")
 		(property "Reference" "#PWR041"
-			(at 67.31 82.55 0)
+			(at 67.31 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2734,7 +2724,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 67.31 80.264 0)
+			(at 67.31 78.994 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2744,7 +2734,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 67.31 76.2 0)
+			(at 67.31 74.93 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2755,7 +2745,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 67.31 76.2 0)
+			(at 67.31 74.93 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2766,7 +2756,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 67.31 76.2 0)
+			(at 67.31 74.93 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

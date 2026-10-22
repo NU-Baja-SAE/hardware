@@ -2602,16 +2602,6 @@
 	)
 	(wire
 		(pts
-			(xy 86.36 120.65) (xy 86.36 121.92)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5c7621e1-8b02-4817-a80c-1d807dca7be2")
-	)
-	(wire
-		(pts
 			(xy 243.84 93.98) (xy 243.84 96.52)
 		)
 		(stroke
@@ -3165,17 +3155,6 @@
 			(justify left)
 		)
 		(uuid "d71a8d73-68be-452b-98f5-ea461fe4f21a")
-	)
-	(hierarchical_label "S"
-		(shape input)
-		(at 130.81 102.87 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "d97c6f7f-2d9f-4bef-b180-8db80570bdfa")
 	)
 	(hierarchical_label "CANH"
 		(shape input)
@@ -4059,6 +4038,83 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 130.81 102.87 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "6473b7a1-2242-469c-b0a4-e773bf18b0ed")
+		(property "Reference" "#PWR052"
+			(at 130.81 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 130.81 106.934 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 130.81 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 130.81 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 130.81 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "bcbf9648-d758-4c06-bf89-5c01600a6e5d")
+		)
+		(instances
+			(project "ecvt-controller"
+				(path "/6a3c849d-efdf-47ab-8467-b82fc2fbc70f/577f7b7d-9ccb-4072-8b99-2d0e10acd900"
+					(reference "#PWR052")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 158.75 74.93 0)
 		(unit 1)
@@ -4142,7 +4198,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 86.36 116.84 0)
+		(at 86.36 118.11 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4153,7 +4209,7 @@
 		(fields_autoplaced yes)
 		(uuid "663de271-1854-40a9-b74e-35113b11d9ac")
 		(property "Reference" "R4"
-			(at 88.9 115.5699 0)
+			(at 88.9 116.8399 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4164,7 +4220,7 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 88.9 118.1099 0)
+			(at 88.9 119.3799 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4174,8 +4230,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
-			(at 84.582 116.84 90)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 84.582 118.11 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4186,7 +4242,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 86.36 116.84 0)
+			(at 86.36 118.11 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4197,7 +4253,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 86.36 116.84 0)
+			(at 86.36 118.11 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
