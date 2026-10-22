@@ -1383,16 +1383,6 @@
 	)
 	(wire
 		(pts
-			(xy 81.28 121.92) (xy 81.28 125.73)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "91807842-0228-43d9-afaf-093a4b6bfe1d")
-	)
-	(wire
-		(pts
 			(xy 120.65 93.98) (xy 129.54 93.98)
 		)
 		(stroke
@@ -2350,84 +2340,6 @@
 			(project "ecvt-controller"
 				(path "/6a3c849d-efdf-47ab-8467-b82fc2fbc70f/9fb119a6-415a-46e4-9f18-11a73f9f5767"
 					(reference "R1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 81.28 125.73 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "f8ebb9a5-1a56-4910-ab8f-47b7d00b0213")
-		(property "Reference" "#PWR07"
-			(at 81.28 132.08 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 81.28 130.81 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 81.28 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 81.28 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 81.28 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "72819ff7-3dff-44b8-8998-0297a64d4928")
-		)
-		(instances
-			(project "ecvt-controller"
-				(path "/6a3c849d-efdf-47ab-8467-b82fc2fbc70f/9fb119a6-415a-46e4-9f18-11a73f9f5767"
-					(reference "#PWR07")
 					(unit 1)
 				)
 			)
