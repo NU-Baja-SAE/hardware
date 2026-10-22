@@ -2,7 +2,7 @@
 	(version 20260306)
 	(generator "eeschema")
 	(generator_version "10.0")
-	(uuid "18aafb24-431d-479f-ab1f-1448c949f213")
+	(uuid "df907c46-9e87-433f-896a-0d1922e28278")
 	(paper "A4")
 	(lib_symbols
 		(symbol "1720420206:1720420206"
@@ -2732,7 +2732,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "1720420206:CONN_SD-172042-001_02_BL_MOL"
+		(property "Footprint" "Molex_SuperSabre:CONN_SD-172042-001_02_BL_MOL"
 			(at 152.4 68.58 0)
 			(hide yes)
 			(show_name no)
@@ -2841,7 +2841,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "1720420206:CONN_SD-172042-001_02_BL_MOL"
+		(property "Footprint" "Molex_SuperSabre:CONN_SD-172042-001_02_BL_MOL"
 			(at 142.24 100.33 0)
 			(hide yes)
 			(show_name no)
