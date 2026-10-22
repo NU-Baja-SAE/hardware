@@ -5,6 +5,56 @@
 	(uuid "6a3c849d-efdf-47ab-8467-b82fc2fbc70f")
 	(paper "A4")
 	(lib_symbols)
+	(wire
+		(pts
+			(xy 158.75 72.39) (xy 158.75 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0615badd-a21b-4202-9641-d835698193ef")
+	)
+	(wire
+		(pts
+			(xy 147.32 72.39) (xy 147.32 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "957012d6-ab4d-488e-8b1c-85cd5f8597d3")
+	)
+	(wire
+		(pts
+			(xy 161.29 72.39) (xy 161.29 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ad6db51c-74e1-40d6-96e4-ce2a70ce7a48")
+	)
+	(wire
+		(pts
+			(xy 166.37 72.39) (xy 166.37 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cc882188-dc0a-4871-b423-aa602dbaca94")
+	)
+	(wire
+		(pts
+			(xy 153.67 72.39) (xy 153.67 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d323e0d5-95a1-47ce-9505-f0a1ca22cb3b")
+	)
 	(sheet
 		(at 128.27 92.71)
 		(size 45.72 26.67)
@@ -41,6 +91,86 @@
 					(size 1.27 1.27)
 				)
 				(justify left top)
+			)
+		)
+		(pin "S" input
+			(at 133.35 92.71 90)
+			(uuid "f945d173-8813-4c79-b137-2b049885059f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "CANH" input
+			(at 151.13 119.38 270)
+			(uuid "984191bb-aa8c-4a31-b602-f6640d2b2f52")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "CANL" input
+			(at 157.48 119.38 270)
+			(uuid "8e63e7e9-7c42-45e9-9ee8-b95f27eca98e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "INT" input
+			(at 147.32 92.71 90)
+			(uuid "1736bcde-7611-402d-9696-a5ecd72d44cf")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "CS" input
+			(at 153.67 92.71 90)
+			(uuid "2405095b-7095-4b97-b1a3-feda78ad15b6")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SI" input
+			(at 158.75 92.71 90)
+			(uuid "e04eb9cc-073e-48a5-94ae-bacc40b38b44")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SO" input
+			(at 161.29 92.71 90)
+			(uuid "5fe38066-d751-4971-a4cf-6423c4f8cc39")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SCK" input
+			(at 166.37 92.71 90)
+			(uuid "d3cc0fa7-5af6-4fe3-be42-aa848fa220f0")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 		(instances
@@ -89,29 +219,79 @@
 				(justify left top)
 			)
 		)
-		(pin "LIMIT{slash}LIN_POT" input
-			(at 153.67 72.39 270)
-			(uuid "10f12027-5f91-4086-b3b1-2f41e1f64905")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
 		(pin "PRIMARY_HALL" input
-			(at 158.75 72.39 270)
+			(at 147.32 43.18 90)
 			(uuid "1f512345-846f-4953-8409-03198912be89")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 		(pin "SECONDARY_HALL" input
-			(at 163.83 72.39 270)
+			(at 157.48 43.18 90)
 			(uuid "f60eab8b-211a-439a-9289-9fb51861a319")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "LIMIT" input
+			(at 138.43 43.18 90)
+			(uuid "860dda47-7fee-417f-932d-15b448f0c6d0")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "CS0" input
+			(at 153.67 72.39 270)
+			(uuid "412137e9-f2c8-4ba8-aab9-13be102f0a23")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "MOSI" input
+			(at 158.75 72.39 270)
+			(uuid "04606395-5989-4d8b-aa24-34c87e08e024")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "INT" input
+			(at 147.32 72.39 270)
+			(uuid "4c037312-a67c-4ee7-a4e8-7c7e30430231")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "SCK" input
+			(at 166.37 72.39 270)
+			(uuid "8c4a3c44-8714-47c5-8673-6b7c1e138e87")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "MISO" input
+			(at 161.29 72.39 270)
+			(uuid "7b94afe9-57ad-4134-8649-17e7060e6c70")
 			(effects
 				(font
 					(size 1.27 1.27)
