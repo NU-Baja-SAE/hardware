@@ -1789,6 +1789,88 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 104.14 130.81 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "50090028-715a-4a23-a022-04eb0a6f2c32")
+		(property "Reference" "R3"
+			(at 106.68 129.5399 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1k"
+			(at 106.68 132.0799 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 102.362 130.81 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 104.14 130.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 104.14 130.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "312fedcb-d4fa-43d6-9f9d-a1f765f4d5c4")
+		)
+		(pin "1"
+			(uuid "25a082bc-5c16-40b4-9927-2501d6c6ee22")
+		)
+		(instances
+			(project "ecvt-controller"
+				(path "/6a3c849d-efdf-47ab-8467-b82fc2fbc70f/9fb119a6-415a-46e4-9f18-11a73f9f5767"
+					(reference "R3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+12V")
 		(at 72.39 101.6 0)
 		(unit 1)
@@ -2346,88 +2428,6 @@
 			(project "ecvt-controller"
 				(path "/6a3c849d-efdf-47ab-8467-b82fc2fbc70f/9fb119a6-415a-46e4-9f18-11a73f9f5767"
 					(reference "F1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 104.14 130.81 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "cf5965d2-515b-42fa-9de9-e2854ac32ae3")
-		(property "Reference" "R1"
-			(at 106.68 129.5399 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1k"
-			(at 106.68 132.0799 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 102.362 130.81 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 104.14 130.81 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 104.14 130.81 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "9bb7b6dd-cc1c-4c36-ac93-1db75c9e31b9")
-		)
-		(pin "1"
-			(uuid "ce21dd6d-48a4-419c-b942-070fb29ff53e")
-		)
-		(instances
-			(project "ecvt-controller"
-				(path "/6a3c849d-efdf-47ab-8467-b82fc2fbc70f/9fb119a6-415a-46e4-9f18-11a73f9f5767"
-					(reference "R1")
 					(unit 1)
 				)
 			)
