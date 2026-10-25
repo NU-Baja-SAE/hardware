@@ -21,20 +21,24 @@ SMAJ26A,"400W unidirectional Transient Voltage Suppressor, 26.0Vr, SMA(DO-214AC)
 TJA1051T-3,"High-Speed CAN Transceiver, separate VIO, silent mode, SOIC-8",,1,daq-node,U2
 TPD2EUSB30,"2-Channel ESD Protection for Super-Speed USB 3.0 Interface, DRT-3",,1,daq-node,U4
 TSR_1-2450,"1A step-down regulator module, fixed 5V output voltage, 5-36V input voltage, -40°C to +85°C temperature range, TO-220 compatible LM78xx replacement",,1,daq-node,U3
-0.1 µF 0603,Unpolarized capacitor,,8,ecvt-controller,C13 C14 C16 C18 C21 C22 C23 C24
-10k 0603,Resistor,,1,ecvt-controller,R4
+0.1 µF 0603,Capacitor 0603 (1608 metric) HandSolder - Baja default passive size,,10,ecvt-controller,C4 C5 C6 C7 C8 C9 C10 C11 C13 C14
+10k 0603,Resistor,,1,ecvt-controller,R7
+10k 0603,Resistor 0603 (1608 metric) HandSolder - Baja default passive size,,2,ecvt-controller,R1 R8
 15311026,,,1,ecvt-controller,J4
-1k 0603,Resistor,,1,ecvt-controller,R3
-220 pF 0603,Unpolarized capacitor,,2,ecvt-controller,C19 C20
-22pF 0805,Unpolarized capacitor,,2,ecvt-controller,C10 C11
-4.7µF 0603,Unpolarized capacitor,,3,ecvt-controller,C12 C15 C17
+15k 0603,Resistor 0603 (1608 metric) HandSolder - Baja default passive size,,2,ecvt-controller,R2 R9
+1N4148,"100V 0.15A standard switching diode, DO-35",,1,ecvt-controller,D1
+1k 0603,Resistor,,2,ecvt-controller,R3 R4
+220pF 0603,Capacitor 0603 (1608 metric) HandSolder - Baja default passive size,,2,ecvt-controller,C16 C17
+30pF 0603,Capacitor 0603 (1608 metric) HandSolder - Baja default passive size,,2,ecvt-controller,C1 C2
+4.7µF 0805,Capacitor 0805 (2012 metric) HandSolder - Baja higher-power passive size,,3,ecvt-controller,C3 C12 C15
 60 1206,Resistor,,2,ecvt-controller,R5 R6
 917780-1,,,1,ecvt-controller,J6
-917782-1,TE Connectivity 917782-1 board-to-board header,,1,ecvt-controller,J3
+917782-1,TE Connectivity 917782-1 board-to-board header,,2,ecvt-controller,J2 J3
 917786-1,,,1,ecvt-controller,J5
+ABM3-16.000MHZ-D2Y-T,"16 MHz ±20ppm Crystal 18pF 40 Ohms 2-SMD, No Lead",Abracon,1,ecvt-controller,Y2
 ACT45B-101-2P-TL003,,,1,ecvt-controller,U5
+ADS1115IDGS,"Ultra-Small, Low-Power, I2C-Compatible, 860-SPS, 16-Bit ADCs With Internal Reference, Oscillator, and Programmable Comparator, VSSOP-10",,1,ecvt-controller,U2
 Conn_02x20_Odd_Even,"Generic connector, double row, 02x20, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)",,1,ecvt-controller,J1
-Crystal,Two pin crystal,,1,ecvt-controller,Y1
 DF2S5M4CTL3FCT-ND,Zener diode,,3,ecvt-controller,D6 D7 D8
 Fuse 1206,Fuse,,1,ecvt-controller,F1
 MCP2515-xSO,"Stand-Alone CAN Controller with SPI Interface, SOIC-18",,1,ecvt-controller,U3
