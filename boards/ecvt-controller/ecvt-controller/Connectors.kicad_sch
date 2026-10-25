@@ -3942,7 +3942,7 @@
 	)
 	(hierarchical_label "Sig1"
 		(shape input)
-		(at 127 95.25 180)
+		(at 127 97.79 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3950,6 +3950,17 @@
 			(justify right)
 		)
 		(uuid "3e292a57-02e1-4191-854b-80321f9706e2")
+	)
+	(hierarchical_label "AIN1"
+		(shape input)
+		(at 127 134.62 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "56d82594-a616-4713-a6cb-39da1fb45d2e")
 	)
 	(hierarchical_label "CANL"
 		(shape input)
@@ -3964,7 +3975,7 @@
 	)
 	(hierarchical_label "Sig2"
 		(shape input)
-		(at 127 97.79 180)
+		(at 127 95.25 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3997,7 +4008,7 @@
 	)
 	(hierarchical_label "AIN0"
 		(shape input)
-		(at 127 134.62 180)
+		(at 127 137.16 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4016,17 +4027,6 @@
 			(justify right)
 		)
 		(uuid "e6a164d1-64c6-4e90-9df6-538f4b3f4491")
-	)
-	(hierarchical_label "AIN1"
-		(shape input)
-		(at 127 137.16 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "f4ff7214-0fe2-4ec1-857d-1f9b5118e8fc")
 	)
 	(symbol
 		(lib_id "power:GND")

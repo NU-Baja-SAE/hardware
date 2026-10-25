@@ -1093,6 +1093,26 @@
 		)
 		(uuid "f3dfd2b2-a5a3-4314-8bee-77c04d000d46")
 	)
+	(label "AIN1"
+		(at 120.65 90.17 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1058058c-f9bc-47c2-86db-b41aae9b1123")
+	)
+	(label "AIN0"
+		(at 120.65 87.63 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c81c4fbd-bbcf-42a1-a3bd-6ac23469c5b1")
+	)
 	(hierarchical_label "SDA"
 		(shape input)
 		(at 153.67 92.71 0)

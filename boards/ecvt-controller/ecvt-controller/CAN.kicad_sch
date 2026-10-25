@@ -3827,6 +3827,16 @@
 		)
 		(uuid "ffa04a3c-cbe0-450c-8d71-6da868be5378")
 	)
+	(label "RESET"
+		(at 69.85 121.92 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "4c29157f-7379-48da-a432-98543994b76a")
+	)
 	(hierarchical_label "S"
 		(shape input)
 		(at 130.81 102.87 180)
