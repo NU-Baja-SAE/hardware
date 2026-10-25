@@ -2136,7 +2136,7 @@
 	)
 	(text "I2C clock: fixed 1.8k pull up to 3.3V\n"
 		(exclude_from_sim no)
-		(at 102.87 85.852 0)
+		(at 101.346 88.392 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2277,7 +2277,7 @@
 	)
 	(text "12C data: fixed 1.8k pull up to 3.3V\n"
 		(exclude_from_sim no)
-		(at 103.124 83.566 0)
+		(at 103.886 80.518 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2577,10 +2577,6 @@
 		(uuid "84095c0b-bdfc-4bc2-a365-2d1e4b4382ab")
 	)
 	(no_connect
-		(at 121.92 83.82)
-		(uuid "8b431b9b-36d5-485c-8fd1-376c625eb0f5")
-	)
-	(no_connect
 		(at 177.8 127)
 		(uuid "9b97a368-35d7-411c-99f2-8061d0422a03")
 	)
@@ -2599,10 +2595,6 @@
 	(no_connect
 		(at 121.92 114.3)
 		(uuid "f3846461-e3b1-4199-8b32-e0e3fb382490")
-	)
-	(no_connect
-		(at 121.92 86.36)
-		(uuid "fca61e56-5fdc-4c3b-aedf-37e925d2d06c")
 	)
 	(wire
 		(pts
@@ -3199,6 +3191,17 @@
 		)
 		(uuid "65355670-7d52-4307-b852-2facd363c5cc")
 	)
+	(hierarchical_label "SCL"
+		(shape input)
+		(at 121.92 86.36 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "6a434481-c395-4df3-a500-2c8571026973")
+	)
 	(hierarchical_label "Sig1"
 		(shape input)
 		(at 121.92 124.46 180)
@@ -3231,6 +3234,17 @@
 			(justify right)
 		)
 		(uuid "b28cd9f9-c107-43ba-b8dc-19f5b552a647")
+	)
+	(hierarchical_label "SDA"
+		(shape input)
+		(at 121.92 83.82 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b8825367-73d2-49bd-9166-6582b5e10631")
 	)
 	(hierarchical_label "INT"
 		(shape input)
