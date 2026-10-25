@@ -458,29 +458,27 @@
 			(on_board yes)
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "PS"
-				(at -12.7 5.842 0)
+			(property "Reference" "PS1"
+				(at 0 10.16 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left bottom)
 				)
 			)
 			(property "Value" "TSR_3-2450N"
-				(at -12.7 -7.366 0)
+				(at 0 7.62 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left bottom)
 				)
 			)
-			(property "Footprint" "TSR_3-2450N:CONV_TSR_3-2450N"
+			(property "Footprint" "baja-common-parts:CONV_TSR_3-2450N"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -492,7 +490,7 @@
 					(justify bottom)
 				)
 			)
-			(property "Datasheet" ""
+			(property "Datasheet" "file://C:\\Users\\manas\\OneDrive - Northwestern University\\Northwestern\\Extracurricular\\hardware\\libraries\\datasheets\\tsr3n_buck.pdf"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -637,8 +635,8 @@
 			)
 			(symbol "TSR_3-2450N_0_0"
 				(rectangle
-					(start -12.7 -5.08)
-					(end 12.7 5.08)
+					(start -12.7 5.08)
+					(end 12.7 -5.08)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -647,7 +645,7 @@
 						(type background)
 					)
 				)
-				(pin input line
+				(pin power_in line
 					(at -17.78 2.54 0)
 					(length 5.08)
 					(name "+VIN"
@@ -683,7 +681,7 @@
 						)
 					)
 				)
-				(pin output line
+				(pin power_out line
 					(at 17.78 2.54 180)
 					(length 5.08)
 					(name "+VOUT"

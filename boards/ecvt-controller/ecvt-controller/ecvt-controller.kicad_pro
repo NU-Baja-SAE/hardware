@@ -262,6 +262,18 @@
   "erc": {
     "erc_exclusions": [
       [
+        "lib_symbol_issues|1638300|1168400|ec45cca8-d321-47a1-b45e-890c31776e99|00000000-0000-0000-0000-000000000000|||",
+        ""
+      ],
+      [
+        "lib_symbol_issues|1866900|914400|91a45e85-367c-46e2-ada4-e6a8d3ecb92a|00000000-0000-0000-0000-000000000000|||",
+        ""
+      ],
+      [
+        "lib_symbol_issues|2146300|977900|45a29e12-ca71-49f8-8a9a-381b5c37b0c7|00000000-0000-0000-0000-000000000000|||",
+        ""
+      ],
+      [
         "pin_to_pin|1409700|1003300|98ecdfb6-fa03-4389-859f-686e5817058b|a774ef56-946a-4e95-81f2-64c7867ae343|/6a3c849d-efdf-47ab-8467-b82fc2fbc70f/2eb35e44-f3d1-4b8a-b6ba-ac006b5b3fd5|/6a3c849d-efdf-47ab-8467-b82fc2fbc70f/2eb35e44-f3d1-4b8a-b6ba-ac006b5b3fd5|/6a3c849d-efdf-47ab-8467-b82fc2fbc70f/2eb35e44-f3d1-4b8a-b6ba-ac006b5b3fd5",
         ""
       ],
@@ -783,7 +795,7 @@
         "uuid": "6a3c849d-efdf-47ab-8467-b82fc2fbc70f"
       }
     ],
-    "used_designators": "J2,PS1",
+    "used_designators": "R4,R7,J2,Y2,PS1,D1,#PWR52,#PWR54,C25",
     "variants": []
   },
   "sheets": [
