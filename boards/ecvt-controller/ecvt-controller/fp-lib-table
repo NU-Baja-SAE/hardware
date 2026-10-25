@@ -3,4 +3,6 @@
 	(lib (name "baja_footprint_library") (type "KiCad") (uri "C:/Users/manas/OneDrive - Northwestern University/Northwestern/Extracurricular/hardware/libraries/baja_footprint_library.pretty") (options "") (descr ""))
 	(lib (name "Molex_SuperSabre") (type "KiCad") (uri "C:/Users/manas/OneDrive - Northwestern University/Northwestern/Extracurricular/hardware/libraries/Molex_SuperSabre.pretty") (options "") (descr ""))
 	(lib (name "Molex_SuperSabre") (type "KiCad") (uri "C:/Users/manas/OneDrive - Northwestern University/Northwestern/Extracurricular/hardware/libraries/Molex_SuperSabre.pretty") (options "") (descr ""))
+	(lib (name "baja-common-parts") (type "KiCad") (uri "${BAJA_LIB}/baja-common-parts.pretty") (options "") (descr ""))
+	(lib (name "baja_footprint_library") (type "KiCad") (uri "${BAJA_LIB}/baja_footprint_library.pretty") (options "") (descr ""))
 )
