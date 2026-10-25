@@ -161,9 +161,6 @@
 			(embedded_fonts no)
 		)
 		(symbol "Device:Fuse"
-			(pin_numbers
-				(hide yes)
-			)
 			(pin_names
 				(offset 0)
 			)
@@ -2505,7 +2502,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "file://C:\\Users\\manas\\OneDrive - Northwestern University\\Northwestern\\Extracurricular\\hardware\\libraries\\datasheets\\Littelfuse-Fuse-437-Datasheet.pdf"
 			(at 125.73 114.3 0)
 			(hide yes)
 			(show_name no)
