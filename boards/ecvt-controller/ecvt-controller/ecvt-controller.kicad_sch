@@ -17,16 +17,6 @@
 	)
 	(wire
 		(pts
-			(xy 220.98 104.14) (xy 228.6 104.14)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0864464c-51b9-4a56-a1e8-3145955ac7e3")
-	)
-	(wire
-		(pts
 			(xy 172.72 60.96) (xy 193.04 60.96)
 		)
 		(stroke
@@ -77,6 +67,26 @@
 	)
 	(wire
 		(pts
+			(xy 214.63 91.44) (xy 214.63 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7d4b7845-39b4-4baf-9405-26a03fcbc89b")
+	)
+	(wire
+		(pts
+			(xy 214.63 45.72) (xy 172.72 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "814df63a-2311-40b9-b05c-80889e3056a8")
+	)
+	(wire
+		(pts
 			(xy 147.32 72.39) (xy 147.32 92.71)
 		)
 		(stroke
@@ -104,6 +114,26 @@
 			(type default)
 		)
 		(uuid "9b994961-5ce5-4986-a549-f5b4864e3e68")
+	)
+	(wire
+		(pts
+			(xy 208.28 49.53) (xy 208.28 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a2e03b3e-45b5-4883-a14e-93bc78f32301")
+	)
+	(wire
+		(pts
+			(xy 142.24 72.39) (xy 142.24 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a412b846-edb8-45e0-a8cb-46230d5aaf71")
 	)
 	(wire
 		(pts
@@ -145,6 +175,16 @@
 		)
 		(uuid "d323e0d5-95a1-47ce-9505-f0a1ca22cb3b")
 	)
+	(wire
+		(pts
+			(xy 172.72 49.53) (xy 208.28 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e12bc22a-5714-463d-b815-a680f78eea6f")
+	)
 	(sheet
 		(at 181.61 91.44)
 		(size 39.37 27.94)
@@ -181,16 +221,6 @@
 					(size 1.27 1.27)
 				)
 				(justify left top)
-			)
-		)
-		(pin "12V_Motor_Driver" input
-			(at 220.98 104.14 0)
-			(uuid "ff981a72-6486-418b-8726-a4ab6fc6d1b2")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
 			)
 		)
 		(pin "CANL" input
@@ -236,6 +266,26 @@
 		(pin "Secondary" input
 			(at 193.04 91.44 90)
 			(uuid "cbaf1e1a-eee4-4fa8-847b-ca9694edd80b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "Sig1" input
+			(at 214.63 91.44 90)
+			(uuid "6eacaca2-3067-4607-b6eb-a0567c1ce458")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "Sig2" input
+			(at 208.28 91.44 90)
+			(uuid "3a44f95e-cbca-413a-a227-2682b7530f05")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -359,6 +409,16 @@
 				(justify right)
 			)
 		)
+		(pin "S" input
+			(at 142.24 92.71 90)
+			(uuid "c1db6f2c-797e-40fc-864d-02e1a60690ef")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
 		(instances
 			(project "ecvt-controller"
 				(path "/6a3c849d-efdf-47ab-8467-b82fc2fbc70f"
@@ -403,36 +463,6 @@
 					(size 1.27 1.27)
 				)
 				(justify left top)
-			)
-		)
-		(pin "PRIMARY_HALL" input
-			(at 172.72 57.15 0)
-			(uuid "1f512345-846f-4953-8409-03198912be89")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(pin "SECONDARY_HALL" input
-			(at 172.72 60.96 0)
-			(uuid "f60eab8b-211a-439a-9289-9fb51861a319")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(pin "LIMIT" input
-			(at 172.72 53.34 0)
-			(uuid "860dda47-7fee-417f-932d-15b448f0c6d0")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
 			)
 		)
 		(pin "CS0" input
@@ -485,6 +515,66 @@
 				(justify left)
 			)
 		)
+		(pin "S" input
+			(at 142.24 72.39 270)
+			(uuid "2b6112a1-482c-4671-bb61-a5ae78a6a50f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "Sig1" input
+			(at 172.72 45.72 0)
+			(uuid "79c4e949-bf23-4b10-86a3-818eb9c02245")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "Sig2" input
+			(at 172.72 49.53 0)
+			(uuid "02f5cd4f-252c-4e4b-b3bb-ce6c0fb3f3a7")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "Primary" input
+			(at 172.72 57.15 0)
+			(uuid "86f02b1c-c188-4875-a66a-07815061fe3f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "Secondary" input
+			(at 172.72 60.96 0)
+			(uuid "5d405ed4-0ec0-460f-a8f9-1d682d1938be")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "Limit" input
+			(at 172.72 53.34 0)
+			(uuid "3bddf6f7-8fb5-4a8a-8b77-52be36a1813d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
 		(instances
 			(project "ecvt-controller"
 				(path "/6a3c849d-efdf-47ab-8467-b82fc2fbc70f"
@@ -494,7 +584,7 @@
 		)
 	)
 	(sheet
-		(at 228.6 95.25)
+		(at 228.6 60.96)
 		(size 45.72 17.78)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -510,7 +600,7 @@
 		)
 		(uuid "9fb119a6-415a-46e4-9f18-11a73f9f5767")
 		(property "Sheetname" "Power"
-			(at 228.6 94.5384 0)
+			(at 228.6 60.2484 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -521,7 +611,7 @@
 			)
 		)
 		(property "Sheetfile" "Power.kicad_sch"
-			(at 228.6 113.6146 0)
+			(at 228.6 79.3246 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -529,16 +619,6 @@
 					(size 1.27 1.27)
 				)
 				(justify left top)
-			)
-		)
-		(pin "12V_Motor_Driver" input
-			(at 228.6 104.14 180)
-			(uuid "c2802161-e145-4aa6-b0ed-baf83e6c374b")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
 			)
 		)
 		(instances
