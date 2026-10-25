@@ -1265,161 +1265,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:C"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0.254)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "C"
-				(at 0.635 2.54 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "C"
-				(at 0.635 -2.54 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" ""
-				(at 0.9652 -3.81 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Unpolarized capacitor"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "cap capacitor"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "C_*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "C_0_1"
-				(polyline
-					(pts
-						(xy -2.032 0.762) (xy 2.032 0.762)
-					)
-					(stroke
-						(width 0.508)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -2.032 -0.762) (xy 2.032 -0.762)
-					)
-					(stroke
-						(width 0.508)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "C_1_1"
-				(pin passive line
-					(at 0 3.81 270)
-					(length 2.794)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -3.81 90)
-					(length 2.794)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Mechanical:MountingHole"
 			(pin_names
 				(offset 1.016)
@@ -1514,6 +1359,316 @@
 					)
 					(fill
 						(type none)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "baja-common-parts:C_0603"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "C"
+				(at 0.635 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "C_0603"
+				(at 0.635 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Capacitor 0603 (1608 metric) HandSolder - Baja default passive size"
+				(at 0 -7.62 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "capacitor c 0603 handsolder baja passive"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "C_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "C_0603_0_1"
+				(polyline
+					(pts
+						(xy -2.032 0.762) (xy 2.032 0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.032 -0.762) (xy 2.032 -0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "C_0603_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "baja-common-parts:C_0805"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "C"
+				(at 0.635 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "C_0805"
+				(at 0.635 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Capacitor 0805 (2012 metric) HandSolder - Baja higher-power passive size"
+				(at 0 -7.62 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "capacitor c 0805 handsolder baja passive"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "C_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "C_0805_0_1"
+				(polyline
+					(pts
+						(xy -2.032 0.762) (xy 2.032 0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.032 -0.762) (xy 2.032 -0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "C_0805_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
 					)
 				)
 			)
@@ -2030,7 +2185,7 @@
 	)
 	(text "PWM0"
 		(exclude_from_sim no)
-		(at 183.134 118.618 0)
+		(at 168.148 119.888 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2040,7 +2195,7 @@
 	)
 	(text "GPIO7"
 		(exclude_from_sim no)
-		(at 177.8 111.76 0)
+		(at 164.846 112.776 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2051,7 +2206,7 @@
 	)
 	(text "GPIO12"
 		(exclude_from_sim no)
-		(at 177.8 119.38 0)
+		(at 164.846 120.396 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2062,7 +2217,7 @@
 	)
 	(text "GPIO21"
 		(exclude_from_sim no)
-		(at 177.8 129.54 0)
+		(at 164.846 130.556 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2095,7 +2250,7 @@
 	)
 	(text "??"
 		(exclude_from_sim no)
-		(at 180.086 128.778 0)
+		(at 166.624 129.54 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2105,7 +2260,7 @@
 	)
 	(text "PWM1"
 		(exclude_from_sim no)
-		(at 117.856 121.412 0)
+		(at 131.826 121.412 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2115,7 +2270,7 @@
 	)
 	(text "GPIO4"
 		(exclude_from_sim no)
-		(at 121.92 88.9 0)
+		(at 137.16 88.9 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2126,7 +2281,7 @@
 	)
 	(text "UART0 RX"
 		(exclude_from_sim no)
-		(at 185.166 90.932 0)
+		(at 170.688 92.202 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2136,7 +2291,7 @@
 	)
 	(text "I2C clock: fixed 1.8k pull up to 3.3V\n"
 		(exclude_from_sim no)
-		(at 101.346 88.392 0)
+		(at 98.806 87.376 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2146,7 +2301,7 @@
 	)
 	(text "GPIO18"
 		(exclude_from_sim no)
-		(at 177.8 93.98 0)
+		(at 164.846 94.996 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2157,7 +2312,7 @@
 	)
 	(text "??"
 		(exclude_from_sim no)
-		(at 180.086 126.238 0)
+		(at 166.624 127 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2178,7 +2333,7 @@
 	)
 	(text "??"
 		(exclude_from_sim no)
-		(at 181.864 93.218 0)
+		(at 167.386 94.488 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2188,7 +2343,7 @@
 	)
 	(text "GPIO25"
 		(exclude_from_sim no)
-		(at 177.8 106.68 0)
+		(at 164.846 107.696 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2199,7 +2354,7 @@
 	)
 	(text "DO NOT USE"
 		(exclude_from_sim no)
-		(at 115.824 113.792 0)
+		(at 131.064 113.792 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2212,7 +2367,7 @@
 	)
 	(text "GPIO1"
 		(exclude_from_sim no)
-		(at 177.8 114.3 0)
+		(at 164.846 115.316 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2234,7 +2389,7 @@
 	)
 	(text "GPIO8"
 		(exclude_from_sim no)
-		(at 177.8 109.22 0)
+		(at 176.784 108.966 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2266,7 +2421,7 @@
 	)
 	(text "GPIO20"
 		(exclude_from_sim no)
-		(at 177.8 127 0)
+		(at 164.846 128.016 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2277,7 +2432,7 @@
 	)
 	(text "12C data: fixed 1.8k pull up to 3.3V\n"
 		(exclude_from_sim no)
-		(at 103.886 80.518 0)
+		(at 98.298 84.074 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2287,7 +2442,7 @@
 	)
 	(text "GPIO15"
 		(exclude_from_sim no)
-		(at 177.8 91.44 0)
+		(at 164.846 92.456 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2308,7 +2463,7 @@
 	)
 	(text "GPIO14"
 		(exclude_from_sim no)
-		(at 177.8 88.9 0)
+		(at 164.846 89.916 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2319,7 +2474,7 @@
 	)
 	(text "SPI0 MISO"
 		(exclude_from_sim no)
-		(at 100.838 106.934 0)
+		(at 109.982 106.934 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2373,7 +2528,7 @@
 	)
 	(text "GPIO23"
 		(exclude_from_sim no)
-		(at 177.8 99.06 0)
+		(at 164.846 100.076 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2395,7 +2550,7 @@
 	)
 	(text "SPI0 CS1"
 		(exclude_from_sim no)
-		(at 188.468 111.76 0)
+		(at 170.18 112.014 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2405,7 +2560,7 @@
 	)
 	(text "SPI0 SCLK"
 		(exclude_from_sim no)
-		(at 100.838 109.474 0)
+		(at 109.728 109.728 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2415,7 +2570,7 @@
 	)
 	(text "GPIO13"
 		(exclude_from_sim no)
-		(at 121.92 121.92 0)
+		(at 135.89 121.92 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2426,7 +2581,7 @@
 	)
 	(text "GPIO24"
 		(exclude_from_sim no)
-		(at 177.8 101.6 0)
+		(at 164.846 102.616 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2437,7 +2592,7 @@
 	)
 	(text "UARTO TX"
 		(exclude_from_sim no)
-		(at 185.166 88.138 0)
+		(at 170.688 89.408 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2458,7 +2613,7 @@
 	)
 	(text "SPI0 MOSI"
 		(exclude_from_sim no)
-		(at 101.092 103.378 0)
+		(at 110.236 104.394 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2468,7 +2623,7 @@
 	)
 	(text "DO NOT USE"
 		(exclude_from_sim no)
-		(at 184.15 113.792 0)
+		(at 171.196 114.554 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2481,7 +2636,7 @@
 	)
 	(text "GPIO0"
 		(exclude_from_sim no)
-		(at 121.92 114.3 0)
+		(at 137.16 114.3 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2492,7 +2647,7 @@
 	)
 	(text "GPIO16"
 		(exclude_from_sim no)
-		(at 177.8 124.46 0)
+		(at 164.846 125.476 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2513,12 +2668,6 @@
 		(uuid "fcba934a-e882-4446-a9b4-80782281752b")
 	)
 	(junction
-		(at 135.89 81.28)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "261bcac9-3d11-4500-83b6-44d9041d570c")
-	)
-	(junction
 		(at 161.29 81.28)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2531,90 +2680,76 @@
 		(uuid "332f9195-167d-4cab-8d6f-9ac5b4519b36")
 	)
 	(junction
+		(at 137.16 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9a766dab-6141-46a4-82c8-31a21a571e5d")
+	)
+	(junction
 		(at 181.61 67.31)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d1ff3369-821c-455a-a196-5d7dd3c677f7")
 	)
 	(no_connect
-		(at 196.85 99.06)
+		(at 156.21 99.06)
 		(uuid "07eb7554-4d8e-4923-b1bc-038a790f0dd1")
 	)
 	(no_connect
-		(at 177.8 124.46)
+		(at 156.21 124.46)
 		(uuid "13d43251-682a-421a-aacc-5c0ccb81ca6a")
 	)
 	(no_connect
-		(at 177.8 114.3)
+		(at 156.21 114.3)
 		(uuid "333990a7-f9b7-49d2-8e99-6f5ed014be38")
 	)
 	(no_connect
-		(at 177.8 129.54)
+		(at 156.21 129.54)
 		(uuid "3beced81-992d-40c6-8700-631a6ae9e998")
 	)
 	(no_connect
-		(at 196.85 101.6)
+		(at 156.21 101.6)
 		(uuid "530fb172-9f2f-497f-9aa9-c249f8f960f1")
 	)
 	(no_connect
-		(at 177.8 93.98)
+		(at 156.21 93.98)
 		(uuid "5563873d-a744-4020-a3b0-cde438e52c9d")
 	)
 	(no_connect
-		(at 121.92 88.9)
+		(at 137.16 88.9)
 		(uuid "55ca057a-a5b3-479f-932c-6ebc97361699")
 	)
 	(no_connect
-		(at 177.8 119.38)
+		(at 156.21 119.38)
 		(uuid "5c476318-6426-4102-9633-a3027b82da78")
 	)
 	(no_connect
-		(at 177.8 88.9)
+		(at 156.21 88.9)
 		(uuid "7c602f39-ac2f-4ead-959e-4a4bac498732")
 	)
 	(no_connect
-		(at 121.92 121.92)
+		(at 135.89 121.92)
 		(uuid "84095c0b-bdfc-4bc2-a365-2d1e4b4382ab")
 	)
 	(no_connect
-		(at 177.8 127)
+		(at 156.21 127)
 		(uuid "9b97a368-35d7-411c-99f2-8061d0422a03")
 	)
 	(no_connect
-		(at 196.85 106.68)
+		(at 156.21 106.68)
 		(uuid "a6c3d6b0-72be-4116-a4fa-c082dd618ef4")
 	)
 	(no_connect
-		(at 177.8 91.44)
+		(at 156.21 91.44)
 		(uuid "bdca4638-4af0-4f20-9d3e-9823a64fb1c5")
 	)
 	(no_connect
-		(at 177.8 111.76)
+		(at 156.21 111.76)
 		(uuid "c60db9bc-7195-47bb-a5b8-13d81e88e310")
 	)
 	(no_connect
-		(at 121.92 114.3)
+		(at 137.16 114.3)
 		(uuid "f3846461-e3b1-4199-8b32-e0e3fb382490")
-	)
-	(wire
-		(pts
-			(xy 156.21 127) (xy 177.8 127)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0fc5c7ad-f3e4-443f-8332-a3d435386c25")
-	)
-	(wire
-		(pts
-			(xy 129.54 81.28) (xy 129.54 63.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "10deefcc-4585-4a4d-961c-5b90685f6a1f")
 	)
 	(wire
 		(pts
@@ -2638,16 +2773,6 @@
 	)
 	(wire
 		(pts
-			(xy 156.21 93.98) (xy 177.8 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1dabef50-6b61-41e3-a99a-af936b51df16")
-	)
-	(wire
-		(pts
 			(xy 143.51 91.44) (xy 139.7 91.44)
 		)
 		(stroke
@@ -2668,16 +2793,6 @@
 	)
 	(wire
 		(pts
-			(xy 156.21 106.68) (xy 196.85 106.68)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2bab6aad-9d91-4962-914f-6bcdab6141ff")
-	)
-	(wire
-		(pts
 			(xy 168.91 78.74) (xy 168.91 83.82)
 		)
 		(stroke
@@ -2685,36 +2800,6 @@
 			(type default)
 		)
 		(uuid "2fa91a66-4b3e-4980-996d-474255df615c")
-	)
-	(wire
-		(pts
-			(xy 156.21 119.38) (xy 177.8 119.38)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "31bec0e6-bcec-48e6-8581-5328efd1007a")
-	)
-	(wire
-		(pts
-			(xy 156.21 111.76) (xy 177.8 111.76)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3b6d4fd3-f776-4195-b975-37707a5cd296")
-	)
-	(wire
-		(pts
-			(xy 156.21 114.3) (xy 177.8 114.3)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3c5b7316-06b5-4d67-8f6e-8eef0b6dc7b5")
 	)
 	(wire
 		(pts
@@ -2758,16 +2843,6 @@
 	)
 	(wire
 		(pts
-			(xy 156.21 91.44) (xy 177.8 91.44)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "519f3532-401f-4719-b1bb-f98316a240de")
-	)
-	(wire
-		(pts
 			(xy 181.61 67.31) (xy 193.04 67.31)
 		)
 		(stroke
@@ -2778,33 +2853,13 @@
 	)
 	(wire
 		(pts
-			(xy 135.89 81.28) (xy 129.54 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "58c63478-8c86-4d05-9eb4-99402e519d22")
-	)
-	(wire
-		(pts
-			(xy 121.92 88.9) (xy 143.51 88.9)
+			(xy 137.16 88.9) (xy 143.51 88.9)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "5f2ac429-66b4-44cb-a0dc-d9b8e62de69d")
-	)
-	(wire
-		(pts
-			(xy 156.21 129.54) (xy 177.8 129.54)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "643191ae-77ac-4bac-aa2f-6cbe8e9831da")
 	)
 	(wire
 		(pts
@@ -2878,16 +2933,6 @@
 	)
 	(wire
 		(pts
-			(xy 156.21 88.9) (xy 177.8 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7f59f8a7-6140-485a-b51c-cf8eb43e9a63")
-	)
-	(wire
-		(pts
 			(xy 156.21 86.36) (xy 158.75 86.36)
 		)
 		(stroke
@@ -2898,7 +2943,7 @@
 	)
 	(wire
 		(pts
-			(xy 121.92 114.3) (xy 143.51 114.3)
+			(xy 137.16 114.3) (xy 143.51 114.3)
 		)
 		(stroke
 			(width 0)
@@ -2948,7 +2993,7 @@
 	)
 	(wire
 		(pts
-			(xy 121.92 121.92) (xy 143.51 121.92)
+			(xy 135.89 121.92) (xy 143.51 121.92)
 		)
 		(stroke
 			(width 0)
@@ -2958,7 +3003,7 @@
 	)
 	(wire
 		(pts
-			(xy 143.51 81.28) (xy 135.89 81.28)
+			(xy 143.51 81.28) (xy 137.16 81.28)
 		)
 		(stroke
 			(width 0)
@@ -2988,16 +3033,6 @@
 	)
 	(wire
 		(pts
-			(xy 156.21 99.06) (xy 196.85 99.06)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bf4aa074-6407-4504-b06d-8069eafcfc73")
-	)
-	(wire
-		(pts
 			(xy 121.92 83.82) (xy 143.51 83.82)
 		)
 		(stroke
@@ -3008,7 +3043,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 63.5) (xy 129.54 63.5)
+			(xy 125.73 63.5) (xy 137.16 63.5)
 		)
 		(stroke
 			(width 0)
@@ -3035,16 +3070,6 @@
 			(type default)
 		)
 		(uuid "d1af5451-8114-4cee-83db-df0c5a1b93e3")
-	)
-	(wire
-		(pts
-			(xy 156.21 124.46) (xy 177.8 124.46)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d24a8afd-1264-490d-b01f-d5228c24a17d")
 	)
 	(wire
 		(pts
@@ -3118,23 +3143,23 @@
 	)
 	(wire
 		(pts
-			(xy 135.89 77.47) (xy 135.89 81.28)
+			(xy 137.16 63.5) (xy 137.16 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f8181fd5-89ce-431f-8b78-b7d2097282dc")
+	)
+	(wire
+		(pts
+			(xy 137.16 59.69) (xy 137.16 63.5)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "fe73f35c-7136-48b0-8a01-817395f4b80f")
-	)
-	(wire
-		(pts
-			(xy 196.85 101.6) (xy 156.21 101.6)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ffa3a543-08f9-46e3-baed-9953ef7cbda2")
 	)
 	(hierarchical_label "MOSI"
 		(shape input)
@@ -3281,7 +3306,7 @@
 	)
 	(symbol
 		(lib_id "power:+3.3V")
-		(at 135.89 77.47 0)
+		(at 137.16 59.69 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3292,7 +3317,7 @@
 		(fields_autoplaced yes)
 		(uuid "055ae725-e31a-47da-99d4-ad841b63a726")
 		(property "Reference" "#PWR027"
-			(at 135.89 81.28 0)
+			(at 137.16 63.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3303,7 +3328,7 @@
 			)
 		)
 		(property "Value" "+3.3V"
-			(at 135.89 72.39 0)
+			(at 137.16 54.61 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3313,7 +3338,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 135.89 77.47 0)
+			(at 137.16 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3324,7 +3349,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 135.89 77.47 0)
+			(at 137.16 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3335,7 +3360,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 135.89 77.47 0)
+			(at 137.16 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3751,6 +3776,88 @@
 		)
 	)
 	(symbol
+		(lib_id "baja-common-parts:C_0603")
+		(at 193.04 72.39 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3efa615b-d529-464c-999a-8d1e6a3cff8a")
+		(property "Reference" "C5"
+			(at 196.85 71.1199 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0.1 µF"
+			(at 196.85 73.6599 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+			(at 193.04 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 193.04 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Capacitor 0603 (1608 metric) HandSolder - Baja default passive size"
+			(at 193.04 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "dd83d83b-caa2-4d5e-b9f6-9a0c44972123")
+		)
+		(pin "1"
+			(uuid "cfddc024-b019-43a9-9a12-8d48a0df84fe")
+		)
+		(instances
+			(project "ecvt-controller"
+				(path "/6a3c849d-efdf-47ab-8467-b82fc2fbc70f/86d3e2f6-ea24-425a-b24f-155dc33c446a"
+					(reference "C5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:PWR_FLAG")
 		(at 125.73 63.5 0)
 		(unit 1)
@@ -3987,6 +4094,88 @@
 		)
 	)
 	(symbol
+		(lib_id "baja-common-parts:C_0805")
+		(at 181.61 72.39 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "66937392-503d-4ee8-b6c5-35d8cbfdecd4")
+		(property "Reference" "C3"
+			(at 185.42 71.1199 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "4.7µF"
+			(at 185.42 73.6599 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+			(at 181.61 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 181.61 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Capacitor 0805 (2012 metric) HandSolder - Baja higher-power passive size"
+			(at 181.61 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "5010ca0f-84e8-494b-8d72-443799adfe59")
+		)
+		(pin "2"
+			(uuid "b8f7f5f4-0826-4d91-8d7d-1d580657dfa6")
+		)
+		(instances
+			(project "ecvt-controller"
+				(path "/6a3c849d-efdf-47ab-8467-b82fc2fbc70f/86d3e2f6-ea24-425a-b24f-155dc33c446a"
+					(reference "C3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Mechanical:MountingHole")
 		(at 119.38 152.4 0)
 		(unit 1)
@@ -4211,87 +4400,6 @@
 			(project "ecvt-controller"
 				(path "/6a3c849d-efdf-47ab-8467-b82fc2fbc70f/86d3e2f6-ea24-425a-b24f-155dc33c446a"
 					(reference "H2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 181.61 72.39 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "81145e98-7d0c-44d8-a80c-3d825d17e2b1")
-		(property "Reference" "C12"
-			(at 175.514 71.374 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "4.7µF"
-			(at 172.466 73.66 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
-			(at 182.5752 76.2 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 181.61 72.39 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 181.61 72.39 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "baaa118b-9710-4a32-9eb0-8ad840fb90f9")
-		)
-		(pin "2"
-			(uuid "0b091331-ed5d-4dcc-8e9b-e251f0c44c33")
-		)
-		(instances
-			(project "ecvt-controller"
-				(path "/6a3c849d-efdf-47ab-8467-b82fc2fbc70f/86d3e2f6-ea24-425a-b24f-155dc33c446a"
-					(reference "C12")
 					(unit 1)
 				)
 			)
@@ -4528,88 +4636,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:C")
-		(at 193.04 72.39 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "b2612a7c-934c-4e9d-be52-414b25b4cfda")
-		(property "Reference" "C13"
-			(at 196.85 71.1199 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "0.1 µF"
-			(at 196.85 73.6599 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
-			(at 194.0052 76.2 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 193.04 72.39 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 193.04 72.39 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "ed471aa3-7957-47a4-b826-2c1fe7c68220")
-		)
-		(pin "1"
-			(uuid "80485d5a-9424-48c7-863c-e9d1acd1b24e")
-		)
-		(instances
-			(project "ecvt-controller"
-				(path "/6a3c849d-efdf-47ab-8467-b82fc2fbc70f/86d3e2f6-ea24-425a-b24f-155dc33c446a"
-					(reference "C13")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 157.48 96.52 90)
 		(unit 1)
@@ -4683,6 +4709,88 @@
 			(project "ecvt-controller"
 				(path "/6a3c849d-efdf-47ab-8467-b82fc2fbc70f/86d3e2f6-ea24-425a-b24f-155dc33c446a"
 					(reference "#PWR023")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "baja-common-parts:C_0603")
+		(at 116.84 67.31 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b9b37472-9955-4d18-8769-6e691291811e")
+		(property "Reference" "C4"
+			(at 120.65 66.0399 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0.1 µF"
+			(at 120.65 68.5799 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+			(at 116.84 69.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 116.84 72.39 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Capacitor 0603 (1608 metric) HandSolder - Baja default passive size"
+			(at 116.84 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "fee1da37-5be2-4d05-a21b-688c7217d801")
+		)
+		(pin "1"
+			(uuid "e462259a-dde2-422d-b575-49ee8375570e")
+		)
+		(instances
+			(project "ecvt-controller"
+				(path "/6a3c849d-efdf-47ab-8467-b82fc2fbc70f/86d3e2f6-ea24-425a-b24f-155dc33c446a"
+					(reference "C4")
 					(unit 1)
 				)
 			)
@@ -4841,87 +4949,6 @@
 			(project "ecvt-controller"
 				(path "/6a3c849d-efdf-47ab-8467-b82fc2fbc70f/86d3e2f6-ea24-425a-b24f-155dc33c446a"
 					(reference "#PWR028")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 116.84 67.31 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "d20d1aa3-655a-490a-90d1-d2e5c6868ea0")
-		(property "Reference" "C14"
-			(at 120.65 66.0399 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "0.1 µF"
-			(at 119.888 68.58 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
-			(at 117.8052 71.12 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 116.84 67.31 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 116.84 67.31 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "fcd13992-3092-4700-8cfb-a3ac0ce52844")
-		)
-		(pin "1"
-			(uuid "2f948a34-0afc-4dec-9832-682636d3b382")
-		)
-		(instances
-			(project "ecvt-controller"
-				(path "/6a3c849d-efdf-47ab-8467-b82fc2fbc70f/86d3e2f6-ea24-425a-b24f-155dc33c446a"
-					(reference "C14")
 					(unit 1)
 				)
 			)
