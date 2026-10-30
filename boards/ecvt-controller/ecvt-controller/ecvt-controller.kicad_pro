@@ -647,27 +647,43 @@
         "wire_width": 6
       },
       {
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "12V",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 1,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 1.0,
+        "tuning_profile": "",
+        "via_diameter": 0.6,
+        "via_drill": 0.3,
+        "wire_width": 6
+      },
+      {
         "name": "Battery",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "priority": 0,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "tuning_profile": "",
-        "wire_width": 12
+        "wire_width": 18
       },
       {
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
         "name": "Power",
-        "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "priority": 1,
-        "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "tuning_profile": "",
-        "wire_width": 6
-      },
-      {
-        "name": "Signal",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "priority": 2,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.6,
         "tuning_profile": "",
+        "via_diameter": 0.6,
+        "via_drill": 0.3,
         "wire_width": 3
       }
     ],
@@ -678,39 +694,39 @@
     "netclass_assignments": null,
     "netclass_patterns": [
       {
-        "netclass": "Battery",
+        "netclass": "12V",
         "pattern": "+12V"
       },
       {
-        "netclass": "Battery",
+        "netclass": "Default",
         "pattern": "GND"
       },
       {
-        "netclass": "Signal",
+        "netclass": "Power",
         "pattern": "/MCU/GPIO27"
       },
       {
-        "netclass": "Signal",
+        "netclass": "Power",
         "pattern": "/MCU/GPIO17"
       },
       {
-        "netclass": "Signal",
+        "netclass": "Power",
         "pattern": "/MCU/GPIO22"
       },
       {
-        "netclass": "Power",
+        "netclass": "12V",
         "pattern": "+3.3V"
       },
       {
-        "netclass": "Power",
+        "netclass": "12V",
         "pattern": "+5V"
       },
       {
-        "netclass": "Signal",
+        "netclass": "Power",
         "pattern": "/MCU/GPIO(5|6|9|10|11)"
       },
       {
-        "netclass": "Signal",
+        "netclass": "Power",
         "pattern": "/MCU/GPIO8"
       }
     ]
@@ -855,7 +871,7 @@
         "uuid": "6a3c849d-efdf-47ab-8467-b82fc2fbc70f"
       }
     ],
-    "used_designators": "",
+    "used_designators": "#PWR65",
     "variants": []
   },
   "sheets": [

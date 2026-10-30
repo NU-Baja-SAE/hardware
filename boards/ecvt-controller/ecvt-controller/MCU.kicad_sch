@@ -2708,6 +2708,10 @@
 		(uuid "3beced81-992d-40c6-8700-631a6ae9e998")
 	)
 	(no_connect
+		(at 121.92 119.38)
+		(uuid "3c46bd24-df1a-47c7-be1c-0b35f3c56492")
+	)
+	(no_connect
 		(at 156.21 101.6)
 		(uuid "530fb172-9f2f-497f-9aa9-c249f8f960f1")
 	)
@@ -3248,17 +3252,6 @@
 			(justify right)
 		)
 		(uuid "90a77646-7a1c-4f14-8618-ea228aa20a33")
-	)
-	(hierarchical_label "S"
-		(shape input)
-		(at 121.92 119.38 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "b28cd9f9-c107-43ba-b8dc-19f5b552a647")
 	)
 	(hierarchical_label "SDA"
 		(shape input)
@@ -4898,7 +4891,7 @@
 				)
 			)
 		)
-		(property "Value" "+3.3V"
+		(property "Value" "+3.3V(v2)"
 			(at 134.62 101.5999 90)
 			(show_name no)
 			(do_not_autoplace no)

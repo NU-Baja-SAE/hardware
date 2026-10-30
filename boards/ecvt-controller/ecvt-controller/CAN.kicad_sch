@@ -3539,6 +3539,16 @@
 	)
 	(wire
 		(pts
+			(xy 130.81 102.87) (xy 130.81 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a5e597cc-eabe-4dd7-b398-f9fdb7709250")
+	)
+	(wire
+		(pts
 			(xy 176.53 100.33) (xy 176.53 99.06)
 		)
 		(stroke
@@ -3836,17 +3846,6 @@
 			(justify left bottom)
 		)
 		(uuid "4c29157f-7379-48da-a432-98543994b76a")
-	)
-	(hierarchical_label "S"
-		(shape input)
-		(at 130.81 102.87 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "1c4a4051-3f56-40b7-9fbd-02058ba3822c")
 	)
 	(hierarchical_label "CS"
 		(shape input)
@@ -5243,6 +5242,84 @@
 	)
 	(symbol
 		(lib_id "power:GND")
+		(at 130.81 105.41 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "698436df-b286-4458-b80a-7ee492d6acf7")
+		(property "Reference" "#PWR065"
+			(at 130.81 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 130.81 110.49 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 130.81 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 130.81 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 130.81 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3312ea97-b4b2-4c4a-89f6-9f33ea2411ff")
+		)
+		(instances
+			(project "ecvt-controller"
+				(path "/6a3c849d-efdf-47ab-8467-b82fc2fbc70f/577f7b7d-9ccb-4072-8b99-2d0e10acd900"
+					(reference "#PWR065")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
 		(at 196.85 100.33 0)
 		(unit 1)
 		(body_style 1)
@@ -5683,7 +5760,7 @@
 				)
 			)
 		)
-		(property "Value" "+3.3V"
+		(property "Value" "+3.3V(v2)"
 			(at 54.61 60.96 0)
 			(show_name no)
 			(do_not_autoplace no)
