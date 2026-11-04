@@ -31,7 +31,7 @@ USAGE:
     python3 harness/scripts/extract_connectors.py            # write generated/*.yaml
     python3 harness/scripts/extract_connectors.py --check    # exit 1 if stale (CI)
 
-Requires kicad-cli on PATH (KiCad 9). Override with --kicad-cli.
+Requires kicad-cli on PATH (KiCad 10). Override with --kicad-cli.
 """
 
 import argparse
@@ -266,16 +266,40 @@ def render_board_yaml(board: str, connectors: dict) -> str:
 
 # --- Board discovery --------------------------------------------------------
 
-def find_root_schematic(board_dir: Path) -> Path | None:
-    """A board's root sheet is the .kicad_sch that shares the .kicad_pro stem."""
-    pro = next(iter(sorted(board_dir.glob("*.kicad_pro"))), None)
-    if pro:
-        root = pro.with_suffix(".kicad_sch")
+def _is_ignored(path: Path, board_dir: Path) -> bool:
+    """Skip KiCad backup / autosave folders when searching for a project."""
+    for part in path.relative_to(board_dir).parts[:-1]:
+        low = part.lower()
+        if low.startswith((".", "#")) or "backup" in low:
+            return True
+    return False
+
+
+def find_root_schematic(board_dir: Path) -> Path:
+    """Locate a board's root sheet: the .kicad_sch sharing its .kicad_pro stem.
+
+    The project may sit directly in boards/<board>/ or in a subfolder of it
+    (e.g. boards/ecvt-controller/ecvt-controller/ecvt-controller.kicad_pro).
+    Raises LookupError if there is no project, or more than one, so a board
+    whose layout changed fails loudly instead of being silently skipped
+    (which would leave its generated/*.yaml stale while CI stays green).
+    """
+    pros = sorted(p for p in board_dir.rglob("*.kicad_pro")
+                  if not _is_ignored(p, board_dir))
+    if len(pros) > 1:
+        rel = ", ".join(str(p.relative_to(board_dir)) for p in pros)
+        raise LookupError(f"more than one KiCad project found ({rel})")
+    if pros:
+        root = pros[0].with_suffix(".kicad_sch")
         if root.exists():
             return root
-    # fallback: a lone schematic
+        raise LookupError(f"{pros[0].relative_to(board_dir)} has no matching "
+                          f"root .kicad_sch")
+    # fallback: a lone schematic directly in the board folder
     schs = sorted(board_dir.glob("*.kicad_sch"))
-    return schs[0] if len(schs) == 1 else None
+    if len(schs) == 1:
+        return schs[0]
+    raise LookupError("no .kicad_pro project (and no lone .kicad_sch) found")
 
 
 def main(argv=None) -> int:
@@ -297,10 +321,11 @@ def main(argv=None) -> int:
     wrote = []
     for board_dir in boards:
         board = board_dir.name
-        sch = find_root_schematic(board_dir)
-        if sch is None:
-            print(f"skip {board}: no root schematic", file=sys.stderr)
-            continue
+        try:
+            sch = find_root_schematic(board_dir)
+        except LookupError as e:
+            print(f"ERROR {board}: {e}", file=sys.stderr)
+            return 1
         try:
             netlist = run_netlist(sch, args.kicad_cli)
             connectors = extract_board(netlist)
@@ -320,7 +345,7 @@ def main(argv=None) -> int:
                 stale.append(board)
         else:
             args.out_dir.mkdir(parents=True, exist_ok=True)
-            out_path.write_text(yaml_text, encoding="utf-8")
+            out_path.write_bytes(yaml_text.encode("utf-8"))  # always LF
             n = sum(len(c["pins"]) for c in connectors.values())
             wrote.append(f"{board}: {len(connectors)} connector(s), {n} pins")
 

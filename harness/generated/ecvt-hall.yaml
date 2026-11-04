@@ -10,12 +10,13 @@ metadata:
   name: ecvt-hall off-board connectors (placeholder)
 
 components:
-  # 3-pin harness connector: supply, ground, hall output.
+  # 3-pin harness connector: supply, ground, hall output. Supply is +3.3V
+  # from the 2027 eCVT J5 (was +5V while the 2026 board was the host).
   J1:
     type: connector
     label: "ecvt-hall J1 (917782-1)"
     zone: ecvt-hall
     pins:
-      - {n: 1, name: "+5V"}
+      - {n: 1, name: "+3V3"}
       - {n: 2, name: GND}
       - {n: 3, name: HALL_OUT}

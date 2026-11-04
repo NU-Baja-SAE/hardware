@@ -21,7 +21,7 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
-# The kicad/kicad:9.0 container image used below should match the team
+# The kicad/kicad:10.0 container image used below should match the team
 # standard KiCad version in the top-level README ("KiCad version" section).
 # Bump every job's image and the README together.
 
@@ -31,7 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     container:
-      image: kicad/kicad:9.0
+      image: kicad/kicad:10.0
       options: --user root
     steps:
       - uses: actions/checkout@v4
@@ -101,7 +101,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     container:
-      image: kicad/kicad:9.0
+      image: kicad/kicad:10.0
       options: --user root
     steps:
       - uses: actions/checkout@v4
@@ -201,7 +201,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     container:
-      image: kicad/kicad:9.0
+      image: kicad/kicad:10.0
       options: --user root
     steps:
       - uses: actions/checkout@v4
@@ -249,7 +249,7 @@ jobs:
     # container like the other kicad jobs. No bash in this image -- POSIX sh
     # only (see the erc-drc job).
     container:
-      image: kicad/kicad:9.0
+      image: kicad/kicad:10.0
       options: --user root
     steps:
       - uses: actions/checkout@v4
@@ -286,7 +286,7 @@ jobs:
           done
           if [ -n "$missing" ]; then
             echo "harness-render: missing required tool(s):$missing" >&2
-            echo "The kicad/kicad:9.0 image is expected to provide these." >&2
+            echo "The kicad/kicad:10.0 image is expected to provide these." >&2
             exit 1
           fi
 

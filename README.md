@@ -161,4 +161,4 @@ Board releases are tagged at the point gerbers are sent to fab, e.g. `ecvt-contr
 
 ## KiCad version
 
-All board files must be authored/saved in the same KiCad version to avoid spurious diffs from format upgrades. Current standard version: **KiCad 9.0** — this is also the version CI runs (the `kicad/kicad:9.0` image in `.github/workflows/ci.yml`), so files saved in a newer major version will fail CI until both are bumped together.
+All board files must be authored/saved in the same KiCad version to avoid spurious diffs from format upgrades. Current standard version: **KiCad 10.0** — this is also the version CI runs (the `kicad/kicad:10.0` image in `.github/workflows/ci.yml`), so files saved in a newer major version will fail CI until both are bumped together.
