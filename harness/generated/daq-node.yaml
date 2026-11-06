@@ -6,17 +6,51 @@ metadata:
   name: daq-node off-board connectors
 
 components:
-  J1:
+  J10:
     type: connector
-    label: daq-node J1 (917784-1)
+    label: daq-node J10 (917783-1)
     zone: daq-node
     pins:
-      - {n: 1, name: GPIO26}
-      - {n: 2, name: GPIO27}
-      - {n: 3, name: GPIO14}
-      - {n: 4, name: GND}
-      - {n: 5, name: +3V3}
-      - {n: 6, name: +5V}
+      - {n: 1, name: GND}
+      - {n: 2, name: GPIO39}
+      - {n: 3, name: GPIO34}
+      - {n: 4, name: GPIO35}
+      - {n: 5, name: +5V}
+
+  J13:
+    type: connector
+    label: daq-node J13 (917781-1)
+    zone: daq-node
+    pins:
+      - {n: 1, name: GND}
+      - {n: 2, name: GPIO36}
+      - {n: 3, name: +5V}
+
+  J15:
+    type: connector
+    label: daq-node J15 (917781-1)
+    zone: daq-node
+    pins:
+      - {n: 1, name: +5V}
+      - {n: 2, name: GPIO16}
+      - {n: 3, name: GND}
+
+  J2:
+    type: connector
+    label: daq-node J2 (917780-1)
+    zone: daq-node
+    pins:
+      - {n: 1, name: CANH}
+      - {n: 2, name: CANL}
+
+  J3:
+    type: connector
+    label: daq-node J3 (917781-1)
+    zone: daq-node
+    pins:
+      - {n: 1, name: GND}
+      - {n: 2, name: Wheel 1}
+      - {n: 3, name: +3.3V}
 
   J4:
     type: connector
@@ -24,32 +58,49 @@ components:
     zone: daq-node
     pins:
       - {n: 1, name: GND}
-      - {n: 2, name: Fuel_Sensor}
+      - {n: 2, name: Fuel Sensor}
       - {n: 3, name: +5V}
 
   J5:
     type: connector
-    label: daq-node J5 (15311026)
+    label: daq-node J5 (917781-1)
     zone: daq-node
     pins:
       - {n: 1, name: GND}
-      - {n: 2, name: +24V}
+      - {n: 2, name: Wheel 2}
+      - {n: 3, name: +3.3V}
+
+  J6:
+    type: connector
+    label: daq-node J6 (917780-1)
+    zone: daq-node
+    pins:
+      - {n: 1, name: +12V}
+      - {n: 2, name: GND}
 
   J7:
     type: connector
-    label: daq-node J7 (917783-1)
+    label: daq-node J7 (917781-1)
     zone: daq-node
     pins:
       - {n: 1, name: GND}
-      - {n: 2, name: TEMP_SENSOR}
-      - {n: 3, name: RIGHT_HALL}
-      - {n: 4, name: LEFT_HALL}
-      - {n: 5, name: +3V3}
+      - {n: 2, name: SUS1}
+      - {n: 3, name: +5V}
 
   J8:
     type: connector
-    label: daq-node J8 (917780-1)
+    label: daq-node J8 (917781-1)
     zone: daq-node
     pins:
-      - {n: 1, name: CANH}
-      - {n: 2, name: CANL}
+      - {n: 1, name: +5V}
+      - {n: 2, name: GPIO17}
+      - {n: 3, name: GND}
+
+  J9:
+    type: connector
+    label: daq-node J9 (917781-1)
+    zone: daq-node
+    pins:
+      - {n: 1, name: +5V}
+      - {n: 2, name: GPIO21}
+      - {n: 3, name: GND}

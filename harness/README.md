@@ -32,7 +32,7 @@ harness/output/car.svg
 
 ## Regenerate locally
 
-Needs `kicad-cli` (KiCad 9) on PATH and the renderer's deps installed:
+Needs `kicad-cli` (KiCad 10) on PATH and the renderer's deps installed:
 
 ```
 pip install -r harness/wirelab/requirements.txt
@@ -49,7 +49,7 @@ python3 harness/scripts/test_pipeline.py
 ## CI
 
 The `harness-render` job (`.github/workflows/ci.yml`) runs in the
-`kicad/kicad:9.0` container. On a **PR** it fails if the committed
+`kicad/kicad:10.0` container. On a **PR** it fails if the committed
 `generated/*.yaml` or `output/car.svg` are stale (`extract_connectors.py
 --check` + an SVG diff). On a **push to `main`** it regenerates and
 auto-commits them (`[skip ci]`), the same safety-net pattern the consolidated

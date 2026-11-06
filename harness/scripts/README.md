@@ -6,6 +6,11 @@ Generates `harness/generated/<board>.yaml` — one file per board describing
 that board's **off-board** connectors (the pins whose wires leave the board
 and become part of the car harness). Board-internal nets are ignored.
 
+It finds each board's KiCad project under `boards/<board>/` (directly, or in a
+subfolder such as `boards/ecvt-controller/ecvt-controller/`; backup folders
+are ignored). A board folder with no project, or more than one, is an error
+rather than a silent skip, so a moved project can't leave its YAML stale.
+
 It runs `kicad-cli sch export netlist` on each board's root schematic, keeps
 only the harness connector families (TE 917xxx, Molex 15311026/15311046), and
 writes a pin-per-connector-pin YAML with each pin named by the net on it.
@@ -15,9 +20,9 @@ python3 harness/scripts/extract_connectors.py          # regenerate generated/*.
 python3 harness/scripts/extract_connectors.py --check   # exit 1 if any file is stale (CI)
 ```
 
-Requires `kicad-cli` (KiCad 9) on PATH. Symbols resolve from each schematic's
+Requires `kicad-cli` (KiCad 10) on PATH. Symbols resolve from each schematic's
 embedded cache, so no library table / `BAJA_LIB` env var is needed — it runs
-the same on a laptop and in the CI `kicad/kicad:9.0` container.
+the same on a laptop and in the CI `kicad/kicad:10.0` container.
 
 ### Files under `harness/generated/` are BUILD ARTIFACTS
 
