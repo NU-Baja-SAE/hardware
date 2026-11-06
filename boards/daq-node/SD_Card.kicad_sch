@@ -1,19 +1,23 @@
 (kicad_sch
-	(version 20250114)
+	(version 20260306)
 	(generator "eeschema")
-	(generator_version "9.0")
-	(uuid "4440afcd-5e8f-4fff-81c0-c193a0a24f9f")
+	(generator_version "10.0")
+	(uuid "00d8b74b-b101-40f3-8071-2bc4bb54beb3")
 	(paper "A4")
 	(lib_symbols
-		(symbol "SD_Card:DM3CS-SF"
+		(symbol "baja-common-parts:DM3CS-SF"
 			(pin_names
 				(offset 1.016)
 			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
 			(property "Reference" "J"
 				(at -7.6282 19.0976 0)
+				(show_name no)
+				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -23,6 +27,8 @@
 			)
 			(property "Value" "DM3CS-SF"
 				(at -7.6357 -21.1508 0)
+				(show_name no)
+				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -30,173 +36,218 @@
 					(justify left bottom)
 				)
 			)
-			(property "Footprint" "DM3CS-SF:HRS_DM3CS-SF"
-				(at 0 0 0)
+			(property "Footprint" "baja-common-parts:SD_Card"
+				(at 0 -20.32 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 					(justify bottom)
-					(hide yes)
 				)
 			)
 			(property "Datasheet" ""
-				(at 0 0 0)
+				(at 0 -22.86 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(property "Description" "CONN MICRO SD CARD HINGED TYPE"
-				(at 0 0 0)
+				(at 0 -25.4 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 					(justify bottom)
-					(hide yes)
 				)
 			)
 			(property "MF" "Hirose Connector"
 				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 					(justify bottom)
-					(hide yes)
 				)
 			)
 			(property "PACKAGE" "None"
 				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 					(justify bottom)
-					(hide yes)
 				)
 			)
 			(property "PRICE" "1.14 USD"
 				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 					(justify bottom)
-					(hide yes)
 				)
 			)
 			(property "Package" "None"
 				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 					(justify bottom)
-					(hide yes)
 				)
 			)
 			(property "Check_prices" "https://www.snapeda.com/parts/DM3CS-SF/Hirose/view-part/?ref=eda"
 				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 					(justify bottom)
-					(hide yes)
 				)
 			)
 			(property "Availability" "In Stock"
 				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 					(justify bottom)
-					(hide yes)
 				)
 			)
 			(property "Price" "None"
 				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 					(justify bottom)
-					(hide yes)
 				)
 			)
 			(property "PARTREV" "n/a"
 				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 					(justify bottom)
-					(hide yes)
 				)
 			)
 			(property "SnapEDA_Link" "https://www.snapeda.com/parts/DM3CS-SF/Hirose/view-part/?ref=snap"
 				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 					(justify bottom)
-					(hide yes)
 				)
 			)
 			(property "MP" "DM3CS-SF"
 				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 					(justify bottom)
-					(hide yes)
 				)
 			)
 			(property "Description_1" "10 (8 + 2) Position Card Connector Secure Digital - microSD™ Surface Mount, Right Angle Gold"
 				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 					(justify bottom)
-					(hide yes)
 				)
 			)
 			(property "STANDARED" "manufacturer recommendation"
 				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 					(justify bottom)
-					(hide yes)
 				)
 			)
 			(property "AVAILABILITY" "Good"
 				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 					(justify bottom)
-					(hide yes)
 				)
 			)
 			(property "MANUFACTURER" "Hirose"
 				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 					(justify bottom)
-					(hide yes)
+				)
+			)
+			(property "ki_keywords" "sd card socket microsd dm3cs hirose storage"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
 				)
 			)
 			(symbol "DM3CS-SF_0_0"
@@ -212,16 +263,34 @@
 					)
 				)
 				(pin passive line
-					(at -12.7 15.24 0)
+					(at -12.7 -5.08 0)
 					(length 5.08)
-					(name "VDD"
+					(name "DAT2"
 						(effects
 							(font
 								(size 1.016 1.016)
 							)
 						)
 					)
-					(number "4"
+					(number "1"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -12.7 -7.62 0)
+					(length 5.08)
+					(name "CD/DAT3"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "2"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -240,6 +309,24 @@
 						)
 					)
 					(number "3"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -12.7 15.24 0)
+					(length 5.08)
+					(name "VDD"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "4"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -266,16 +353,16 @@
 					)
 				)
 				(pin passive line
-					(at -12.7 5.08 0)
+					(at -12.7 -12.7 0)
 					(length 5.08)
-					(name "CD_SW"
+					(name "VSS"
 						(effects
 							(font
 								(size 1.016 1.016)
 							)
 						)
 					)
-					(number "9"
+					(number "6"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -320,52 +407,16 @@
 					)
 				)
 				(pin passive line
-					(at -12.7 -5.08 0)
+					(at -12.7 5.08 0)
 					(length 5.08)
-					(name "DAT2"
+					(name "CD_SW"
 						(effects
 							(font
 								(size 1.016 1.016)
 							)
 						)
 					)
-					(number "1"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -12.7 -7.62 0)
-					(length 5.08)
-					(name "CD/DAT3"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -12.7 -12.7 0)
-					(length 5.08)
-					(name "VSS"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "6"
+					(number "9"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -452,7 +503,7 @@
 			(embedded_fonts no)
 		)
 		(symbol "power:+3.3V"
-			(power)
+			(power global)
 			(pin_numbers
 				(hide yes)
 			)
@@ -463,17 +514,23 @@
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
 			(property "Reference" "#PWR"
 				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(property "Value" "+3.3V"
 				(at 0 3.556 0)
+				(show_name no)
+				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -482,38 +539,46 @@
 			)
 			(property "Footprint" ""
 				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(property "Datasheet" ""
 				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(property "Description" "Power symbol creates a global label with name \"+3.3V\""
 				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(property "ki_keywords" "global power"
 				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(symbol "+3.3V_0_1"
@@ -558,7 +623,7 @@
 				(pin power_in line
 					(at 0 0 90)
 					(length 0)
-					(name "~"
+					(name ""
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -577,7 +642,7 @@
 			(embedded_fonts no)
 		)
 		(symbol "power:GND"
-			(power)
+			(power global)
 			(pin_numbers
 				(hide yes)
 			)
@@ -588,17 +653,23 @@
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
 			(property "Reference" "#PWR"
 				(at 0 -6.35 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(property "Value" "GND"
 				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -607,38 +678,46 @@
 			)
 			(property "Footprint" ""
 				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(property "Datasheet" ""
 				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
 				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(property "ki_keywords" "global power"
 				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(symbol "GND_0_1"
@@ -659,7 +738,7 @@
 				(pin power_in line
 					(at 0 0 270)
 					(length 0)
-					(name "~"
+					(name ""
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -678,175 +757,314 @@
 			(embedded_fonts no)
 		)
 	)
+	(no_connect
+		(at 135.89 95.885)
+		(uuid "c7021647-e01d-43b5-8fa7-3f3a71cbf868")
+	)
+	(no_connect
+		(at 135.89 93.345)
+		(uuid "cfefbe17-14ef-4229-9d01-72d28dfb4391")
+	)
+	(no_connect
+		(at 135.89 90.805)
+		(uuid "d70f01d5-3380-4826-ab06-5aedb7e31b9d")
+	)
 	(wire
 		(pts
-			(xy 149.86 105.41) (xy 149.86 113.03)
+			(xy 128.905 103.505) (xy 135.89 103.505)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "0055dc77-cc96-4f1f-abec-de01f912d00c")
+		(uuid "11d11b6c-d6ea-4c4f-8fe2-008566b47029")
 	)
 	(wire
 		(pts
-			(xy 151.13 77.47) (xy 161.29 77.47)
+			(xy 129.54 88.265) (xy 135.89 88.265)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "4a04c8cb-65c4-4d2d-911e-979729fa33ee")
+		(uuid "2bb7e9df-5b5b-45f4-bf69-6a84a7c2950c")
 	)
 	(wire
 		(pts
-			(xy 157.48 113.03) (xy 157.48 107.95)
+			(xy 135.89 100.965) (xy 121.92 100.965)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "58eef256-0682-49b2-93b7-ee67879c9880")
+		(uuid "3b7f70dd-8418-439f-924b-434e67193734")
 	)
 	(wire
 		(pts
-			(xy 161.29 105.41) (xy 149.86 105.41)
+			(xy 129.54 83.185) (xy 135.89 83.185)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "80e5a74b-9600-4fb0-958f-1f5b4880387d")
+		(uuid "413e915d-f17e-44a8-93e5-3d3c34f3bd18")
 	)
 	(wire
 		(pts
-			(xy 151.13 73.66) (xy 151.13 77.47)
+			(xy 129.54 78.105) (xy 135.89 78.105)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "9e67bc24-4f0d-4366-96a7-d14d399ed290")
+		(uuid "562938e4-82a1-4273-8feb-d12e2102338c")
 	)
 	(wire
 		(pts
-			(xy 157.48 107.95) (xy 161.29 107.95)
+			(xy 121.92 100.965) (xy 121.92 103.505)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d3106837-207b-42d2-af13-6c73ce0221a7")
+		(uuid "8144f5fa-1e91-412f-83fc-118e0aef8159")
 	)
 	(wire
 		(pts
-			(xy 158.75 82.55) (xy 161.29 82.55)
+			(xy 129.54 73.025) (xy 135.89 73.025)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d46b5e60-1c2d-444a-8201-664f8ec36e20")
+		(uuid "b2a2a9a1-bf90-4ff2-9a16-a1fe118375c3")
 	)
 	(wire
 		(pts
-			(xy 157.48 92.71) (xy 161.29 92.71)
+			(xy 129.54 80.645) (xy 135.89 80.645)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "f8e78fe5-65ba-46db-a250-e1831453d7f8")
-	)
-	(hierarchical_label "DAT_3"
-		(shape input)
-		(at 161.29 100.33 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "150e32d4-6463-4aaa-8f7d-53cb95e032e6")
-	)
-	(hierarchical_label "CS"
-		(shape input)
-		(at 161.29 87.63 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "18284b72-56cf-4233-9ebc-b916540aeb18")
+		(uuid "d1a617fb-b7f2-4a8a-a0a8-23e2facbee45")
 	)
 	(hierarchical_label "CLK"
 		(shape input)
-		(at 161.29 85.09 180)
+		(at 129.54 80.645 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "2ddcea53-a6ce-431e-a49e-83bc4882d340")
-	)
-	(hierarchical_label "DAT_2"
-		(shape input)
-		(at 161.29 97.79 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "5d2c86ec-bca9-424a-8810-ac373c84d627")
-	)
-	(hierarchical_label "MISO"
-		(shape input)
-		(at 157.48 92.71 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "d2e1a03a-0876-45a6-a2ed-06e7b0c7a4b2")
-	)
-	(hierarchical_label "DAT_1"
-		(shape input)
-		(at 161.29 95.25 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "e8e88da5-51e1-4c8c-bb56-02014f9bb291")
+		(uuid "2072fa89-000e-4521-9792-9421d0c0e2ae")
 	)
 	(hierarchical_label "MOSI"
 		(shape input)
-		(at 158.75 82.55 180)
+		(at 129.54 78.105 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "ec0324e3-708b-4d8e-801d-cf483bc25678")
+		(uuid "325139b1-64cb-4bec-a6e6-51ebea5097ae")
+	)
+	(hierarchical_label "MISO"
+		(shape output)
+		(at 129.54 88.265 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "6af3340e-6330-4643-9aeb-e625903f91ed")
+	)
+	(hierarchical_label "CS"
+		(shape input)
+		(at 129.54 83.185 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f036e935-e948-45e2-a265-c0ec61536ef4")
 	)
 	(symbol
-		(lib_id "SD_Card:DM3CS-SF")
-		(at 173.99 92.71 0)
+		(lib_id "power:+3.3V")
+		(at 129.54 73.025 0)
 		(unit 1)
+		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
+		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "1440775c-0a55-463d-ba14-9ea1de858b1e")
-		(property "Reference" "J6"
-			(at 182.88 91.4399 0)
+		(uuid "4fd666e6-4d0c-4bab-94a2-6b740ca90718")
+		(property "Reference" "#PWR09"
+			(at 129.54 76.835 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 129.54 68.58 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 129.54 73.025 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 129.54 73.025 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 129.54 73.025 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b8de22d8-c3af-4326-94c9-ff8d3473a290")
+		)
+		(instances
+			(project "DAQ_Back_Board"
+				(path "/0ba67103-d9d7-4140-bc2b-72ee6bb76452/4025f0f9-da67-4a60-a997-b2a2503703af"
+					(reference "#PWR09")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 128.905 103.505 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "91d6c2a5-e1f9-479b-9a82-db2965bad5ff")
+		(property "Reference" "#PWR013"
+			(at 128.905 109.855 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 128.905 107.95 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 128.905 103.505 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 128.905 103.505 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 128.905 103.505 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "61fe0f42-a079-4db4-9c7a-58a4dd32995a")
+		)
+		(instances
+			(project "DAQ_Back_Board"
+				(path "/0ba67103-d9d7-4140-bc2b-72ee6bb76452/4025f0f9-da67-4a60-a997-b2a2503703af"
+					(reference "#PWR013")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "baja-common-parts:DM3CS-SF")
+		(at 148.59 88.265 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "cf22f124-6795-4dd5-851b-1067f9020268")
+		(property "Reference" "J1"
+			(at 157.48 86.9949 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -855,7 +1073,9 @@
 			)
 		)
 		(property "Value" "DM3CS-SF"
-			(at 182.88 93.9799 0)
+			(at 157.48 89.5349 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -864,317 +1084,283 @@
 			)
 		)
 		(property "Footprint" "baja_footprint_library:SD_Card"
-			(at 173.99 92.71 0)
+			(at 148.59 108.585 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify bottom)
-				(hide yes)
 			)
 		)
 		(property "Datasheet" ""
-			(at 173.99 92.71 0)
+			(at 148.59 111.125 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 173.99 92.71 0)
+		(property "Description" "CONN MICRO SD CARD HINGED TYPE"
+			(at 148.59 113.665 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
+				(justify bottom)
 			)
 		)
 		(property "MF" "Hirose Connector"
-			(at 173.99 92.71 0)
+			(at 148.59 88.265 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "DESCRIPTION" "CONN MICRO SD CARD HINGED TYPE"
-			(at 173.99 92.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
 			)
 		)
 		(property "PACKAGE" "None"
-			(at 173.99 92.71 0)
+			(at 148.59 88.265 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify bottom)
-				(hide yes)
 			)
 		)
 		(property "PRICE" "1.14 USD"
-			(at 173.99 92.71 0)
+			(at 148.59 88.265 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify bottom)
-				(hide yes)
 			)
 		)
 		(property "Package" "None"
-			(at 173.99 92.71 0)
+			(at 148.59 88.265 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify bottom)
-				(hide yes)
 			)
 		)
 		(property "Check_prices" "https://www.snapeda.com/parts/DM3CS-SF/Hirose/view-part/?ref=eda"
-			(at 173.99 92.71 0)
+			(at 148.59 88.265 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify bottom)
-				(hide yes)
 			)
 		)
 		(property "Availability" "In Stock"
-			(at 173.99 92.71 0)
+			(at 148.59 88.265 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify bottom)
-				(hide yes)
 			)
 		)
 		(property "Price" "None"
-			(at 173.99 92.71 0)
+			(at 148.59 88.265 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify bottom)
-				(hide yes)
 			)
 		)
 		(property "PARTREV" "n/a"
-			(at 173.99 92.71 0)
+			(at 148.59 88.265 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify bottom)
-				(hide yes)
 			)
 		)
 		(property "SnapEDA_Link" "https://www.snapeda.com/parts/DM3CS-SF/Hirose/view-part/?ref=snap"
-			(at 173.99 92.71 0)
+			(at 148.59 88.265 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify bottom)
-				(hide yes)
 			)
 		)
 		(property "MP" "DM3CS-SF"
-			(at 173.99 92.71 0)
+			(at 148.59 88.265 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify bottom)
-				(hide yes)
 			)
 		)
 		(property "Description_1" "10 (8 + 2) Position Card Connector Secure Digital - microSD™ Surface Mount, Right Angle Gold"
-			(at 173.99 92.71 0)
+			(at 148.59 88.265 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify bottom)
-				(hide yes)
 			)
 		)
 		(property "STANDARED" "manufacturer recommendation"
-			(at 173.99 92.71 0)
+			(at 148.59 88.265 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify bottom)
-				(hide yes)
 			)
 		)
 		(property "AVAILABILITY" "Good"
-			(at 173.99 92.71 0)
+			(at 148.59 88.265 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify bottom)
-				(hide yes)
 			)
 		)
 		(property "MANUFACTURER" "Hirose"
-			(at 173.99 92.71 0)
+			(at 148.59 88.265 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify bottom)
-				(hide yes)
 			)
 		)
 		(pin "2"
-			(uuid "8b116cba-8cc9-4944-8397-bcd56d860432")
-		)
-		(pin "S1"
-			(uuid "e7af5e05-37ba-4a5e-bf0d-749449a8f9e0")
-		)
-		(pin "S2"
-			(uuid "07b14cfb-606c-40d8-9f06-e63624f87d01")
-		)
-		(pin "3"
-			(uuid "ebee50ab-4e01-49db-a3d8-e6e24f0df55c")
+			(uuid "d87a6516-fa5e-413d-bbd7-292820d262af")
 		)
 		(pin "1"
-			(uuid "1d739c87-af9f-4aa8-ab02-c914b0815066")
+			(uuid "3692b06a-79d6-4bb7-9a90-1112631a8c80")
 		)
 		(pin "4"
-			(uuid "c176b19b-ec75-4243-a7a3-47e970e381d1")
+			(uuid "4dad3d37-e624-45ec-8e11-30569724e2e3")
 		)
-		(pin "S3"
-			(uuid "55fb011d-7d16-4053-aa3d-b3fc613dda81")
+		(pin "3"
+			(uuid "d1637543-c650-4e5c-9ffa-25bdbb5e3d9c")
 		)
 		(pin "5"
-			(uuid "b02d5b30-6cd6-46ea-9e42-d03bb08bb1be")
-		)
-		(pin "6"
-			(uuid "e2847a4e-4993-4678-99d8-73515c426213")
+			(uuid "9b79623e-cc2b-40df-95d1-9da784b09fec")
 		)
 		(pin "9"
-			(uuid "6efb4caf-3f71-4a45-8d39-d6db4b1bf7b4")
+			(uuid "402ce2fe-c4d2-4cc8-8839-508a2bb045bd")
 		)
 		(pin "8"
-			(uuid "a3b710e0-084d-4ac7-aee2-fff42b571de1")
-		)
-		(pin "S5"
-			(uuid "3db8024e-96b7-4e81-af3b-0cdf3a612cdd")
+			(uuid "de3a508b-2a87-475e-b409-353ef78fded8")
 		)
 		(pin "7"
-			(uuid "f608c260-c6b9-4012-9412-d547e39eec08")
+			(uuid "6af25016-c861-445f-82a0-49dcb3f4a579")
+		)
+		(pin "S5"
+			(uuid "d690beb2-1665-4c8b-9fa4-ba345953f5dc")
+		)
+		(pin "6"
+			(uuid "01c6c3f7-a248-4bc2-979a-6ccbdcc0ae3f")
+		)
+		(pin "S3"
+			(uuid "d66c06ef-3ba5-48a0-9afa-a52a4477c407")
+		)
+		(pin "S1"
+			(uuid "b4e9cf64-1e3d-4fee-b444-f57d084ecc73")
+		)
+		(pin "S2"
+			(uuid "61a3eee8-9ebf-44c2-b313-d4c483c2e3b2")
 		)
 		(instances
-			(project ""
-				(path "/fbbff63c-816e-460c-8c40-59811440d581/ea330596-c869-4704-a47f-7558852ea1fe"
-					(reference "J6")
+			(project "DAQ_Back_Board"
+				(path "/0ba67103-d9d7-4140-bc2b-72ee6bb76452/4025f0f9-da67-4a60-a997-b2a2503703af"
+					(reference "J1")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "power:+3.3V")
-		(at 151.13 73.66 0)
+		(lib_id "power:GND")
+		(at 121.92 103.505 0)
 		(unit 1)
+		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
+		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "2a196be3-d6d7-4cb6-9729-2488bd28424a")
-		(property "Reference" "#PWR025"
-			(at 151.13 77.47 0)
+		(uuid "de5e579f-dc4c-41ac-9f66-29950cec1553")
+		(property "Reference" "#PWR014"
+			(at 121.92 109.855 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+3V3"
-			(at 151.13 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 151.13 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 151.13 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 151.13 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "b8bec96e-3176-46aa-b46f-6fc4c6426968")
-		)
-		(instances
-			(project "daq_board"
-				(path "/fbbff63c-816e-460c-8c40-59811440d581/ea330596-c869-4704-a47f-7558852ea1fe"
-					(reference "#PWR025")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 157.48 113.03 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "50a9c003-f94a-4f83-94c8-e1eba7bf36ac")
-		(property "Reference" "#PWR011"
-			(at 157.48 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
 			)
 		)
 		(property "Value" "GND"
-			(at 157.48 111.76 0)
+			(at 121.92 107.95 0)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1182,104 +1368,45 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 157.48 113.03 0)
+			(at 121.92 103.505 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Datasheet" ""
-			(at 157.48 113.03 0)
+			(at 121.92 103.505 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 157.48 113.03 0)
+			(at 121.92 103.505 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "1"
-			(uuid "34578900-a1cd-4c40-9005-25d4fdf985f8")
+			(uuid "ca339563-f8bb-4749-a394-fc9b078ab6a2")
 		)
 		(instances
-			(project "daq_board"
-				(path "/fbbff63c-816e-460c-8c40-59811440d581/ea330596-c869-4704-a47f-7558852ea1fe"
-					(reference "#PWR011")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 149.86 113.03 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "e236f585-f3f8-45af-bf91-14a19ecda6e1")
-		(property "Reference" "#PWR010"
-			(at 149.86 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 149.86 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 149.86 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 149.86 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 149.86 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "727d92ee-144a-459a-b0ee-c9bde7af04c2")
-		)
-		(instances
-			(project "daq_board"
-				(path "/fbbff63c-816e-460c-8c40-59811440d581/ea330596-c869-4704-a47f-7558852ea1fe"
-					(reference "#PWR010")
+			(project "DAQ_Back_Board"
+				(path "/0ba67103-d9d7-4140-bc2b-72ee6bb76452/4025f0f9-da67-4a60-a997-b2a2503703af"
+					(reference "#PWR014")
 					(unit 1)
 				)
 			)

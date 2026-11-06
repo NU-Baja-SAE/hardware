@@ -56,41 +56,42 @@ components:
 
 wires:
   # ── Power: battery -> master switch/fuse -> each board's power connector ──
-  # Every board has a Molex 15311026 power-in connector:
-  #   ecvt J4 (+12V / GND), daq J5 (GND / +24V), hud J4 (+24V / GND).
+  # Each board has a 2-pin power-in connector:
+  #   ecvt J4 (+12V / GND), daq J6 (+24V / GND), hud J4 (+24V / GND).
   # Power is distributed from the switched side; grounds return to the battery.
   #
-  # OPEN QUESTION: the 2027 eCVT board takes +12V, but daq and hud are still
-  # the 2026 boards (stand-ins until their 2027 versions land) and take +24V.
+  # OPEN QUESTION: the 2027 eCVT board takes +12V, but the 2027 daq takes +24V
+  # (as does hud, still the 2026 board, a stand-in until its 2027 version lands).
   # They're drawn off the same switched rail here; settle the car's supply
   # voltage (or add a converter) before building the harness.
   - {from: BATTERY.PWR, to: MASTER_SWITCH.A1, gauge: 12, color: RED, signal: "B+"}
   - {from: MASTER_SWITCH.B1, to: ecvt.J4.+12V, gauge: 12, color: RED, signal: "+12V"}
-  - {from: MASTER_SWITCH.B1, to: daq.J5.+24V, gauge: 14, color: RED, signal: "+24V"}
+  - {from: MASTER_SWITCH.B1, to: daq.J6.+24V, gauge: 14, color: RED, signal: "+24V"}
   - {from: MASTER_SWITCH.B1, to: hud.J4.+24V, gauge: 14, color: RED, signal: "+24V"}
   - {from: BATTERY.GND, to: ecvt.J4.GND, gauge: 12, color: BLACK, signal: "GND"}
-  - {from: BATTERY.GND, to: daq.J5.GND, gauge: 14, color: BLACK, signal: "GND"}
+  - {from: BATTERY.GND, to: daq.J6.GND, gauge: 14, color: BLACK, signal: "GND"}
   - {from: BATTERY.GND, to: hud.J4.GND, gauge: 14, color: BLACK, signal: "GND"}
 
   # ── CAN bus: daisy-chain the three boards' CAN connectors ────────────────
-  # ecvt J6, daq J8, hud J3 each expose CANH/CANL. Chain ecvt <-> daq <-> hud.
-  - {from: ecvt.J6.CANH, to: daq.J8.CANH, gauge: 22, color: YELLOW, signal: "CANH"}
-  - {from: ecvt.J6.CANL, to: daq.J8.CANL, gauge: 22, color: GREEN, signal: "CANL"}
-  - {from: daq.J8.CANH, to: hud.J3.CANH, gauge: 22, color: YELLOW, signal: "CANH"}
-  - {from: daq.J8.CANL, to: hud.J3.CANL, gauge: 22, color: GREEN, signal: "CANL"}
+  # ecvt J6, daq J2, hud J3 each expose CANH/CANL. Chain ecvt <-> daq <-> hud.
+  - {from: ecvt.J6.CANH, to: daq.J2.CANH, gauge: 22, color: YELLOW, signal: "CANH"}
+  - {from: ecvt.J6.CANL, to: daq.J2.CANL, gauge: 22, color: GREEN, signal: "CANL"}
+  - {from: daq.J2.CANH, to: hud.J3.CANH, gauge: 22, color: YELLOW, signal: "CANH"}
+  - {from: daq.J2.CANL, to: hud.J3.CANL, gauge: 22, color: GREEN, signal: "CANL"}
 
   # ── Auxiliary sensor boards -> their host board ──────────────────────────
   # Each aux board draws its supply/ground from the host connector it reports
   # into and returns its one signal on the matching input pin.
   #
-  # Fuel-level sensor -> daq J4 (Fuel_Sensor / +5V / GND):
+  # Fuel-level sensor -> daq J4 ("Fuel Sensor" / +5V / GND). The signal pin has
+  # a space in its name, so it's referred to by NUMBER:
   - {from: daq.J4.+5V,         to: fuel.J1.+5V,       gauge: 22, color: RED,   signal: "+5V"}
   - {from: daq.J4.GND,         to: fuel.J1.GND,       gauge: 22, color: BLACK, signal: "GND"}
-  - {from: daq.J4.Fuel_Sensor, to: fuel.J1.FUEL_LEVEL, gauge: 22, color: BLUE, signal: "FUEL"}
+  - {from: daq.J4.2,   to: fuel.J1.FUEL_LEVEL, gauge: 22, color: BLUE, signal: "FUEL"}
   #
   # Wheel hall-speed sensors, one per corner. Two host connectors split them:
   #   - Front wheels (FL/FR) -> HUD J5 "Wheel power" (Wheel1/Wheel2, +3.3V/GND)
-  #   - Rear wheels  (RL/RR) -> daq J7 (LEFT_HALL/RIGHT_HALL, +3V3/GND)
+  #   - Rear wheels  (RL/RR) -> daq J3 ("Wheel 1") and J5 ("Wheel 2")
   # Front left / front right -> HUD J5:
   - {from: hud.J5.+3V3,   to: wheel_fl.J1.+3V3,     gauge: 22, color: RED,   signal: "+3V3"}
   - {from: hud.J5.GND,    to: wheel_fl.J1.GND,      gauge: 22, color: BLACK, signal: "GND"}
@@ -98,13 +99,15 @@ wires:
   - {from: hud.J5.+3V3,   to: wheel_fr.J1.+3V3,     gauge: 22, color: RED,   signal: "+3V3"}
   - {from: hud.J5.GND,    to: wheel_fr.J1.GND,      gauge: 22, color: BLACK, signal: "GND"}
   - {from: hud.J5.Wheel2, to: wheel_fr.J1.HALL_OUT, gauge: 22, color: WHITE, signal: "FR_HALL"}
-  # Rear left / rear right -> daq J7:
-  - {from: daq.J7.+3V3,       to: wheel_rl.J1.+3V3,     gauge: 22, color: RED,   signal: "+3V3"}
-  - {from: daq.J7.GND,        to: wheel_rl.J1.GND,      gauge: 22, color: BLACK, signal: "GND"}
-  - {from: daq.J7.LEFT_HALL,  to: wheel_rl.J1.HALL_OUT, gauge: 22, color: WHITE, signal: "RL_HALL"}
-  - {from: daq.J7.RIGHT_HALL, to: wheel_rr.J1.HALL_OUT, gauge: 22, color: WHITE, signal: "RR_HALL"}
-  - {from: daq.J7.+3V3,       to: wheel_rr.J1.+3V3,     gauge: 22, color: RED,   signal: "+3V3"}
-  - {from: daq.J7.GND,        to: wheel_rr.J1.GND,      gauge: 22, color: BLACK, signal: "GND"}
+  # Rear left -> daq J3, rear right -> daq J5 (ASSUMED, by analogy with hud
+  # Wheel1=left: the schematic doesn't say which side is which). Pins 1/2/3 are
+  # GND / Wheel n / +3.3V; numbers because `+3.3V` contains a dot.
+  - {from: daq.J3.3, to: wheel_rl.J1.+3V3,     gauge: 22, color: RED,   signal: "+3V3"}
+  - {from: daq.J3.1, to: wheel_rl.J1.GND,      gauge: 22, color: BLACK, signal: "GND"}
+  - {from: daq.J3.2, to: wheel_rl.J1.HALL_OUT, gauge: 22, color: WHITE, signal: "RL_HALL"}
+  - {from: daq.J5.2, to: wheel_rr.J1.HALL_OUT, gauge: 22, color: WHITE, signal: "RR_HALL"}
+  - {from: daq.J5.3, to: wheel_rr.J1.+3V3,     gauge: 22, color: RED,   signal: "+3V3"}
+  - {from: daq.J5.1, to: wheel_rr.J1.GND,      gauge: 22, color: BLACK, signal: "GND"}
   #
   # eCVT sheave hall pickups -> ecvt J5 (2027 board, 917786-1):
   #   1 +3.3V  2 Primary  3 GND  |  4 +3.3V  5 Secondary  6 GND  |  7 GND  8 Limit
