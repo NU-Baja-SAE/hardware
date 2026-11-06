@@ -1644,7 +1644,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "power:+24V"
+		(symbol "power:+12V"
 			(power global)
 			(pin_numbers
 				(hide yes)
@@ -1669,7 +1669,7 @@
 					)
 				)
 			)
-			(property "Value" "+24V"
+			(property "Value" "+12V"
 				(at 0 3.556 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1701,7 +1701,7 @@
 					)
 				)
 			)
-			(property "Description" "Power symbol creates a global label with name \"+24V\""
+			(property "Description" "Power symbol creates a global label with name \"+12V\""
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1723,7 +1723,7 @@
 					)
 				)
 			)
-			(symbol "+24V_0_1"
+			(symbol "+12V_0_1"
 				(polyline
 					(pts
 						(xy -0.762 1.27) (xy 0 2.54)
@@ -1761,7 +1761,7 @@
 					)
 				)
 			)
-			(symbol "+24V_1_1"
+			(symbol "+12V_1_1"
 				(pin power_in line
 					(at 0 0 90)
 					(length 0)
@@ -2648,7 +2648,7 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+24V")
+		(lib_id "power:+12V")
 		(at 71.755 79.375 0)
 		(unit 1)
 		(body_style 1)
@@ -2670,7 +2670,7 @@
 				)
 			)
 		)
-		(property "Value" "+24V"
+		(property "Value" "+12V"
 			(at 71.755 74.295 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2702,7 +2702,7 @@
 				)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"+24V\""
+		(property "Description" "Power symbol creates a global label with name \"+12V\""
 			(at 71.755 79.375 0)
 			(hide yes)
 			(show_name no)

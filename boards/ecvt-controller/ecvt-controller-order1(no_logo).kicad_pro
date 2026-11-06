@@ -622,7 +622,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "ecvt-controller.kicad_pro",
+    "filename": "ecvt-controller-order1(no_logo).kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -866,7 +866,7 @@
     "subpart_id_separator": 0,
     "top_level_sheets": [
       {
-        "filename": "ecvt-controller.kicad_sch",
+        "filename": "ecvt-controller-order1(no_logo).kicad_sch",
         "name": "ecvt-controller",
         "uuid": "6a3c849d-efdf-47ab-8467-b82fc2fbc70f"
       }

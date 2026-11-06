@@ -42,7 +42,7 @@ components:
   # parts that live on no board, so they're declared here.
   BATTERY:
     type: device
-    label: "Battery (12V/24V)"
+    label: "Battery (12V)"
     zone: power
     pins:
       - {n: 1, name: PWR}
@@ -57,17 +57,15 @@ components:
 wires:
   # ── Power: battery -> master switch/fuse -> each board's power connector ──
   # Each board has a 2-pin power-in connector:
-  #   ecvt J4 (+12V / GND), daq J6 (+24V / GND), hud J4 (+24V / GND).
+  #   ecvt J4 (+12V / GND), daq J6 (+12V / GND), hud J4 (+12V / GND).
   # Power is distributed from the switched side; grounds return to the battery.
   #
-  # OPEN QUESTION: the 2027 eCVT board takes +12V, but the 2027 daq takes +24V
-  # (as does hud, still the 2026 board, a stand-in until its 2027 version lands).
-  # They're drawn off the same switched rail here; settle the car's supply
-  # voltage (or add a converter) before building the harness.
+  # The whole car runs on +12V. hud is still the 2026 stand-in, whose schematic
+  # labels this pin +24V, so it's referred to by NUMBER until the 2027 hud lands.
   - {from: BATTERY.PWR, to: MASTER_SWITCH.A1, gauge: 12, color: RED, signal: "B+"}
   - {from: MASTER_SWITCH.B1, to: ecvt.J4.+12V, gauge: 12, color: RED, signal: "+12V"}
-  - {from: MASTER_SWITCH.B1, to: daq.J6.+24V, gauge: 14, color: RED, signal: "+24V"}
-  - {from: MASTER_SWITCH.B1, to: hud.J4.+24V, gauge: 14, color: RED, signal: "+24V"}
+  - {from: MASTER_SWITCH.B1, to: daq.J6.+12V, gauge: 14, color: RED, signal: "+12V"}
+  - {from: MASTER_SWITCH.B1, to: hud.J4.1, gauge: 14, color: RED, signal: "+12V"}
   - {from: BATTERY.GND, to: ecvt.J4.GND, gauge: 12, color: BLACK, signal: "GND"}
   - {from: BATTERY.GND, to: daq.J6.GND, gauge: 14, color: BLACK, signal: "GND"}
   - {from: BATTERY.GND, to: hud.J4.GND, gauge: 14, color: BLACK, signal: "GND"}

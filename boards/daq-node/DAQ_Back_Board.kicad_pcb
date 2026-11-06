@@ -3977,7 +3977,7 @@
 			(drill 1.1684)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net "+24V")
+			(net "+12V")
 			(pinfunction "1")
 			(pintype "unspecified")
 			(uuid "63798409-2a01-44d7-94a5-4d9263dd43c7")
@@ -13940,7 +13940,7 @@
 			(size 1.325 0.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "+24V")
+			(net "+12V")
 			(pinfunction "D")
 			(pintype "passive")
 			(uuid "0ba23eed-77d4-4334-9c7c-50a67995ac3f")
@@ -20007,7 +20007,7 @@
 		(end 137.6175 132.1175)
 		(width 1)
 		(layer "F.Cu")
-		(net "+24V")
+		(net "+12V")
 		(uuid "04952279-44a7-40a7-a330-865a13e0613a")
 	)
 	(segment
@@ -20015,7 +20015,7 @@
 		(end 136.8 123.95)
 		(width 1)
 		(layer "F.Cu")
-		(net "+24V")
+		(net "+12V")
 		(uuid "3051a9b7-30b1-4178-96a5-6c3d02794ee4")
 	)
 	(segment
@@ -20023,7 +20023,7 @@
 		(end 136.8525 124.0975)
 		(width 1)
 		(layer "F.Cu")
-		(net "+24V")
+		(net "+12V")
 		(uuid "96643f91-d309-4430-ac84-77d9f3b051fe")
 	)
 	(segment
@@ -20031,7 +20031,7 @@
 		(end 135.2531 123.95)
 		(width 1)
 		(layer "F.Cu")
-		(net "+24V")
+		(net "+12V")
 		(uuid "9de09a2d-0583-4c78-9f31-c750a71e87bb")
 	)
 	(segment
@@ -20039,7 +20039,7 @@
 		(end 136.9 124.05)
 		(width 1)
 		(layer "F.Cu")
-		(net "+24V")
+		(net "+12V")
 		(uuid "a6f75332-55e6-4fe8-8818-9337ddd8d3a6")
 	)
 	(segment
@@ -20047,7 +20047,7 @@
 		(end 136.8525 130.75)
 		(width 1)
 		(layer "F.Cu")
-		(net "+24V")
+		(net "+12V")
 		(uuid "a897004a-3947-4093-afa5-62b5b3a959c8")
 	)
 	(segment
@@ -20055,7 +20055,7 @@
 		(end 136.8525 131.3525)
 		(width 1)
 		(layer "F.Cu")
-		(net "+24V")
+		(net "+12V")
 		(uuid "ca0bc57f-957d-4338-8dd2-f795bc023a5b")
 	)
 	(segment

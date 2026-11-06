@@ -75,7 +75,7 @@ components:
     label: daq-node J6 (917780-1)
     zone: daq-node
     pins:
-      - {n: 1, name: +24V}
+      - {n: 1, name: +12V}
       - {n: 2, name: GND}
 
   J7:
