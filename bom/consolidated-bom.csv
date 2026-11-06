@@ -1,4 +1,27 @@
 part_number,description,manufacturer,quantity,board,notes
+.1uF 0603,Unpolarized capacitor,,5,DAQ_Back_Board,C1 C2 C6 C8 C9
+.1uf 0603,Unpolarized capacitor,,1,DAQ_Back_Board,C7
+0603 Fuse 0603,Fuse,,1,DAQ_Back_Board,F1
+10k 0603,Resistor,,4,DAQ_Back_Board,R6 R7 R8 R9
+1k 0603,Resistor,,3,DAQ_Back_Board,R3 R4 R5
+220p 0603,Unpolarized capacitor,,2,DAQ_Back_Board,C4 C5
+4.7uF 0603,Polarized capacitor,,1,DAQ_Back_Board,C3
+5V,Zener diode,,1,DAQ_Back_Board,D1
+60 1206,Resistor,,2,DAQ_Back_Board,R1 R2
+917780-1,TE Connectivity 917780-1 board-to-board header,,2,DAQ_Back_Board,J2 J6
+917781-1,TE Connectivity 917781-1 board-to-board header,,8,DAQ_Back_Board,J3 J4 J5 J7 J8 J9 J13 J15
+917783-1,TE Connectivity 917783-1 board-to-board header,TE,1,DAQ_Back_Board,J10
+ACT45B-101-2P-TL003,,,1,DAQ_Back_Board,U3
+BMI088,"Accelerometer, Gyroscope, 6-Axis Sensor, I2C / SPI interface, LGA-16",,1,DAQ_Back_Board,U4
+Conn_01x19_Socket,"Generic connector, single row, 01x19, script generated",,2,DAQ_Back_Board,J11 J12
+DM3CS-SF,CONN MICRO SD CARD HINGED TYPE,Hirose,1,DAQ_Back_Board,J1
+D_TVS,Bidirectional transient-voltage-suppression diode,,11,DAQ_Back_Board,D3 D4 D5 D6 D8 D9 D10 D11 D12 D13 D14
+Q_PMOS_DGS,"P-MOSFET transistor, drain/gate/source",,1,DAQ_Back_Board,Q1
+SMAJ26A,"400W unidirectional Transient Voltage Suppressor, 26.0Vr, SMA(DO-214AC)",,1,DAQ_Back_Board,D2
+SW_SPST,Single Pole Single Throw (SPST) switch,,2,DAQ_Back_Board,SW1 SW2
+TJA1051T-3,"High-Speed CAN Transceiver, separate VIO, silent mode, SOIC-8",,1,DAQ_Back_Board,U2
+TPD2EUSB30,"2-Channel ESD Protection for Super-Speed USB 3.0 Interface, DRT-3",,1,DAQ_Back_Board,U5
+TSR_1-2450,"1A step-down regulator module, fixed 5V output voltage, 5-36V input voltage, -40°C to +85°C temperature range, TO-220 compatible LM78xx replacement",,1,DAQ_Back_Board,U1
 0.1 µF 0603,Unpolarized capacitor,,1,daq-node,C11
 0.1 µF 0603,"Unpolarized capacitor, small symbol",,1,daq-node,C5
 0.1 µF 0805,Unpolarized capacitor,,3,daq-node,C2 C4 C6
